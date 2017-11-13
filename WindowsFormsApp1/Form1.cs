@@ -36,10 +36,11 @@ namespace WindowsFormsApp1
                     foreach (var update in updates)
                     {
                         var message = update.Message;
-                        if (message.Type == Telegram.Bot.Types.Enums.MessageType.TextMessage)
+                        var callback = update.CallbackQuery;
+                        if (message!=null && message.Type == Telegram.Bot.Types.Enums.MessageType.TextMessage)
                         {
                             if (message.Text == "/say")
-                            {await Bot.SendTextMessageAsync(message.Chat.Id, "тест");}
+                            { await Bot.SendTextMessageAsync(message.Chat.Id, "тест"); }
                             else if (message.Text == "/start")
                             { await Bot.SendTextMessageAsync(message.Chat.Id, "Привет!"); }
                             else if (message.Text == "/but")
@@ -57,7 +58,6 @@ namespace WindowsFormsApp1
                                     ResizeKeyboard = true,
                                 };
                                 await Bot.SendTextMessageAsync(message.Chat.Id, "Нео, что ты выберешь?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
-                                
                             }
                             else if (message.Text == "Red!")
                             {
@@ -67,8 +67,51 @@ namespace WindowsFormsApp1
                             {
                                 await Bot.SendTextMessageAsync(message.Chat.Id, "Ты даун!", replyToMessageId: message.MessageId);
                             }
+                            else if (message.Text == "/but2")
+                            {
+                                var keyboard = new Telegram.Bot.Types.ReplyMarkups.InlineKeyboardMarkup(new[]
+                                {
+                                    new[]
+                                    {
+                                        new Telegram.Bot.Types.InlineKeyboardButtons.InlineKeyboardCallbackButton("Aki","Aki"),
+                                        new Telegram.Bot.Types.InlineKeyboardButtons.InlineKeyboardCallbackButton("Sora","Sora"),
+                                    },
+                                 });
+                                await Bot.SendTextMessageAsync(message.Chat.Id, "Кого хочешь увидеть?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
+                            }
                             else
-                            { await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); }
+                            { await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); } 
+                        }
+                        else
+                        {
+                                if (callback.Data == "Aki")
+                                {
+                                    await Bot.AnswerCallbackQueryAsync(callback.Id, "You hav choosen " + callback.Data, true);
+                                    //var uri = new System.Uri("C:\\Users\\DD\\Desktop\\123.png");  ПОПЫТКИ СКИНУТЬ ПИКРИЛ
+                                   // var converted = uri.AbsoluteUri;
+                                    //var photo=new Telegram.Bot.Types.FileToSend(converted);
+                                   // await Bot.SendPhotoAsync(callback.Message.Chat.Id, photo);
+                                }
+                                else
+                                if (callback.Data == "Sora")
+                                {
+                                    await Bot.AnswerCallbackQueryAsync(callback.Id, "You hav choosen " + callback.Data, true);
+                                }
+                            //ТО, ЧТО ВЫШЕ МОЖНО ПЕРЕПИСАТЬ В СОБЫТИЕ 
+                            //Bot.OnCallbackQuery += async (object sc, Telegram.Bot.Args.CallbackQueryEventArgs ev) =>
+                            //{
+                            //    var message = ev.CallbackQuery.Message;
+                            //    if (ev.CallbackQuery.Data == "callback1")
+                            //    {
+                            //        await Bot.AnswerCallbackQueryAsync(ev.CallbackQuery.Id, "You hav choosen " + ev.CallbackQuery.Data, true);
+                            //    }
+                            //    else
+                            //    if (ev.CallbackQuery.Data == "callback2")
+                            //    {
+                            //        await Bot.SendTextMessageAsync(message.Chat.Id, "тест", replyToMessageId: message.MessageId);
+                            //        await Bot.AnswerCallbackQueryAsync(ev.CallbackQuery.Id);
+                            //    }
+                            //};
                         }
                         Console.WriteLine(update.Type);
                         offset = update.Id + 1;
@@ -87,7 +130,7 @@ namespace WindowsFormsApp1
             if (this.backgroundWorker1.IsBusy != true)
             {
                 var text = textBox1.Text;
-                if (text!=null && this.backgroundWorker1.IsBusy != true)
+                if (text != null && this.backgroundWorker1.IsBusy != true)
                 {
                     this.backgroundWorker1.RunWorkerAsync(text);
                 }
