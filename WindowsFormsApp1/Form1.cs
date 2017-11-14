@@ -87,6 +87,14 @@ namespace WindowsFormsApp1
                                 if (callback.Data == "Aki")
                                 {
                                     await Bot.AnswerCallbackQueryAsync(callback.Id, "You hav choosen " + callback.Data, true);
+                                     var picrel = @"C:\\Users\\Arrklaid\\Desktop\\pics\\golub.jpg";
+                                     using (var stream = System.IO.File.Open(picrel, System.IO.FileMode.Open))
+                                     {
+                                         Telegram.Bot.Types.FileToSend fts = new Telegram.Bot.Types.FileToSend();
+                                         fts.Content = stream;
+                                        fts.Filename = picrel.Split('\\').Last();
+                                         var test = await Bot.SendPhotoAsync(callback.Message.Chat.Id, fts, "WRYYYYY");
+                                 }
                                     //var uri = new System.Uri("C:\\Users\\DD\\Desktop\\123.png");  ПОПЫТКИ СКИНУТЬ ПИКРИЛ
                                    // var converted = uri.AbsoluteUri;
                                     //var photo=new Telegram.Bot.Types.FileToSend(converted);
