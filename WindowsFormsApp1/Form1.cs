@@ -36,57 +36,58 @@ namespace WindowsFormsApp1
                     foreach (var update in updates)
                     {
                         var w = update.Type;
-                        //if (w==Telegram.Bot.Types.Enums.UpdateType.MessageUpdate)
-                        //{ }
-                        var message = update.Message;
-                        var callback = update.CallbackQuery;
-                        if (message!=null && message.Type == Telegram.Bot.Types.Enums.MessageType.TextMessage)
+                        if (w == Telegram.Bot.Types.Enums.UpdateType.MessageUpdate)
                         {
-                            if (message.Text == "/say")
-                            { await Bot.SendTextMessageAsync(message.Chat.Id, "тест"); }
-                            else if (message.Text == "/start")
-                            { await Bot.SendTextMessageAsync(message.Chat.Id, "Привет!"); }
-                            else if (message.Text == "/but")
+                            var message = update.Message;
+                            if (message != null && message.Type == Telegram.Bot.Types.Enums.MessageType.TextMessage)
                             {
-                                var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+                                if (message.Text == "/say")
+                                { await Bot.SendTextMessageAsync(message.Chat.Id, "тест"); }
+                                else if (message.Text == "/start")
+                                { await Bot.SendTextMessageAsync(message.Chat.Id, "Привет!"); }
+                                else if (message.Text == "/but")
                                 {
-                                    Keyboard = new[]
+                                    var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
                                     {
+                                        Keyboard = new[]
+                                        {
                                                 new[]
                                                 {
                                                     new Telegram.Bot.Types.KeyboardButton("Red!"),
                                                     new Telegram.Bot.Types.KeyboardButton("Blue!")
                                                 },
                                      },
-                                    ResizeKeyboard = true,
-                                };
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Нео, что ты выберешь?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
-                            }
-                            else if (message.Text == "Red!")
-                            {
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Ты в матрице!", replyToMessageId: message.MessageId);
-                            }
-                            else if (message.Text == "Blue!")
-                            {
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Ты даун!", replyToMessageId: message.MessageId);
-                            }
-                            else if (message.Text == "/but2")
-                            {
-                                var keyboard = new Telegram.Bot.Types.ReplyMarkups.InlineKeyboardMarkup(new[]
+                                        ResizeKeyboard = true,
+                                    };
+                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Нео, что ты выберешь?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
+                                }
+                                else if (message.Text == "Red!")
                                 {
+                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Ты в матрице!", replyToMessageId: message.MessageId);
+                                }
+                                else if (message.Text == "Blue!")
+                                {
+                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Ты даун!", replyToMessageId: message.MessageId);
+                                }
+                                else if (message.Text == "/but2")
+                                {
+                                    var keyboard = new Telegram.Bot.Types.ReplyMarkups.InlineKeyboardMarkup(new[]
+                                    {
                                     new[]
                                     {
                                         new Telegram.Bot.Types.InlineKeyboardButtons.InlineKeyboardCallbackButton("Aki","Aki"),
                                         new Telegram.Bot.Types.InlineKeyboardButtons.InlineKeyboardCallbackButton("Sora","Sora"),
                                     },
                                  });
-                                await Bot.SendTextMessageAsync(message.Chat.Id, "Кого хочешь увидеть?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
+                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Кого хочешь увидеть?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
+                                }
+                                else
+                                { await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); }
                             }
-                            else
-                            { await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); } 
                         }
-                        else
-                        {
+                        else if (w == Telegram.Bot.Types.Enums.UpdateType.CallbackQueryUpdate)
+                        { 
+                            var callback = update.CallbackQuery;
                             if (callback.Data == "Aki")
                             {
                                 await Bot.AnswerCallbackQueryAsync(callback.Id, "You hav choosen " + callback.Data, true);
@@ -99,22 +100,20 @@ namespace WindowsFormsApp1
                                     var test = await Bot.SendPhotoAsync(callback.Message.Chat.Id, fts, "WRYYYYY");
                                 }
                             }
-                            else
-                            if (callback.Data == "Sora")
+                            else if (callback.Data == "Sora")
                             {
                                 await Bot.AnswerCallbackQueryAsync(callback.Id, "You hav choosen " + callback.Data, true);
                             }
                         }
-                        Console.WriteLine(update.Type);
                         offset = update.Id + 1;
                     }
-
                 }
             }
             catch (Telegram.Bot.Exceptions.ApiRequestException ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
