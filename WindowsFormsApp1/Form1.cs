@@ -35,6 +35,9 @@ namespace WindowsFormsApp1
 
                     foreach (var update in updates)
                     {
+                        var w = update.Type;
+                        //if (w==Telegram.Bot.Types.Enums.UpdateType.MessageUpdate)
+                        //{ }
                         var message = update.Message;
                         var callback = update.CallbackQuery;
                         if (message!=null && message.Type == Telegram.Bot.Types.Enums.MessageType.TextMessage)
