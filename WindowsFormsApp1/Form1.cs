@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +100,12 @@ namespace WindowsFormsApp1
                                     fts.Filename = picrel.Split('\\').Last();
                                     var test = await Bot.SendPhotoAsync(callback.Message.Chat.Id, fts, "WRYYYYY");
                                 }
+                                //Telegram.Bot.Types.FileToSend fts = new Telegram.Bot.Types.FileToSend();
+                                ////fts.Content = stream;
+                                //MemoryStream d = new MemoryStream();
+                                //Properties.Resources.shit.Save(d, Properties.Resources.shit.RawFormat);
+                                //var r = d;
+                                //fts.Content = r;
                             }
                             else if (callback.Data == "Sora")
                             {
