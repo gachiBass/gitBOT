@@ -76,8 +76,8 @@ namespace WindowsFormsApp1
                                     {
                                     new[]
                                     {
-                                        new Telegram.Bot.Types.InlineKeyboardButtons.InlineKeyboardCallbackButton("Aki","Aki"),
-                                        new Telegram.Bot.Types.InlineKeyboardButtons.InlineKeyboardCallbackButton("Sora","Sora"),
+                                        new Telegram.Bot.Types.InlineKeyboardButtons.InlineKeyboardCallbackButton("God","god"),
+                                        new Telegram.Bot.Types.InlineKeyboardButtons.InlineKeyboardCallbackButton("Shit","shit"),
                                     },
                                  });
                                     await Bot.SendTextMessageAsync(message.Chat.Id, "Кого хочешь увидеть?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
@@ -87,29 +87,16 @@ namespace WindowsFormsApp1
                             }
                         }
                         else if (w == Telegram.Bot.Types.Enums.UpdateType.CallbackQueryUpdate)
-                        { 
+                        {
                             var callback = update.CallbackQuery;
-                            if (callback.Data == "Aki")
+                            await Bot.AnswerCallbackQueryAsync(callback.Id, "You hav choosen " + callback.Data, true);
+                            var picrel = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Resources\" + callback.Data + ".png");
+                            using (var stream = System.IO.File.Open(picrel, System.IO.FileMode.Open))
                             {
-                                await Bot.AnswerCallbackQueryAsync(callback.Id, "You hav choosen " + callback.Data, true);
-                                var picrel = @"C:\\Users\\Arrklaid\\Desktop\\pics\\golub.jpg";
-                                using (var stream = System.IO.File.Open(picrel, System.IO.FileMode.Open))
-                                {
-                                    Telegram.Bot.Types.FileToSend fts = new Telegram.Bot.Types.FileToSend();
-                                    fts.Content = stream;
-                                    fts.Filename = picrel.Split('\\').Last();
-                                    var test = await Bot.SendPhotoAsync(callback.Message.Chat.Id, fts, "WRYYYYY");
-                                }
-                                //Telegram.Bot.Types.FileToSend fts = new Telegram.Bot.Types.FileToSend();
-                                ////fts.Content = stream;
-                                //MemoryStream d = new MemoryStream();
-                                //Properties.Resources.shit.Save(d, Properties.Resources.shit.RawFormat);
-                                //var r = d;
-                                //fts.Content = r;
-                            }
-                            else if (callback.Data == "Sora")
-                            {
-                                await Bot.AnswerCallbackQueryAsync(callback.Id, "You hav choosen " + callback.Data, true);
+                                Telegram.Bot.Types.FileToSend fts = new Telegram.Bot.Types.FileToSend();
+                                fts.Content = stream;
+                                fts.Filename = picrel.Split('\\').Last();
+                                await Bot.SendPhotoAsync(callback.Message.Chat.Id, fts);
                             }
                         }
                         offset = update.Id + 1;
