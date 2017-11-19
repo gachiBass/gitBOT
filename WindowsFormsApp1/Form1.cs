@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -81,6 +83,22 @@ namespace WindowsFormsApp1
                                     },
                                  });
                                     await Bot.SendTextMessageAsync(message.Chat.Id, "Кого хочешь увидеть?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
+                                }
+                                else if (message.Text == "/foot")
+                                {
+                                    try
+                                    {
+                                        String result;
+                                        WebClient client = new WebClient();
+                                        String address = @"http://api.football-data.org/v1/competitions/";
+                                        client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
+                                        result = client.DownloadString(address);
+                                        Console.WriteLine(address); /*ТОЧКА ОСТАНОВЫ ДЛЯ ПРОВЕРКИ*/
+                                    }
+                                    catch (Exception e1)
+                                    {
+                                        Console.WriteLine(e1);
+                                    }
                                 }
                                 else
                                 { await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); }
