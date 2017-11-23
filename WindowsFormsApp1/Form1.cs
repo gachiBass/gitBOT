@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
                 int offset = 0;
                 while (true)
                 {
-                    var updates = await Bot.GetUpdatesAsync(offset);
+                    var updates = await Bot.GetUpdatesAsync(offset,timeout:50);
 
                     foreach (var update in updates)
                     {
