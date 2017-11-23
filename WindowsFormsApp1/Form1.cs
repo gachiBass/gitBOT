@@ -1,13 +1,18 @@
-﻿using System;
+﻿using com.valgut.libs.bots.Wit;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WitAi;
+using WitAi.Models;
 
 namespace WindowsFormsApp1
 {
@@ -20,7 +25,11 @@ namespace WindowsFormsApp1
             this.backgroundWorker1.DoWork += this.bw_DoWork;
             textBox1.Text = "490680514:AAFdle0Rk4pZOe29H9ptSUewVfizh6hkvzg";
         }
-
+        private static WitContext Send(ConverseRequest request, ConverseResponse response)
+        {
+            // Do something with the Context
+            return request.Context;
+        }
         async void bw_DoWork(object sender, DoWorkEventArgs e)
         {
             var worker = sender as BackgroundWorker;
@@ -82,8 +91,30 @@ namespace WindowsFormsApp1
                                  });
                                     await Bot.SendTextMessageAsync(message.Chat.Id, "Кого хочешь увидеть?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
                                 }
+                                else if (message.Text == "/foot")
+                                {
+                                    try
+                                    {
+                                        String result;
+                                        WebClient client = new WebClient();
+                                        String address = @"http://api.football-data.org/v1/competitions/";
+                                        client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
+                                        result = client.DownloadString(address);
+                                        Console.WriteLine(address); /*ТОЧКА ОСТАНОВЫ ДЛЯ ПРОВЕРКИ*/
+                                    }
+                                    catch (Exception e1)
+                                    {
+                                        Console.WriteLine(e1);
+                                    }
+                                }
                                 else
-                                { await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); }
+                                {
+                                    var actions = new WitActions();
+                                    actions["send"] = Send;
+                                    Wit client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions);
+                                    var response = client.Message("какой результат матча");
+                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Yay, got Wit.ai response: " + response);
+                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); }
                             }
                         }
                         else if (w == Telegram.Bot.Types.Enums.UpdateType.CallbackQueryUpdate)
