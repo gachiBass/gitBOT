@@ -1,5 +1,6 @@
 ﻿using com.valgut.libs.bots.Wit;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,12 +19,16 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        Wit client;
         public Form1()
         {
             InitializeComponent();
             this.backgroundWorker1 = new BackgroundWorker();
             this.backgroundWorker1.DoWork += this.bw_DoWork;
             textBox1.Text = "490680514:AAFdle0Rk4pZOe29H9ptSUewVfizh6hkvzg";
+            var actions = new WitActions();
+            actions["send"] = Send;
+            client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions);
         }
         private static WitContext Send(ConverseRequest request, ConverseResponse response)
         {
@@ -49,6 +54,19 @@ namespace WindowsFormsApp1
                         if (w == Telegram.Bot.Types.Enums.UpdateType.MessageUpdate)
                         {
                             var message = update.Message;
+                            var response = client.Message("какой результат матча");/*message*/
+                            foreach (var res in response.Entities)
+                            {
+                                if (res.Key == "intent")
+                                {
+                                    var r = res.Value.Children()["value"];
+                                    foreach (JToken result in r)
+                                    {
+                                        await Bot.SendTextMessageAsync(message.Chat.Id, result.ToString());
+                                    }
+                                    //await Bot.SendTextMessageAsync(message.Chat.Id, "Yay, got Wit.ai response: " + res.Value.Children()["value"]);
+                                }
+                            }
                             if (message != null && message.Type == Telegram.Bot.Types.Enums.MessageType.TextMessage)
                             {
                                 if (message.Text == "/say")
@@ -108,13 +126,7 @@ namespace WindowsFormsApp1
                                     }
                                 }
                                 else
-                                {
-                                    var actions = new WitActions();
-                                    actions["send"] = Send;
-                                    Wit client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions);
-                                    var response = client.Message("какой результат матча");
-                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Yay, got Wit.ai response: " + response);
-                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); }
+                                {await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); }
                             }
                         }
                         else if (w == Telegram.Bot.Types.Enums.UpdateType.CallbackQueryUpdate)
