@@ -19,21 +19,24 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+
+
         Wit client;
         Telegram.Bot.TelegramBotClient Bot;
+
+
         public Form1()
         {
             InitializeComponent();
             this.backgroundWorker1 = new BackgroundWorker();
             this.backgroundWorker1.DoWork += this.bw_DoWork;
-            textBox1.Text = "490680514:AAFdle0Rk4pZOe29H9ptSUewVfizh6hkvzg";
+            textBox1.Text = "490680514:AAFdle0Rk4pZOe29H9ptSUewVfizh6hkvzg"; /*TELEGRAM TOKEN*/
             var actions = new WitActions();
             actions["send"] = Send;
-            client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions);         
+            client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions); /*WIT.AI CLIENT*/        
         }
         private static WitContext Send(ConverseRequest request, ConverseResponse response)
         {
-            // Do something with the Context
             return request.Context;
         }
 
@@ -48,7 +51,7 @@ namespace WindowsFormsApp1
                 int offset = 0;
                 while (true)
                 {
-                    var updates = await Bot.GetUpdatesAsync(offset,timeout:50);
+                    var updates = await Bot.GetUpdatesAsync(offset);
 
                     foreach (var update in updates)
                     {
@@ -56,19 +59,6 @@ namespace WindowsFormsApp1
                         if (w == Telegram.Bot.Types.Enums.UpdateType.MessageUpdate)
                         {
                             var message = update.Message;
-                            var response = client.Message("информация о команде");/*message*/
-                            foreach (var res in response.Entities)
-                            {
-                                if (res.Key == "intent")
-                                {
-                                    var r = res.Value.Children()["value"];
-                                    foreach (JToken result in r)
-                                    {
-                                        await Bot.SendTextMessageAsync(message.Chat.Id, result.ToString());
-                                    }
-                                    //await Bot.SendTextMessageAsync(message.Chat.Id, "Yay, got Wit.ai response: " + res.Value.Children()["value"]);
-                                }
-                            }
                             if (message != null && message.Type == Telegram.Bot.Types.Enums.MessageType.TextMessage)
                             {
                                 if (message.Text == "/say")
@@ -128,7 +118,10 @@ namespace WindowsFormsApp1
                                     }
                                 }
                                 else
-                                {await Bot.SendTextMessageAsync(message.Chat.Id, "Сорри, нет такой команды"); }
+                                {
+                                    var response = client.Message(message.Text);/*message*/
+                                    WitAi(message.Chat.Id,response);
+                                }
                             }
                         }
                         else if (w == Telegram.Bot.Types.Enums.UpdateType.CallbackQueryUpdate)
@@ -167,19 +160,29 @@ namespace WindowsFormsApp1
             }
         }
 
-       async public void WitAi(MessageResponse resp)
+       async public void WitAi(long id,MessageResponse resp)
         {
             string Intent="nothing";
             double MaxSovpad=0;
             foreach (var res in resp.Entities)
             {
                 var sovpad = res.Value.Children()["confidence"];
-                Intent = (MaxSovpad < Convert.ToDouble(sovpad)) ? Intent : res.Key;
+                var ee= sovpad.Values().ToList();
+                double de = Convert.ToDouble(ee[0].ToString());/*КАК ПОМНЯТЬ???????????*/
+                Intent = (MaxSovpad <de) ? res.Key : Intent;
             }
             if (Intent == "match")
-            { await Bot.SendTextMessageAsync(message.Chat.Id, result.ToString()); }
+            {
+                await Bot.SendTextMessageAsync(id, "Интент матч");/*Замена на результат матча*/
+            }
             else if (Intent == "command")
-            { }
+            {
+                await Bot.SendTextMessageAsync(id, "Команда");/*Замена на команду*/
+            }
+            else if (Intent == "nothing")
+            {
+                await Bot.SendTextMessageAsync(id, "Сорри, не знаю что ответить");
+            }
         }
     }
 }
