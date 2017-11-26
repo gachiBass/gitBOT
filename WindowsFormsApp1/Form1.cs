@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         Wit client;
+        Telegram.Bot.TelegramBotClient Bot;
         public Form1()
         {
             InitializeComponent();
@@ -28,20 +29,21 @@ namespace WindowsFormsApp1
             textBox1.Text = "490680514:AAFdle0Rk4pZOe29H9ptSUewVfizh6hkvzg";
             var actions = new WitActions();
             actions["send"] = Send;
-            client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions);
+            client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions);         
         }
         private static WitContext Send(ConverseRequest request, ConverseResponse response)
         {
             // Do something with the Context
             return request.Context;
         }
+
         async void bw_DoWork(object sender, DoWorkEventArgs e)
         {
             var worker = sender as BackgroundWorker;
             var key = e.Argument as String;
             try
             {
-                var Bot = new Telegram.Bot.TelegramBotClient(key);
+                Bot = new Telegram.Bot.TelegramBotClient(key);
                 await Bot.SetWebhookAsync("");
                 int offset = 0;
                 while (true)
@@ -54,7 +56,7 @@ namespace WindowsFormsApp1
                         if (w == Telegram.Bot.Types.Enums.UpdateType.MessageUpdate)
                         {
                             var message = update.Message;
-                            var response = client.Message("какой результат матча");/*message*/
+                            var response = client.Message("информация о команде");/*message*/
                             foreach (var res in response.Entities)
                             {
                                 if (res.Key == "intent")
@@ -163,6 +165,21 @@ namespace WindowsFormsApp1
                     this.backgroundWorker1.RunWorkerAsync(text);
                 }
             }
+        }
+
+       async public void WitAi(MessageResponse resp)
+        {
+            string Intent="nothing";
+            double MaxSovpad=0;
+            foreach (var res in resp.Entities)
+            {
+                var sovpad = res.Value.Children()["confidence"];
+                Intent = (MaxSovpad < Convert.ToDouble(sovpad)) ? Intent : res.Key;
+            }
+            if (Intent == "match")
+            { await Bot.SendTextMessageAsync(message.Chat.Id, result.ToString()); }
+            else if (Intent == "command")
+            { }
         }
     }
 }
