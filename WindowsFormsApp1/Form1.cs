@@ -162,27 +162,28 @@ namespace WindowsFormsApp1
 
        async public void WitAi(long id,MessageResponse resp)
         {
-            string Intent="nothing";
+            List<string> commands=new List<string>();
             double MaxSovpad=0;
             foreach (var res in resp.Entities)
             {
-                var sovpad = res.Value.Children()["confidence"];
-                var ee= sovpad.Values().ToList();
-                double de = Convert.ToDouble(ee[0].ToString());/*КАК ПОМНЯТЬ???????????*/
-                Intent = (MaxSovpad <de) ? res.Key : Intent;
-            }
-            if (Intent == "match")
-            {
-                await Bot.SendTextMessageAsync(id, "Интент матч");/*Замена на результат матча*/
-            }
-            else if (Intent == "command")
-            {
-                await Bot.SendTextMessageAsync(id, "Команда");/*Замена на команду*/
-            }
-            else if (Intent == "nothing")
-            {
-                await Bot.SendTextMessageAsync(id, "Сорри, не знаю что ответить");
-            }
+                if (res.Key == "command")
+                {
+                    var sovpad = res.Value.Children()["value"];
+                    var ee = sovpad.Values().ToList();
+                    foreach (var e in ee)
+                    {
+                        commands.Add(e.ToString());
+                    }
+                    if (commands.Count != 2)
+                    {
+                        await Bot.SendTextMessageAsync(id, "В матче должно быть 2 команы, не?");
+                    }
+                    else if (commands.Count == 2)
+                    {
+                        //МЕТОД ДЛЯ РАСЧЕТА
+                    }
+                }
+            }              
         }
     }
 }
