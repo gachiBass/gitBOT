@@ -52,7 +52,6 @@ namespace WindowsFormsApp1
                 while (true)
                 {
                     var updates = await Bot.GetUpdatesAsync(offset);
-
                     foreach (var update in updates)
                     {
                         var w = update.Type;
@@ -160,7 +159,7 @@ namespace WindowsFormsApp1
             }
         }
 
-       async public void WitAi(long id,MessageResponse resp)
+       async void WitAi(long id,MessageResponse resp)
         {
             List<string> commands=new List<string>();
             double MaxSovpad=0;
@@ -180,7 +179,7 @@ namespace WindowsFormsApp1
                     }
                     else if (commands.Count == 2)
                     {
-                        //МЕТОД ДЛЯ РАСЧЕТА
+                        await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
                     }
                 }
             }              
