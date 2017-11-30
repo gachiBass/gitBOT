@@ -162,14 +162,25 @@ namespace WindowsFormsApp1
        async void WitAi(long id,MessageResponse resp)
         {
             List<string> commands=new List<string>();
+            List<string> times = new List<string>();
             double MaxSovpad=0;
             foreach (var res in resp.Entities)
             {
-                if (res.Key == "command")
+                if (res.Key == "time")
                 {
-                    var sovpad = res.Value.Children()["value"];
-                    var ee = sovpad.Values().ToList();
-                    foreach (var e in ee)
+                    var sovpadTime = res.Value.Children()["value"];
+                    var time = sovpadTime.Values().ToList();
+                    foreach (var e in time)
+                    {
+                        times.Add(e.ToString());  
+                    }
+                    continue;
+                }
+                    if (res.Key == "command")
+                {
+                    var sovpadCom = res.Value.Children()["value"];
+                    var com = sovpadCom.Values().ToList();
+                    foreach (var e in com)
                     {
                         commands.Add(e.ToString());
                     }
