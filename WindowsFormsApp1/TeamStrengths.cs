@@ -19,27 +19,27 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL0708.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0708.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga0708.csv";
+                     // Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2008/2009":
                     {
                         EPLExcelName = @"..\..\csv\EPL0809.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0809.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga0809.csv";
+                  //    Ligue1ExcelName= @"..\..\csv\.csv";*/
                         break;
                     }
                 case "2009/2010":
                     {
                         EPLExcelName = @"..\..\csv\EPL0910.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0910.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga0910.csv";
+                    //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2010/2011":
@@ -520,7 +520,7 @@ namespace WindowsFormsApp1
             //    string[] Promoted = PromotedTeams(League, Season);
             //    TeamNames[0][17] = Promoted[0];
             //    TeamNames[0][18] = Promoted[1];
-            //    TeamNames[0][19] = Promoted[2];
+            //    TeamNames[0][19] = Promoted[2];3
             //}
 
             //ВЫВОДА НЕТ
