@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WitAi;
 using WitAi.Models;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WindowsFormsApp1
 {
@@ -199,6 +200,23 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void CSVcreate(string[] str)
+        {
+            string path = openFileDialog1.ShowDialog().ToString();  
+            var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
+
+            Excel.Application excel = new Excel.Application();
+            Excel._Workbook wb = null;
+            wb = excel.Workbooks[1];
+
+            //int index = 2;
+
+            for (int index = 2; index < str.Length; index++)
+            {
+                excel.Cells[index, 1].value = str[index-2];
+            }
         }
     }
 }
