@@ -106,14 +106,15 @@ namespace WindowsFormsApp1
                                     {
                                         String result;
                                         WebClient client = new WebClient();
-                                        String address = @"http://api.football-data.org/v1/competitions/";
+                                        String address = @"http://api.football-data.org/v1/competitions/445/fixtures";
                                         client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
-                                        result = client.DownloadString(address);
-                                        Console.WriteLine(address); /*ТОЧКА ОСТАНОВЫ ДЛЯ ПРОВЕРКИ*/
+                                        result = client.DownloadString(address);                      
+                                        JObject jres = JObject.Parse(result);
+                                        await Bot.SendTextMessageAsync(message.Chat.Id, jres.ToString());
                                     }
                                     catch (Exception e1)
                                     {
-                                        Console.WriteLine(e1);
+                                        await Bot.SendTextMessageAsync(message.Chat.Id, e1.ToString());
                                     }
                                 }
                                 else
@@ -144,9 +145,7 @@ namespace WindowsFormsApp1
             {
                 Console.WriteLine(ex.Message);
             }
-
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (this.backgroundWorker1.IsBusy != true)
