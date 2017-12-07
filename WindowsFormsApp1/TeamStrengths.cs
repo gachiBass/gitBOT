@@ -19,90 +19,99 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL0708.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0708.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga0708.csv";
+                     // Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2008/2009":
                     {
                         EPLExcelName = @"..\..\csv\EPL0809.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0809.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga0809.csv";
+                  //    Ligue1ExcelName= @"..\..\csv\.csv";*/
                         break;
                     }
                 case "2009/2010":
                     {
                         EPLExcelName = @"..\..\csv\EPL0910.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0910.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga0910.csv";
+                    //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2010/2011":
                     {
                         EPLExcelName = @"..\..\csv\EPL1011.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1011.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga1011.csv";
+                    //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2011/2012":
                     {
                         EPLExcelName = @"..\..\csv\EPL1112.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1112.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga1112.csv";
+                    //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2012/2013":
                     {
                         EPLExcelName = @"..\..\csv\EPL1213.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1213.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga1213.csv";
+                  //    Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2013/2014":
                     {
                         EPLExcelName = @"..\..\csv\EPL1314.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1314.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga1314.csv";
+                    //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2014/2015":
                     {
                         EPLExcelName = @"..\..\csv\EPL1415.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1415.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        // BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga1415.csv";
+                   //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2015/2016":
                     {
                         EPLExcelName = @"..\..\csv\EPL1516.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1516.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                       //   BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga1516.csv";
+                    //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
                 case "2016/2017":
                     {
                         EPLExcelName = @"..\..\csv\EPL1617.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1617.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                      LaLigaExcelName= @"..\..\csv\LaLiga1617.csv";
+                  //    Ligue1ExcelName= @"..\..\csv\.csv";
+                        break;
+                    }
+                case "2017/2018":
+                    {
+                        EPLExcelName = @"..\..\csv\EPL1718.csv";
+                        SERIA_AExcelName = @"..\..\csv\SERIA_A1718.csv";
+                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                        LaLigaExcelName = @"..\..\csv\LaLiga1718.csv";
+                        //    Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
                     }
             }
@@ -370,7 +379,7 @@ namespace WindowsFormsApp1
                     }
                 case "La_Liga":
                     {
-                        // LowDivExcelName = @"..\..\csv\.csv";
+                         LowDivExcelName = @"..\..\csv\Segunda.csv";
                         break;
                     }
                 case "Ligue1":
@@ -520,7 +529,7 @@ namespace WindowsFormsApp1
             //    string[] Promoted = PromotedTeams(League, Season);
             //    TeamNames[0][17] = Promoted[0];
             //    TeamNames[0][18] = Promoted[1];
-            //    TeamNames[0][19] = Promoted[2];
+            //    TeamNames[0][19] = Promoted[2];3
             //}
 
             //ВЫВОДА НЕТ
