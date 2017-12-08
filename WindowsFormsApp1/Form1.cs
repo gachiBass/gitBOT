@@ -210,8 +210,6 @@ namespace WindowsFormsApp1
             Excel._Workbook wb = null;
             wb = excel.Workbooks[1];
 
-            //int index = 2;
-
             for (int index = 2; index < str.Length; index++)
             {
                 excel.Cells[index, 1].value = str[index-2];
