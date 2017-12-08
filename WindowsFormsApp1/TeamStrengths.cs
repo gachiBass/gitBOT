@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL0708.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0708.csv";
-                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                         BundesligaExcelName= @"..\..\csv\Bundes0708.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga0708.csv";
                      // Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL0809.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0809.csv";
-                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                         BundesligaExcelName= @"..\..\csv\Bundes0809.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga0809.csv";
                   //    Ligue1ExcelName= @"..\..\csv\.csv";*/
                         break;
@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL0910.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0910.csv";
-                        //BundesligaExcelName= @"..\..\csv\.csv";
+                        BundesligaExcelName= @"..\..\csv\Bundes0910.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga0910.csv";
                     //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL1011.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1011.csv";
-                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                         BundesligaExcelName= @"..\..\csv\Bundes1011.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga1011.csv";
                     //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL1112.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1112.csv";
-                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                         BundesligaExcelName= @"..\..\csv\Bundes1112.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga1112.csv";
                     //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL1213.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1213.csv";
-                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                         BundesligaExcelName= @"..\..\csv\Bundes1213.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga1213.csv";
                   //    Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL1314.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1314.csv";
-                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                        BundesligaExcelName= @"..\..\csv\Bundes1314.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga1314.csv";
                     //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL1415.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1415.csv";
-                        // BundesligaExcelName= @"..\..\csv\.csv";
+                        BundesligaExcelName= @"..\..\csv\Bundes1415.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga1415.csv";
                    //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -91,7 +91,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL1516.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1516.csv";
-                       //   BundesligaExcelName= @"..\..\csv\.csv";
+                         BundesligaExcelName= @"..\..\csv\Bundes1516.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga1516.csv";
                     //  Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -100,7 +100,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL1617.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1617.csv";
-                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                        BundesligaExcelName= @"..\..\csv\Bundes1617.csv";
                       LaLigaExcelName= @"..\..\csv\LaLiga1617.csv";
                   //    Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
                     {
                         EPLExcelName = @"..\..\csv\EPL1718.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1718.csv";
-                        //  BundesligaExcelName= @"..\..\csv\.csv";
+                         BundesligaExcelName= @"..\..\csv\Bundes1718.csv";
                         LaLigaExcelName = @"..\..\csv\LaLiga1718.csv";
                         //    Ligue1ExcelName= @"..\..\csv\.csv";
                         break;
@@ -374,7 +374,7 @@ namespace WindowsFormsApp1
                     }
                 case "Bundesliga":
                     {
-                        //   LowDivExcelName = @"..\..\csv\.csv";
+                       LowDivExcelName = @"..\..\csv\Bundes2.csv";
                         break;
                     }
                 case "La_Liga":
