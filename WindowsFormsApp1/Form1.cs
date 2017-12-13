@@ -25,7 +25,6 @@ namespace WindowsFormsApp1
         Wit client;
         Telegram.Bot.TelegramBotClient Bot;
 
-
         public Form1()
         {
             InitializeComponent();
@@ -111,6 +110,7 @@ namespace WindowsFormsApp1
                                         client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
                                         result = client.DownloadString(address);                      
                                         JObject jres = JObject.Parse(result);
+                                        JsonToMass();
                                         await Bot.SendTextMessageAsync(message.Chat.Id, jres.ToString());
                                     }
                                     catch (Exception e1)
@@ -199,10 +199,40 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }        
+        public void JsonToMass()
+        {
+            List<string> ret = new List<string>();                     
+                String result;
+                WebClient client = new WebClient();
+                String address = @"http://api.football-data.org/v1/competitions/445/fixtures";
+                client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
+                result = client.DownloadString(address);
+                JObject jres = JObject.Parse(result);
+                var listJres = jres.SelectToken("fixtures").ToList();
+                foreach (var list in listJres)
+                {
+                    string str = "";
+                    DateTime d = Convert.ToDateTime(list.SelectToken("date").ToString());
+                    var dd = d.Date.ToString("dd/MM/yy").Replace(".", "/");
+                    str += dd.ToString() + ",";
+                    str += list.SelectToken("homeTeamName").ToString() + ",";
+                    str += list.SelectToken("awayTeamName").ToString() + ",";
+                    str += list.SelectToken("result")["goalsHomeTeam"].ToString() + ",";
+                    str += list.SelectToken("result")["goalsAwayTeam"].ToString() + ",";
+                    int res1 = 0;
+                    int res2 = 0;
+                    res1 = Convert.ToInt32(list.SelectToken("result")["goalsHomeTeam"].ToString());
+                    res2 = Convert.ToInt32(list.SelectToken("result")["goalsAwayTeam"].ToString());
+                    string res = (res1 == res2) ? "D" : (res1 > res2) ? "H" : "A";
+                    str += res;
+                    ret.Add(str);
+                //return ret;
+            }
         }
-
         public void CSVcreate(string[] str)
         {
+            int[] ligues = new int[] { 445, 450, 452, 455, 456 };
             string path = openFileDialog1.ShowDialog().ToString();  
             var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
 
