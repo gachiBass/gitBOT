@@ -138,7 +138,6 @@ namespace WindowsFormsApp1
                     {
                         return Ligue1ExcelName;
                     }
-
             }
             return Season;
         }
@@ -152,117 +151,117 @@ namespace WindowsFormsApp1
         }
 
         public double AVGHomeGoals, AVGAwayGoals;
-        string[,] GetTable(string FileName, bool ShowTable)
-        {
-            List<string> Matches = new List<string>();
-            List<string> TeamsList = new List<string>();
-            List<string> TeamNamesList = new List<string>(); //названия команд
-            StreamReader stream = new StreamReader(new FileStream(FileName, FileMode.Open));
-            string row;
-            while ((row = stream.ReadLine()) != null)
-            {
-                Matches.Add(row);
-            }
-            stream.Close(); //считали матчи в лист
+        //string[,] GetTable(string FileName, bool ShowTable)
+        //{
+        //    List<string> Matches = new List<string>();
+        //    List<string> TeamsList = new List<string>();
+        //    List<string> TeamNamesList = new List<string>(); //названия команд
+        //    StreamReader stream = new StreamReader(new FileStream(FileName, FileMode.Open));
+        //    string row;
+        //    while ((row = stream.ReadLine()) != null)
+        //    {
+        //        Matches.Add(row);
+        //    }
+        //    stream.Close(); //считали матчи в лист
 
-            string[] Values;
-            for (int i = 1; i < Matches.Count; i++)
-            {
-                string Text = Matches[i];
-                Values = Text.Split(new char[] { ',' });
-                TeamsList.Add(Values[2]);
-            }
+        //    string[] Values;
+        //    for (int i = 1; i < Matches.Count; i++)
+        //    {
+        //        string Text = Matches[i];
+        //        Values = Text.Split(new char[] { ',' });
+        //        TeamsList.Add(Values[2]);
+        //    }
 
-            foreach (string team in TeamsList.Distinct())
-            {
-                TeamNamesList.Add(team); //лист с наименованиями команд
-            }
+        //    foreach (string team in TeamsList.Distinct())
+        //    {
+        //        TeamNamesList.Add(team); //лист с наименованиями команд
+        //    }
 
-            string[,] Teams = new string[TeamNamesList.Count, 7];
-            for (int i = 0; i < TeamNamesList.Count; i++)
-            {
-                Teams[i, 0] = TeamNamesList[i]; //название команды
-                Teams[i, 1] = "0"; //забито дома
-                Teams[i, 2] = "0"; //пропущено дома
-                Teams[i, 3] = "0"; //забито в гостях
-                Teams[i, 4] = "0"; //пропущено в гостях   
-                Teams[i, 5] = "0"; //разница
-                Teams[i, 6] = "0"; //очки              
-            }
+        //    string[,] Teams = new string[TeamNamesList.Count, 7];
+        //    for (int i = 0; i < TeamNamesList.Count; i++)
+        //    {
+        //        Teams[i, 0] = TeamNamesList[i]; //название команды
+        //        Teams[i, 1] = "0"; //забито дома
+        //        Teams[i, 2] = "0"; //пропущено дома
+        //        Teams[i, 3] = "0"; //забито в гостях
+        //        Teams[i, 4] = "0"; //пропущено в гостях   
+        //        Teams[i, 5] = "0"; //разница
+        //        Teams[i, 6] = "0"; //очки              
+        //    }
 
-            int HomeTeamIndex, AwayTeamIndex;
-            int HomeScored, AwayScored, HomeConceded, AwayConceded;
-            for (int i = 1; i < Matches.Count; i++)
-            {
-                string Text = Matches[i];
-                Values = Text.Split(new char[] { ',' });
-                HomeTeamIndex = Array.IndexOf(TeamNamesList.ToArray(), Values[2]);
-                AwayTeamIndex = Array.IndexOf(TeamNamesList.ToArray(), Values[3]);
+        //    int HomeTeamIndex, AwayTeamIndex;
+        //    int HomeScored, AwayScored, HomeConceded, AwayConceded;
+        //    for (int i = 1; i < Matches.Count; i++)
+        //    {
+        //        string Text = Matches[i];
+        //        Values = Text.Split(new char[] { ',' });
+        //        HomeTeamIndex = Array.IndexOf(TeamNamesList.ToArray(), Values[2]);
+        //        AwayTeamIndex = Array.IndexOf(TeamNamesList.ToArray(), Values[3]);
 
-                HomeScored = ToInt(Teams[HomeTeamIndex, 1]);
-                AwayScored = ToInt(Teams[AwayTeamIndex, 3]);
-                HomeConceded = ToInt(Teams[HomeTeamIndex, 2]);
-                AwayConceded = ToInt(Teams[AwayTeamIndex, 4]);
+        //        HomeScored = ToInt(Teams[HomeTeamIndex, 1]);
+        //        AwayScored = ToInt(Teams[AwayTeamIndex, 3]);
+        //        HomeConceded = ToInt(Teams[HomeTeamIndex, 2]);
+        //        AwayConceded = ToInt(Teams[AwayTeamIndex, 4]);
 
-                HomeScored += ToInt(Values[4]);
-                HomeConceded += ToInt(Values[5]);
-                AwayScored += ToInt(Values[5]);
-                AwayConceded += ToInt(Values[4]);
+        //        HomeScored += ToInt(Values[4]);
+        //        HomeConceded += ToInt(Values[5]);
+        //        AwayScored += ToInt(Values[5]);
+        //        AwayConceded += ToInt(Values[4]);
 
-                Teams[HomeTeamIndex, 1] = HomeScored.ToString();
-                Teams[HomeTeamIndex, 2] = HomeConceded.ToString();
-                Teams[AwayTeamIndex, 3] = AwayScored.ToString();
-                Teams[AwayTeamIndex, 4] = AwayConceded.ToString();
+        //        Teams[HomeTeamIndex, 1] = HomeScored.ToString();
+        //        Teams[HomeTeamIndex, 2] = HomeConceded.ToString();
+        //        Teams[AwayTeamIndex, 3] = AwayScored.ToString();
+        //        Teams[AwayTeamIndex, 4] = AwayConceded.ToString();
 
-                switch (Values[6])
-                {
-                    case "H":
-                        {
-                            int points = ToInt(Teams[HomeTeamIndex, 6]);
-                            points += 3;
-                            Teams[HomeTeamIndex, 6] = points.ToString();
-                            break;
-                        }
-                    case "D":
-                        {
-                            int points = ToInt(Teams[HomeTeamIndex, 6]);
-                            points += 1;
-                            Teams[HomeTeamIndex, 6] = points.ToString();
-                            points = ToInt(Teams[AwayTeamIndex, 6]);
-                            points += 1;
-                            Teams[AwayTeamIndex, 6] = points.ToString();
-                            break;
-                        }
-                    case "A":
-                        {
-                            int points = ToInt(Teams[AwayTeamIndex, 6]);
-                            points += 3;
-                            Teams[AwayTeamIndex, 6] = points.ToString();
-                            break;
-                        }
-                }
+        //        switch (Values[6])
+        //        {
+        //            case "H":
+        //                {
+        //                    int points = ToInt(Teams[HomeTeamIndex, 6]);
+        //                    points += 3;
+        //                    Teams[HomeTeamIndex, 6] = points.ToString();
+        //                    break;
+        //                }
+        //            case "D":
+        //                {
+        //                    int points = ToInt(Teams[HomeTeamIndex, 6]);
+        //                    points += 1;
+        //                    Teams[HomeTeamIndex, 6] = points.ToString();
+        //                    points = ToInt(Teams[AwayTeamIndex, 6]);
+        //                    points += 1;
+        //                    Teams[AwayTeamIndex, 6] = points.ToString();
+        //                    break;
+        //                }
+        //            case "A":
+        //                {
+        //                    int points = ToInt(Teams[AwayTeamIndex, 6]);
+        //                    points += 3;
+        //                    Teams[AwayTeamIndex, 6] = points.ToString();
+        //                    break;
+        //                }
+        //        }
 
-            }
+        //    }
 
-            for (int i = 0; i < TeamNamesList.Count; i++)
-            {
-                int Scored = ToInt(Teams[i, 1]) + ToInt(Teams[i, 3]);
-                int Conceded = ToInt(Teams[i, 2]) + ToInt(Teams[i, 4]);
-                int GoalDifference = Scored - Conceded;
-                Teams[i, 5] = GoalDifference.ToString(); //разница мячей
-            }
+        //    for (int i = 0; i < TeamNamesList.Count; i++)
+        //    {
+        //        int Scored = ToInt(Teams[i, 1]) + ToInt(Teams[i, 3]);
+        //        int Conceded = ToInt(Teams[i, 2]) + ToInt(Teams[i, 4]);
+        //        int GoalDifference = Scored - Conceded;
+        //        Teams[i, 5] = GoalDifference.ToString(); //разница мячей
+        //    }
 
-            SortByColumnDesc(Teams, 6); //cортировка по очкам
+        //    SortByColumnDesc(Teams, 6); //cортировка по очкам
 
-            for (int i = 0; i < TeamNamesList.Count - 1; i++) //меняем местами по разнице мячей,если количество очков одинаковое
-            {
-                if (ToInt(Teams[i, 6]) == ToInt(Teams[i + 1, 6]) && ToInt(Teams[i, 5]) < ToInt(Teams[i + 1, 5]))
-                {
-                    SwapRows(Teams, i, i + 1);
-                }
-            }
-            return Teams;
-        }
+        //    for (int i = 0; i < TeamNamesList.Count - 1; i++) //меняем местами по разнице мячей,если количество очков одинаковое
+        //    {
+        //        if (ToInt(Teams[i, 6]) == ToInt(Teams[i + 1, 6]) && ToInt(Teams[i, 5]) < ToInt(Teams[i + 1, 5]))
+        //        {
+        //            SwapRows(Teams, i, i + 1);
+        //        }
+        //    }
+        //    return Teams;
+        //}
 
         static void SortByColumnDesc(string[,] massiv, int column)
         {
@@ -356,7 +355,7 @@ namespace WindowsFormsApp1
 
         }
 
-        string[] PromotedTeams(string league, string season)
+        string[] PromotedTeams(string league, string season) //раз в год
         {
             string LowDivExcelName = "";
             string[] Promoted = new string[3];
@@ -374,17 +373,17 @@ namespace WindowsFormsApp1
                     }
                 case "Bundesliga":
                     {
-                       LowDivExcelName = @"..\..\csv\Bundes2.csv";
+                        LowDivExcelName = @"..\..\csv\Bundes2.csv";
                         break;
                     }
                 case "La_Liga":
                     {
-                         LowDivExcelName = @"..\..\csv\Segunda.csv";
+                        LowDivExcelName = @"..\..\csv\Segunda.csv";
                         break;
                     }
                 case "Ligue1":
                     {
-                        // LowDivExcelName = @"..\..\csv\.csv";
+                        LowDivExcelName = @"..\..\csv\Ligue2.csv";
                         break;
                     }
             }
@@ -443,18 +442,16 @@ namespace WindowsFormsApp1
 
         public void button1_Click_1(object sender, EventArgs e)
         {
-          //  League = comboBox2.SelectedItem.ToString(); //НА ВХОД БУДУТ ПО-ДРУГОМУ ПРИХОДИТЬ
-          //  Season = comboBox1.SelectedItem.ToString();
-          //  TeamsTable.Rows.Clear();
-        //    StrengthTable.Rows.Clear();
+          //  League = ???
+          //  Season =???        
+      
             string ExcelName = GetExcelFileName(League, Season); //узнали из какой чсвшки брать инфу
             TeamCount = GetTeamCount(League);
 
-            int AllHomeGames, AllAwayGames;
-            AllHomeGames = AllAwayGames = TeamCount - 1;
+            //int AllHomeGames, AllAwayGames;
+            //AllHomeGames = AllAwayGames = TeamCount - 1;
 
             List<string> Matches = new List<string>();
-
             StreamReader stream = new StreamReader(new FileStream(ExcelName, FileMode.Open));
             string row;
             while ((row = stream.ReadLine()) != null)
@@ -462,7 +459,7 @@ namespace WindowsFormsApp1
                 Matches.Add(row);
             }
             stream.Close();
-
+            ///////////////////рассчет домашнего параметра исходя из прошлого сезона
             AllAwayGoals = AllHomeGoals = 0;
             for (int i = 1; i < Matches.Count; i++)
             {
@@ -472,21 +469,23 @@ namespace WindowsFormsApp1
                 AllAwayGoals += ToInt(Values[5]); //всего забито в гостях                                  
             }
             HomeAdvantage = AllHomeGoals * 1.0 / AllAwayGoals;
-            TeamNames = new List<List<string>>(); //вся таблица команд с параметрами
-            for (int i = 0; i < 9; i++)
-            {
-                TeamNames.Add(new List<string>());
-            }
+            ///////////////////////////////////////////
 
-            string[,] HighDivTable = GetTable(ExcelName, true);
+            //TeamNames = new List<List<string>>(); //вся таблица команд с параметрами
+            //for (int i = 0; i < 9; i++)
+            //{
+            //    TeamNames.Add(new List<string>());
+            //}
 
-            for (int i = 0; i < HighDivTable.GetLength(0); i++)
-            {
-                TeamNames[0].Add(HighDivTable[i, 0]);
-            }
+            //string[,] HighDivTable = GetTable(ExcelName, true);
 
-            AVGHomeGoals = AllHomeGoals * 1.0 / TeamCount / AllHomeGames;
-            AVGAwayGoals = AllAwayGoals * 1.0 / TeamCount / AllAwayGames;
+            //for (int i = 0; i < HighDivTable.GetLength(0); i++)
+            //{
+            //    TeamNames[0].Add(HighDivTable[i, 0]);
+            //}
+
+            //AVGHomeGoals = AllHomeGoals * 1.0 / TeamCount / AllHomeGames;
+            //AVGAwayGoals = AllAwayGoals * 1.0 / TeamCount / AllAwayGames;
 
             //textBox1.Text = AllHomeGoals.ToString(); //ВЫВОДА НЕТ 
             //textBox2.Text = AllAwayGoals.ToString();
@@ -494,36 +493,36 @@ namespace WindowsFormsApp1
             //textBox4.Text = AVGAwayGoals.ToString();
 
 
-            for (int j = 0; j < TeamCount; j++) //сколько всего забито дома и в гостях
-            {
-                int HomeScored, AwayScored, HomeConceded, AwayConceded;
-                HomeScored = AwayScored = HomeConceded = AwayConceded = 0;
-                int TeamIndex = Array.IndexOf(TeamNames[0].ToArray(), TeamNames[0][j]);
-                HomeScored = ToInt(HighDivTable[TeamIndex, 1]);
-                HomeConceded = ToInt(HighDivTable[TeamIndex, 2]);
-                AwayScored = ToInt(HighDivTable[TeamIndex, 3]);
-                AwayConceded = ToInt(HighDivTable[TeamIndex, 4]);
+            //for (int j = 0; j < TeamCount; j++) //сколько всего забито дома и в гостях
+            //{
+            //    int HomeScored, AwayScored, HomeConceded, AwayConceded;
+            //    HomeScored = AwayScored = HomeConceded = AwayConceded = 0;
+            //    int TeamIndex = Array.IndexOf(TeamNames[0].ToArray(), TeamNames[0][j]);
+            //    HomeScored = ToInt(HighDivTable[TeamIndex, 1]);
+            //    HomeConceded = ToInt(HighDivTable[TeamIndex, 2]);
+            //    AwayScored = ToInt(HighDivTable[TeamIndex, 3]);
+            //    AwayConceded = ToInt(HighDivTable[TeamIndex, 4]);
 
-                TeamNames[1].Add(HomeScored.ToString());
-                TeamNames[2].Add(HomeConceded.ToString());
-                TeamNames[3].Add(AwayScored.ToString());
-                TeamNames[4].Add(AwayConceded.ToString());
+            //    TeamNames[1].Add(HomeScored.ToString());
+            //    TeamNames[2].Add(HomeConceded.ToString());
+            //    TeamNames[3].Add(AwayScored.ToString());
+            //    TeamNames[4].Add(AwayConceded.ToString());
 
-                double HomeAtt, HomeDef, AwayAtt, AwayDef;
-                HomeAtt = HomeDef = AwayAtt = AwayDef = 0;
-                HomeAtt = ToInt(TeamNames[1][j]) * 1.0 / (TeamCount - 1) / AVGHomeGoals;
-                HomeDef = ToInt(TeamNames[2][j]) * 1.0 / (TeamCount - 1) / AVGAwayGoals;
-                AwayAtt = ToInt(TeamNames[3][j]) * 1.0 / (TeamCount - 1) / AVGAwayGoals;
-                AwayDef = ToInt(TeamNames[4][j]) * 1.0 / (TeamCount - 1) / AVGHomeGoals;
+            //    double HomeAtt, HomeDef, AwayAtt, AwayDef;
+            //    HomeAtt = HomeDef = AwayAtt = AwayDef = 0;
+            //    HomeAtt = ToInt(TeamNames[1][j]) * 1.0 / (TeamCount - 1) / AVGHomeGoals;
+            //    HomeDef = ToInt(TeamNames[2][j]) * 1.0 / (TeamCount - 1) / AVGAwayGoals;
+            //    AwayAtt = ToInt(TeamNames[3][j]) * 1.0 / (TeamCount - 1) / AVGAwayGoals;
+            //    AwayDef = ToInt(TeamNames[4][j]) * 1.0 / (TeamCount - 1) / AVGHomeGoals;
 
-                TeamNames[5].Add(HomeAtt.ToString());
-                TeamNames[6].Add(HomeDef.ToString());
-                TeamNames[7].Add(AwayAtt.ToString());
-                TeamNames[8].Add(AwayDef.ToString());
-            }
+            //    TeamNames[5].Add(HomeAtt.ToString());
+            //    TeamNames[6].Add(HomeDef.ToString());
+            //    TeamNames[7].Add(AwayAtt.ToString());
+            //    TeamNames[8].Add(AwayDef.ToString());
+            //}
 
 
-            //получение команды вышедшей из плейофф // занести эти команды в чсв и вытягивать их оттуда
+            //получение команды вышедшей из нижнего дивизиона
             //if (IsFormOpened<Matches>())
             //{
             //    string[] Promoted = PromotedTeams(League, Season);
@@ -531,23 +530,7 @@ namespace WindowsFormsApp1
             //    TeamNames[0][18] = Promoted[1];
             //    TeamNames[0][19] = Promoted[2];3
             //}
-
-            //ВЫВОДА НЕТ
-            //for (int j = 0; j < TeamCount; j++)
-            //{
-            //    TeamsTable.Rows.Add();
-            //    StrengthTable.Rows.Add();
-            //    TeamsTable[0, j].Value = TeamNames[0][j];
-            //    StrengthTable[0, j].Value = TeamNames[0][j];
-            //    TeamsTable[1, j].Value = TeamNames[1][j];
-            //    TeamsTable[2, j].Value = TeamNames[2][j];
-            //    TeamsTable[3, j].Value = TeamNames[3][j];
-            //    TeamsTable[4, j].Value = TeamNames[4][j];
-            //    StrengthTable[1, j].Value = TeamNames[5][j];
-            //    StrengthTable[2, j].Value = TeamNames[6][j];
-            //    StrengthTable[3, j].Value = TeamNames[7][j];
-            //    StrengthTable[4, j].Value = TeamNames[8][j];
-            //}
+                       
         }
 
 
