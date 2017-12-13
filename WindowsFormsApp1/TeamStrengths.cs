@@ -270,7 +270,35 @@ namespace WindowsFormsApp1
                     if (Convert.ToDouble(massiv[i, column]) < Convert.ToDouble(massiv[j, column]))
                         SwapRows(massiv, i, j);
         }
-               
+             
+        string [] GetMatchResult(string ExcelName, string HomeTeam, string AwayTeam)
+        {
+            string[] Result = new string[4];
+            Result[1] = HomeTeam;
+            Result[2] = AwayTeam;
+            List<string> Matches = new List<string>();
+            List<string> TeamsList = new List<string>();
+            List<string> TeamNamesList = new List<string>(); //названия команд
+            StreamReader stream = new StreamReader(new FileStream(ExcelName, FileMode.Open));
+            string row;
+            while ((row = stream.ReadLine()) != null)
+            {
+                Matches.Add(row);
+            }
+            stream.Close(); 
+            string[] Values;
+            for (int i = 1; i < Matches.Count; i++)
+            {
+                string Text = Matches[i];
+                Values = Text.Split(new char[] { ',' });
+                if (Values[2]==HomeTeam && Values[3]==AwayTeam)
+                {
+                    Result[0] = Values[1];
+                    Result[3] = Values[4] + ":" + Values[5];
+                }
+            }
+            return Result;
+        }
 
         static void SwapRows(string[,] massiv, int row1, int row2)
         {
