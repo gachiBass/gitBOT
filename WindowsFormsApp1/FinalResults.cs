@@ -198,21 +198,294 @@ namespace WindowsFormsApp1
             return TeamCount;
         }
 
+        string[] PromotedTeams(string league, string season) //раз в год
+        {
+            string LowDivExcelName = "";
+            string[] Promoted = new string[3];
+            switch (League)
+            {
+                case "EPL":
+                    {
+                        LowDivExcelName = @"..\..\csv\SHIP.csv";
+                        break;
+                    }
+                case "Seria_A":
+                    {
+                        LowDivExcelName = @"..\..\csv\Seria_B.csv";
+                        break;
+                    }
+                case "Bundesliga":
+                    {
+                        LowDivExcelName = @"..\..\csv\Bundes2.csv";
+                        break;
+                    }
+                case "La_Liga":
+                    {
+                        LowDivExcelName = @"..\..\csv\Segunda.csv";
+                        break;
+                    }
+                case "Ligue1":
+                    {
+                        LowDivExcelName = @"..\..\csv\Ligue2.csv";
+                        break;
+                    }
+            }
+            List<string> Seasons = new List<string>();
+            StreamReader stream = new StreamReader(new FileStream(LowDivExcelName, FileMode.Open));
+            string row;
+            while ((row = stream.ReadLine()) != null)
+            {
+                Seasons.Add(row);
+            }
+            stream.Close(); //считали матчи в лист
+
+            string[] Values;
+            for (int i = 0; i < Seasons.Count; i++)
+            {
+                string Text = Seasons[i];
+                Values = Text.Split(new char[] { ',' });
+                if (Values[0] == season)
+                {
+                    Promoted[0] = Values[1];
+                    Promoted[1] = Values[2];
+                    Promoted[2] = Values[3];
+                }
+            }
+            return Promoted;
+        }
+
+        string[] Forecast(string HomeTeam, string AwayTeam) //прогноз на матч
+        {
+            //double AllHomeGoals = strengths.AllHomeGoals; //йавайцйв
+            //double AllAwayGoals = strengths.AllAwayGoals;
+
+            double HomeAdvantageValue = 1;
+            double AVGHomeGoals, AVGAwayGoals;
+
+            //AVGHomeGoals = strengths.AVGHomeGoals; //йцуйцу
+            //AVGAwayGoals = strengths.AVGAwayGoals;
+            //HomeAdvantageValue = strengths.HomeAdvantage;
+            double HomeGoals, AwayGoals;
+            HomeGoals = AwayGoals = 0;
+            int HomeTeamIndex, AwayTeamIndex;
+
+            //for (int i = 0; i < dataGridView4.RowCount; i++) //таблица будет виртуальной
+            //{
+            //    HomeTeamIndex = Array.IndexOf(TeamNames[0].ToArray(), dataGridView4[0, i].Value);
+            //    AwayTeamIndex = Array.IndexOf(TeamNames[0].ToArray(), dataGridView4[1, i].Value);
+            //    if (i > 50)
+            //    {
+            //        if ((i + 1) % 10 == 0)
+            //        {
+            //            strengths.GetNewStrengths((i + 1) / 10);
+            //        }
+            //    }
+
+            //    HomeGoals = HomeAdvantageValue * ToDouble(TeamNames[5][HomeTeamIndex]) * ToDouble(TeamNames[8][AwayTeamIndex]) * AVGHomeGoals;
+            //    AwayGoals = ToDouble(TeamNames[7][AwayTeamIndex]) * ToDouble(TeamNames[6][HomeTeamIndex]) * AVGAwayGoals;
+
+            //    double[] HomeGoalsPercentage = new double[10];
+            //    double[] AwayGoalsPercentage = new double[10];
+
+            //    for (int j = 0; j < 10; j++)
+            //    {
+            //        HomeGoalsPercentage[j] = Math.Pow(HomeGoals, j) / (Math.Pow(Math.E, HomeGoals) * Factorial(j));
+            //        AwayGoalsPercentage[j] = Math.Pow(AwayGoals, j) / (Math.Pow(Math.E, AwayGoals) * Factorial(j));
+            //    }
+            //    double[,] ResultMatrix = new double[10, 10];
+            //    double homewin, draw, awaywin;
+            //    homewin = draw = awaywin = 0;
+
+            //    for (int x = 0; x < 10; x++)
+            //        for (int y = 0; y < 10; y++)
+            //        {
+            //            ResultMatrix[x, y] = AwayGoalsPercentage[y] * HomeGoalsPercentage[x];
+            //            if (x == y) draw += ResultMatrix[x, y];
+            //            if (x > y) homewin += ResultMatrix[x, y];
+            //            if (x < y) awaywin += ResultMatrix[x, y];
+            //        }
+            //    dataGridView4[8, i].Value = Math.Round(homewin, 5);
+            //    dataGridView4[9, i].Value = Math.Round(draw, 5);
+            //    dataGridView4[10, i].Value = Math.Round(awaywin, 5);
+            //    string winner;
+            //    if (homewin > 0.333)
+            //    {
+            //        if (draw > 0.333)
+            //            winner = "1x";
+            //        else
+            //        {
+            //            if (awaywin > 0.333)
+            //                winner = "x";
+            //            else
+            //                winner = "1";
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (draw > 0.333)
+            //        {
+            //            if (awaywin > 0.333)
+            //                winner = "x2";
+            //            else winner = "x";
+            //        }
+            //        else winner = "2";
+            //    }
+
+            //    int homegoals, awaygoals;
+            //    homegoals = 0;
+            //    awaygoals = 0;
+            //    switch (winner)
+            //    {
+            //        case "1":
+            //            {
+            //                double max = 0;
+            //                for (int x = 0; x < ResultMatrix.GetLength(0); x++)
+            //                    for (int y = 0; y < ResultMatrix.GetLength(1); y++)
+            //                    {
+            //                        if (x > y)
+            //                            if (ResultMatrix[x, y] > max)
+            //                            {
+            //                                max = ResultMatrix[x, y];
+            //                                homegoals = x;
+            //                                awaygoals = y;
+            //                            }
+            //                    }
+            //                if (dataGridView4[5, i].Value.ToString() == "H")
+            //                {
+            //                    dataGridView4[6, i].Value = true;
+            //                }
+            //                break;
+            //            }
+            //        case "1x":
+            //            {
+            //                double max = 0;
+
+            //                for (int x = 0; x < ResultMatrix.GetLength(0); x++)
+            //                    for (int y = 0; y < ResultMatrix.GetLength(1); y++)
+            //                    {
+            //                        if (x >= y)
+            //                            if (ResultMatrix[x, y] > max)
+            //                            {
+            //                                max = ResultMatrix[x, y];
+            //                                homegoals = x;
+            //                                awaygoals = y;
+            //                            }
+            //                    }
+            //                if (dataGridView4[5, i].Value.ToString() != "A")
+            //                {
+            //                    dataGridView4[6, i].Value = true;
+            //                }
+            //                break;
+            //            }
+            //        case "12":
+            //            {
+            //                double max = 0;
+
+            //                for (int x = 0; x < ResultMatrix.GetLength(0); x++)
+            //                    for (int y = 0; y < ResultMatrix.GetLength(1); y++)
+            //                    {
+            //                        if (x == y)
+            //                            if (ResultMatrix[x, y] > max)
+            //                            {
+            //                                max = ResultMatrix[x, y];
+            //                                homegoals = x;
+            //                                awaygoals = y;
+            //                            }
+            //                    }
+            //                if (dataGridView4[5, i].Value.ToString() != "D")
+            //                {
+            //                    dataGridView4[6, i].Value = true;
+            //                }
+            //                break;
+            //            }
+            //        case "x":
+            //            {
+            //                double max = 0;
+
+            //                for (int x = 0; x < ResultMatrix.GetLength(0); x++)
+            //                    for (int y = 0; y < ResultMatrix.GetLength(1); y++)
+            //                    {
+            //                        if (x == y)
+            //                            if (ResultMatrix[x, y] > max)
+            //                            {
+            //                                max = ResultMatrix[x, y];
+            //                                homegoals = x;
+            //                                awaygoals = y;
+            //                            }
+            //                    }
+            //                if (dataGridView4[5, i].Value.ToString() == "D")
+            //                {
+            //                    dataGridView4[6, i].Value = true;
+            //                }
+            //                break;
+            //            }
+            //        case "x2":
+            //            {
+            //                double max = 0;
+
+            //                for (int x = 0; x < ResultMatrix.GetLength(0); x++)
+            //                    for (int y = 0; y < ResultMatrix.GetLength(1); y++)
+            //                    {
+            //                        if (x <= y)
+            //                            if (ResultMatrix[x, y] > max)
+            //                            {
+            //                                max = ResultMatrix[x, y];
+            //                                homegoals = x;
+            //                                awaygoals = y;
+            //                            }
+            //                    }
+            //                if (dataGridView4[5, i].Value.ToString() != "H")
+            //                {
+            //                    dataGridView4[6, i].Value = true;
+            //                }
+            //                break;
+            //            }
+            //        case "2":
+            //            {
+            //                double max = 0;
+
+            //                for (int x = 0; x < ResultMatrix.GetLength(0); x++)
+            //                    for (int y = 0; y < ResultMatrix.GetLength(1); y++)
+            //                    {
+            //                        if (x < y)
+            //                            if (ResultMatrix[x, y] > max)
+            //                            {
+            //                                max = ResultMatrix[x, y];
+            //                                homegoals = x;
+            //                                awaygoals = y;
+            //                            }
+            //                    }
+            //                if (dataGridView4[5, i].Value.ToString() == "A")
+            //                {
+            //                    dataGridView4[6, i].Value = true;
+            //                }
+            //                break;
+            //            }
+            //    }
+            //    dataGridView4[3, i].Value = winner;
+            //    dataGridView4[2, i].Value = homegoals.ToString() + "-" + awaygoals.ToString();
+            //    if (dataGridView4[2, i].Value.ToString() == dataGridView4[4, i].Value.ToString())
+            //    {
+            //        dataGridView4[7, i].Value = true;
+            //    }
+            //}
+        }
+
         void Do()
         {
             //из ВИТ получаем сезон, лигу, домашнюю команду,гостевую команду
             string Season, League, HomeTeam, AwayTeam;
             //через ВИТ определяем,что нужно пользователю - результаты прошлых матчей или прогноз
             bool Past=true;
-            string ExcelName;
+            string ExcelName = GetExcelFileName(League, Season);
+            string[] MatchResult;
             if (Past)
-            {
-                ExcelName = GetExcelFileName(League, Season);
-                string[] MatchResult = GetMatchResult(ExcelName, HomeTeam, AwayTeam);
+            {                
+                 MatchResult= GetMatchResult(ExcelName, HomeTeam, AwayTeam); //здесь счет запрашиваемого матча
             }
             else
             {
-
+                MatchResult = Forecast(HomeTeam, AwayTeam);
             }
         }
     }

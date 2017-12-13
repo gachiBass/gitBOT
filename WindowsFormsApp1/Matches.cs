@@ -232,149 +232,12 @@ namespace WindowsFormsApp1
             //    }
             //}
         }
-        string GetExcelFileName(string season, string league)
-        {
-
-            string EPLExcelName, SERIA_AExcelName, BundesligaExcelName, LaLigaExcelName, Ligue1ExcelName;
-            EPLExcelName = SERIA_AExcelName = BundesligaExcelName = LaLigaExcelName = Ligue1ExcelName = "";
-            switch (season)
-            {
-                case "2006/2007":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL0607.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A0607.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                          LaLigaExcelName= @"..\..\csv\.csv";
-                          Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2007/2008":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL0708.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A0708.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2008/2009":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL0809.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A0809.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2009/2010":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL0910.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A0910.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2010/2011":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL1011.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A1011.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2011/2012":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL1112.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A1112.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2012/2013":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL1213.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A1213.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2013/2014":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL1314.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A1314.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2014/2015":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL1415.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A1415.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2015/2016":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL1516.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A1516.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-                case "2016/2017":
-                    {
-                        EPLExcelName = @"..\..\csv\EPL1617.csv";
-                        SERIA_AExcelName = @"..\..\csv\SERIA_A1617.csv";
-                        /*  BundesligaExcelName= @"..\..\csv\.csv";
-                      LaLigaExcelName= @"..\..\csv\.csv";
-                      Ligue1ExcelName= @"..\..\csv\.csv";*/
-                        break;
-                    }
-            }
-            switch (League)
-            {
-                case "EPL":
-                    {
-                        return EPLExcelName;
-                    }
-
-                case "Seria_A":
-                    {
-                        return SERIA_AExcelName;
-                    }
-                case "BundesLiga":
-                    {
-                        return BundesligaExcelName;
-                    }
-                case "LaLiga":
-                    {
-                        return LaLigaExcelName;
-                    }
-                case "Ligue1":
-                    {
-                        return Ligue1ExcelName;
-                    }
-
-            }
-            return season;
-        }
+       
 
         public List<List<string>> TeamNames;
         //   public Strengths strengths;
 
-        int ToInt(string TextValue)
-        {
-            int Value = Convert.ToInt32(TextValue);
-            return Value;
-        }
+      
 
         double ToDouble(string TextValue)
         {
@@ -528,7 +391,7 @@ namespace WindowsFormsApp1
                 massiv[row2, i] = tmp;
             }
         }
-        public string League, Season;
+      
 
         private void button2_Click(object sender, EventArgs e)
         {
