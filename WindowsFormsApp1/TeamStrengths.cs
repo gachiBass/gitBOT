@@ -275,13 +275,13 @@ namespace WindowsFormsApp1
             }
 
 
-            получение команды вышедшей из нижнего дивизиона
+            //получение команды вышедшей из нижнего дивизиона
             if (IsFormOpened<Matches>())
             {
                 string[] Promoted = PromotedTeams(League, Season);
                 TeamNames[0][17] = Promoted[0];
                 TeamNames[0][18] = Promoted[1];
-                TeamNames[0][19] = Promoted[2]; 3
+                TeamNames[0][19] = Promoted[2]; //3
             }
 
         }
