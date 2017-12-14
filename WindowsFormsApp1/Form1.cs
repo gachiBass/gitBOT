@@ -110,7 +110,6 @@ namespace WindowsFormsApp1
                                         client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
                                         result = client.DownloadString(address);                      
                                         JObject jres = JObject.Parse(result);
-                                        JsonToMass();
                                         await Bot.SendTextMessageAsync(message.Chat.Id, jres.ToString());
                                     }
                                     catch (Exception e1)
@@ -200,19 +199,19 @@ namespace WindowsFormsApp1
         {
 
         }        
-        public void JsonToMass()
+        public List<string> JsonToMass(int league)
         {
             List<string> ret = new List<string>();                     
                 String result;
                 WebClient client = new WebClient();
-                String address = @"http://api.football-data.org/v1/competitions/445/fixtures";
+                String address = @"http://api.football-data.org/v1/competitions/"+league.ToString()+"/fixtures";
                 client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
                 result = client.DownloadString(address);
                 JObject jres = JObject.Parse(result);
                 var listJres = jres.SelectToken("fixtures").ToList();
                 foreach (var list in listJres)
                 {
-                    string str = "";
+                    string str = " ,";
                     DateTime d = Convert.ToDateTime(list.SelectToken("date").ToString());
                     var dd = d.Date.ToString("dd/MM/yy").Replace(".", "/");
                     str += dd.ToString() + ",";
@@ -222,28 +221,45 @@ namespace WindowsFormsApp1
                     str += list.SelectToken("result")["goalsAwayTeam"].ToString() + ",";
                     int res1 = 0;
                     int res2 = 0;
-                    res1 = Convert.ToInt32(list.SelectToken("result")["goalsHomeTeam"].ToString());
-                    res2 = Convert.ToInt32(list.SelectToken("result")["goalsAwayTeam"].ToString());
-                    string res = (res1 == res2) ? "D" : (res1 > res2) ? "H" : "A";
-                    str += res;
-                    ret.Add(str);
-                //return ret;
-            }
+                    if (list.SelectToken("result")["goalsHomeTeam"].ToString() != "" && list.SelectToken("result")["goalsAwayTeam"].ToString() != "")
+                    {
+                        res1 = Convert.ToInt32(list.SelectToken("result")["goalsHomeTeam"].ToString());
+                        res2 = Convert.ToInt32(list.SelectToken("result")["goalsAwayTeam"].ToString());
+                        string res = (res1 == res2) ? "D" : (res1 > res2) ? "H" : "A";
+                        str += res;
+
+                        ret.Add(str);
+                    }
+                
+                }
+            return ret;
         }
-        public void CSVcreate(string[] str)
+        public void CSVcreate()
         {
             int[] ligues = new int[] { 445, 450, 452, 455, 456 };
-            string path = openFileDialog1.ShowDialog().ToString();  
-            var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
-
-            Excel.Application excel = new Excel.Application();
-            Excel._Workbook wb = null;
-            wb = excel.Workbooks[1];
-
-            for (int index = 2; index < str.Length; index++)
+            for (int i = 0; i < ligues.Length; i++)
             {
-                excel.Cells[index, 1].value = str[index-2];
+                List<string> str = new List<string>();
+                str = JsonToMass(ligues[0]);
+
+                openFileDialog1.ShowDialog(); 
+                string path = openFileDialog1.FileName;  
+                var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
+                //Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HF,AF,HC,AC,HY,AY,HR,AR,B365H,B365D,B365A,BWH,BWD,BWA,GBH,GBD,GBA,IWH,IWD,IWA,LBH,LBD,LBA,SBH,SBD,SBA,WHH,WHD,WHA,SJH,SJD,SJA,VCH,VCD,VCA,BSH,BSD,BSA,Bb1X2,BbMxH,BbAvH,BbMxD,BbAvD,BbMxA,BbAvA,BbOU,BbMx>2.5,BbAv>2.5,BbMx<2.5,BbAv<2.5,BbAH,BbAHh,BbMxAHH,BbAvAHH,BbMxAHA,BbAvAHA
+                Excel.Application excel = new Excel.Application();
+                Excel._Workbook wb = null;
+                wb = excel.Workbooks.Add(path);
+
+                for (int index = 2; index < str.Count; index++)
+                {
+                    excel.Cells[index, 1].value = str[index-2];
+                }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CSVcreate();
         }
     }
 }
