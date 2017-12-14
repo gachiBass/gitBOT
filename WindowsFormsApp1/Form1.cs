@@ -236,24 +236,30 @@ namespace WindowsFormsApp1
         }
         public void CSVcreate()
         {
+
             int[] ligues = new int[] { 445, 450, 452, 455, 456 };
-            for (int i = 0; i < ligues.Length; i++)
+            for (int i = 0; i < 1; i++)
             {
                 List<string> str = new List<string>();
                 str = JsonToMass(ligues[0]);
 
                 openFileDialog1.ShowDialog(); 
                 string path = openFileDialog1.FileName;  
-                var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
+                //var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
                 //Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HF,AF,HC,AC,HY,AY,HR,AR,B365H,B365D,B365A,BWH,BWD,BWA,GBH,GBD,GBA,IWH,IWD,IWA,LBH,LBD,LBA,SBH,SBD,SBA,WHH,WHD,WHA,SJH,SJD,SJA,VCH,VCD,VCA,BSH,BSD,BSA,Bb1X2,BbMxH,BbAvH,BbMxD,BbAvD,BbMxA,BbAvA,BbOU,BbMx>2.5,BbAv>2.5,BbMx<2.5,BbAv<2.5,BbAH,BbAHh,BbMxAHH,BbAvAHH,BbMxAHA,BbAvAHA
                 Excel.Application excel = new Excel.Application();
-                Excel._Workbook wb = null;
-                wb = excel.Workbooks.Add(path);
-
+                Excel.Workbook wb = excel.Workbooks.Open(path);
+                
+                //wb = excel.Workbooks.Add();
+                
                 for (int index = 2; index < str.Count; index++)
                 {
                     excel.Cells[index, 1].value = str[index-2];
                 }
+                excel.Visible = true;
+                excel.ActiveWorkbook.Save();
+                excel.ActiveWorkbook.Close(true);
+                excel.Quit();
             }
         }
 
