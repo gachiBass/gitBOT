@@ -107,6 +107,7 @@ namespace WindowsFormsApp1
                                         String result;
                                         WebClient client = new WebClient();
                                         String address = @"http://api.football-data.org/v1/competitions/445/fixtures";
+                                        //address = @"http://api.football-data.org/v1/teams/57";
                                         client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
                                         result = client.DownloadString(address);                      
                                         JObject jres = JObject.Parse(result);
@@ -162,6 +163,10 @@ namespace WindowsFormsApp1
         {
             List<string> commands=new List<string>();
             List<string> times = new List<string>();
+            string season = "";
+            DateTime dateBegin = new DateTime(1, 1, 1, 0, 0, 0);
+            DateTime dateEnd = new DateTime(1, 1, 1, 0, 0, 0);
+
             double MaxSovpad=0;
             foreach (var res in resp.Entities)
             {
@@ -175,7 +180,106 @@ namespace WindowsFormsApp1
                     }
                     continue;
                 }
-                    if (res.Key == "command")
+                if (res.Key == "season")
+                {
+                    var seasons = res.Value.Children()["value"];
+                    var seas = seasons.Values().ToList();
+                    foreach (var e in seas)
+                    {
+                        season = e.ToString();
+                    }
+                }
+                if (res.Key == "Past")
+                {
+                    var time = res.Value.Children()["value"];
+                    var dates = time.Values().ToList();
+                    foreach (var e in dates)
+                    {
+                        var f = 0;
+                        switch (e.ToString())
+                        {
+                            case "вчера":
+                                {
+                                    dateBegin = DateTime.Today.AddDays(-1);
+                                    dateEnd = DateTime.Today.AddSeconds(-1);
+                                  //  dateBegin.AddHours
+                                    break;
+                                }
+                            case "В прошлом месяце":
+                                {
+                                    var yr = DateTime.Today.Year;
+                                    var mth = DateTime.Today.Month;
+                                    dateBegin = new DateTime(yr, mth, 1,0,0,0).AddMonths(-1);
+                                    dateEnd = new DateTime(yr, mth, 1,23,59,59).AddDays(-1);
+                                    break;
+                                }
+                            case "В прошлом году":
+                                {
+                                    var yr = DateTime.Today.Year;
+                                    dateBegin = new DateTime(yr, 1, 1, 0, 0, 0).AddYears(-1);
+                                    dateEnd = new DateTime(yr, 12, 31, 23, 59, 59).AddYears(-1);
+                                    break;
+                                }
+                            case "на прошлой неделе":
+                                {
+                                    var day = DateTime.Today.DayOfWeek.ToString();
+                                    switch (day)
+                                    {
+                                        case "Monday":
+                                            {
+                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0,0,0).AddDays(-7);
+                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23,59,59).AddDays(-1);
+                                                break;
+                                            }
+                                        case "Tuesday":
+                                            {
+                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-8);
+                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-2);
+                                                break;
+                                            }
+                                        case "Wednsday":
+                                            {
+                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-9);
+                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-3);
+                                                break;
+                                            }
+                                        case "Thursday":
+                                            {
+                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-10);
+                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-4);
+                                                break;
+                                            }
+                                        case "Friday":
+                                            {
+                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-11);
+                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-5);
+                                                break;
+                                            }
+                                        case "Saturday":
+                                            {
+                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-12);
+                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-6);
+                                                break;
+                                            }
+                                        case "Sunday":
+                                            {
+                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-13);
+                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-7);
+                                                break;
+                                            }
+                                    } 
+                                    break;
+                                }
+                        }
+                    }
+                }
+                else if (res.Key == "Future")
+                { }
+                if (season == "")
+                {
+                    season = "1718";
+                }
+                if (res.Key == "England" || res.Key == "Germany" || res.Key == "Spain" || res.Key == "Italy" || res.Key == "France")
                 {
                     var sovpadCom = res.Value.Children()["value"];
                     var com = sovpadCom.Values().ToList();
@@ -185,11 +289,34 @@ namespace WindowsFormsApp1
                     }
                     if (commands.Count != 2)
                     {
-                        await Bot.SendTextMessageAsync(id, "В матче должно быть 2 команы, не?");
+                        await Bot.SendTextMessageAsync(id, "В матче должно быть 2 команды, не?");
                     }
                     else if (commands.Count == 2)
                     {
-                        await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
+                        switch (res.Key)
+                        {
+                            case "England":
+                                {
+                                    break;
+                                }
+                            case "Germany":
+                                {
+                                    break;
+                                }
+                            case "Spain":
+                                {
+                                    break;
+                                }
+                            case "Italy":
+                                {
+                                    break;
+                                }
+                            case "France":
+                                {
+                                    break;
+                                }
+                                //await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
+                        }
                     }
                 }
             }              
