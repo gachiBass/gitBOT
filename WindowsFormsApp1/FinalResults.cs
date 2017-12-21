@@ -202,7 +202,11 @@
 //            int TeamCount = ToInt(LeagueArrayCount[LeagueIndex]);
 //            return TeamCount;
 //        }
-
+int ToInt(string TextValue)
+{
+    int Value = Convert.ToInt32(TextValue);
+    return Value;
+}
 //        string[] PromotedTeams(string league, string season) //раз в год
 //        {
 //            string LowDivExcelName = "";
@@ -260,11 +264,11 @@
 //        }
 // string GetStrengthFile(string league)
 //{
-                //string StrengthFile = "";
-                //switch (league)
-                //    ca
+//string StrengthFile = "";
+//switch (league)
+//    ca
 
-            //}
+//}
 //        string[] Forecast(string HomeTeam, string AwayTeam, string StrengthFile) //прогноз на матч
 //        {
 //          string FileName = @"..\..\csv\TeamCount.csv";
