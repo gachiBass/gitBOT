@@ -258,10 +258,32 @@
 //            }
 //            return Promoted;
 //        }
+// string GetStrengthFile(string league)
+//{
+                //string StrengthFile = "";
+                //switch (league)
+                //    ca
 
+            //}
 //        string[] Forecast(string HomeTeam, string AwayTeam, string StrengthFile) //прогноз на матч
 //        {
+//          string FileName = @"..\..\csv\TeamCount.csv";
+//            StreamReader stream = new StreamReader(new FileStream(FileName, FileMode.Open));
+//            string row;
+//            while ((row = stream.ReadLine()) != null)
+//            {
+//                LeaguesWithCount.Add(row);
+//            }
+//            stream.Close();
 
+//            string[] Values;
+//            for (int i = 0; i < LeaguesWithCount.Count; i++)
+//            {
+//                string Text = LeaguesWithCount[i];
+//                Values = Text.Split(new char[] { ',' });
+//                LeagueArrayName[i] = Values[0];
+//                LeagueArrayCount[i] = Values[1];
+//            }
 
 //            //double AllHomeGoals = strengths.AllHomeGoals; //йавайцйв
 //            //double AllAwayGoals = strengths.AllAwayGoals;
