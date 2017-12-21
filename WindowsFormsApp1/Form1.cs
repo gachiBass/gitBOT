@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
                                         String address = @"http://api.football-data.org/v1/competitions/445/fixtures";
                                         //address = @"http://api.football-data.org/v1/teams/57";
                                         client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
-                                        result = client.DownloadString(address);                      
+                                        result = client.DownloadString(address);
                                         JObject jres = JObject.Parse(result);
                                         await Bot.SendTextMessageAsync(message.Chat.Id, jres.ToString());
                                     }
@@ -123,7 +123,7 @@ namespace WindowsFormsApp1
                                 else
                                 {
                                     var response = client.Message(message.Text);/*message*/
-                                    WitAi(message.Chat.Id,response);
+                                    WitAi(message.Chat.Id, response);
                                 }
                             }
                         }
@@ -302,7 +302,7 @@ namespace WindowsFormsApp1
                                     matchResult = "Результат:";
                                     string pathtofile = @"..\..\csv\EPL"+season.ToString() + ".csv";
                                     string path = System.IO.File.Open(@"..\..\csv\EPL" + season.ToString() + ".csv", FileMode.Open).Name;
-                                    Matches(path, dateBegin, dateEnd, commands);
+                                    Matches( path, dateBegin, dateEnd, commands, id);
                                    
                                     break;
                                 }
@@ -404,28 +404,65 @@ namespace WindowsFormsApp1
             CSVcreate();
         }
 
-        public void Matches(string path, DateTime d1, DateTime d2, List<string> commands)
+        public string Matches(string path, DateTime d1, DateTime d2, List<string> commands, long id)
         {
-            matchResult = "";
+            matchResult = "Результат:\n";
+            StreamReader stream = new StreamReader(new FileStream(@"..\..\csv\SHIP.csv",FileMode.Open));
             try
             {
+                stream = new StreamReader(new FileStream(path, FileMode.Open));
+                //string[] Result = new string[4];
+                //Result[1] = HomeTeam;
+                //Result[2] = AwayTeam;
+                List<string> Matches = new List<string>();
+                List<string> TeamsList = new List<string>();
+                List<string> TeamNamesList = new List<string>();
 
-                Excel.Application excel = new Excel.Application();
-                Excel.Workbook wb = excel.Workbooks.Open(path);
-                int row1 = RowFindExcel(excel, commands[0].ToString(), commands[1].ToString());
-                int row2 = RowFindExcel(excel, commands[1].ToString(), commands[0].ToString());
+                string row;
+                while ((row = stream.ReadLine()) != null)
+                {
+                    Matches.Add(row);
+                }
+                stream.Close();
+                string[] Values;
+                for (int i = 1; i < Matches.Count; i++)
+                {
+                    string Text = Matches[i];
+                    Values = Text.Split(new char[] { ',' });
+                    if (Values[2] == commands[0] && Values[3] == commands[1])
+                    {
+                        matchResult += Values[1] + Values[2] + ":" + Values[3] + Values[4] + ":" + Values[5];
+                    }
+                    if (Values[2] == commands[1] && Values[3] == commands[0])
+                    {
+                        matchResult += Values[1] + Values[2] + ":" + Values[3] + Values[4] + ":" + Values[5];
+                    }
+                }
+                return matchResult;
 
-                string FsMatch = excel.Range[row1,1].ToString();
-                string ScMatch = excel.Range[row2,1].ToString();
+                //Excel.Application excel = new Excel.Application();
+                
+                //Excel.Workbook wb = excel.Workbooks.Open(path);
+                //int row1 = RowFindExcel(excel, commands[0].ToString(), commands[1].ToString());
+                //int row2 = RowFindExcel(excel, commands[1].ToString(), commands[0].ToString());
+
+                //string FsMatch = excel.Range[row1,1].ToString();
+                //string ScMatch = excel.Range[row2,1].ToString();
                 //excel.Visible = true;
+                //return matchResult;
             }
-            catch
+            catch(Exception e)
             {
                 Process[] list = Process.GetProcessesByName("EXCEL");
                 foreach (Process proc in list)
                 {
                     proc.Kill();
                 }
+                Process.GetCurrentProcess().Kill();
+                matchResult = e.ToString();
+                
+                stream.Close();
+                return matchResult;
             }
         }
             //return matchResult;
