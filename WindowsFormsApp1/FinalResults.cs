@@ -142,11 +142,11 @@
 //            return Season;
 //        }
 
-//        string[] GetMatchResult(string ExcelName, string HomeTeam, string AwayTeam) //получение результата прошедшего матча
+//        string[,] GetMatchResult(string ExcelName, string HomeTeam, string AwayTeam) //получение результата прошедшего матча
 //        {
-//            string[] Result = new string[4];
-//            Result[1] = HomeTeam;
-//            Result[2] = AwayTeam;
+//            string[,] Result = new string[4,2];
+//            Result[1,0] = HomeTeam; Result[1,1]=AwayTeam;
+//            Result[2,0] = AwayTeam; Result[2,1]=HomeTeam;
 //            List<string> Matches = new List<string>();
 //            List<string> TeamsList = new List<string>();
 //            List<string> TeamNamesList = new List<string>(); //названия команд
@@ -164,8 +164,13 @@
 //                Values = Text.Split(new char[] { ',' });
 //                if (Values[2] == HomeTeam && Values[3] == AwayTeam)
 //                {
-//                    Result[0] = Values[1];
-//                    Result[3] = Values[4] + ":" + Values[5];
+//                    Result[0,0] = Values[1];
+//                    Result[3,0] = Values[4] + ":" + Values[5];
+//                }
+//              if (Values[2] == AwayTeam && Values[3] == HomeTeam)
+//                {
+//                    Result[0,1] = Values[1];
+//                    Result[3,1] = Values[4] + ":" + Values[5];
 //                }
 //            }
 //            return Result;
@@ -254,8 +259,10 @@
 //            return Promoted;
 //        }
 
-//        string[] Forecast(string HomeTeam, string AwayTeam) //прогноз на матч
+//        string[] Forecast(string HomeTeam, string AwayTeam, string StrengthFile) //прогноз на матч
 //        {
+
+
 //            //double AllHomeGoals = strengths.AllHomeGoals; //йавайцйв
 //            //double AllAwayGoals = strengths.AllAwayGoals;
 
@@ -478,7 +485,7 @@
 //            //через ВИТ определяем,что нужно пользователю - результаты прошлых матчей или прогноз
 //            bool Past=true;
 //            string ExcelName = GetExcelFileName(League, Season);
-//            string[] MatchResult;
+//            string[,] MatchResult;
 //            if (Past)
 //            {                
 //                 MatchResult= GetMatchResult(ExcelName, HomeTeam, AwayTeam); //здесь счет запрашиваемого матча
