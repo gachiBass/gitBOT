@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             textBox1.Text = "490680514:AAFdle0Rk4pZOe29H9ptSUewVfizh6hkvzg"; /*TELEGRAM TOKEN*/
             var actions = new WitActions();
             actions["send"] = Send;
-            client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions); /*WIT.AI CLIENT*/        
+            client = new Wit(accessToken: "LJYKR53FHFUMQFDW74HRW4BYKPJ7OCIH", actions: actions); /*WIT.AI CLIENT*/
         }
         private static WitContext Send(ConverseRequest request, ConverseResponse response)
         {
@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
             try
             {
                 Bot = new Telegram.Bot.TelegramBotClient(key);
-                await Bot.SetWebhookAsync("");
+                // await Bot.SetWebhookAsync("");
                 int offset = 0;
                 while (true)
                 {
@@ -161,15 +161,15 @@ namespace WindowsFormsApp1
             }
         }
 
-       async void WitAi(long id,MessageResponse resp)
+        async void WitAi(long id, MessageResponse resp)
         {
-            List<string> commands=new List<string>();
+            List<string> commands = new List<string>();
             List<string> times = new List<string>();
             string season = "";
             DateTime dateBegin = new DateTime(1, 1, 1, 0, 0, 0);
             DateTime dateEnd = new DateTime(1, 1, 1, 0, 0, 0);
 
-            double MaxSovpad=0;
+            double MaxSovpad = 0;
             foreach (var res in resp.Entities)
             {
                 if (res.Key == "time")
@@ -178,7 +178,7 @@ namespace WindowsFormsApp1
                     var time = sovpadTime.Values().ToList();
                     foreach (var e in time)
                     {
-                        times.Add(e.ToString());  
+                        times.Add(e.ToString());
                     }
                     continue;
                 }
@@ -204,15 +204,15 @@ namespace WindowsFormsApp1
                                 {
                                     dateBegin = DateTime.Today.AddDays(-1);
                                     dateEnd = DateTime.Today.AddSeconds(-1);
-                                  //  dateBegin.AddHours
+                                    //  dateBegin.AddHours
                                     break;
                                 }
                             case "В прошлом месяце":
                                 {
                                     var yr = DateTime.Today.Year;
                                     var mth = DateTime.Today.Month;
-                                    dateBegin = new DateTime(yr, mth, 1,0,0,0).AddMonths(-1);
-                                    dateEnd = new DateTime(yr, mth, 1,23,59,59).AddDays(-1);
+                                    dateBegin = new DateTime(yr, mth, 1, 0, 0, 0).AddMonths(-1);
+                                    dateEnd = new DateTime(yr, mth, 1, 23, 59, 59).AddDays(-1);
                                     break;
                                 }
                             case "В прошлом году":
@@ -229,8 +229,8 @@ namespace WindowsFormsApp1
                                     {
                                         case "Monday":
                                             {
-                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0,0,0).AddDays(-7);
-                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23,59,59).AddDays(-1);
+                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-7);
+                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-1);
                                                 break;
                                             }
                                         case "Tuesday":
@@ -269,7 +269,7 @@ namespace WindowsFormsApp1
                                                 dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-7);
                                                 break;
                                             }
-                                    } 
+                                    }
                                     break;
                                 }
                         }
@@ -300,7 +300,7 @@ namespace WindowsFormsApp1
                             case "England":
                                 {
                                     matchResult = "Результат:";
-                                    string pathtofile = @"..\..\csv\EPL"+season.ToString() + ".csv";
+                                    string pathtofile = @"..\..\csv\EPL" + season.ToString() + ".csv";
                                     string path = System.IO.File.Open(@"..\..\csv\EPL" + season.ToString() + ".csv", FileMode.Open).Name;
                                     Matches( path, dateBegin, dateEnd, commands, id);
                                    
@@ -323,51 +323,51 @@ namespace WindowsFormsApp1
                                     break;
                                 }
                                 //await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
-                                
+
                         }
                         await Bot.SendTextMessageAsync(id, matchResult);
                     }
                 }
-            }              
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }        
+        }
         public List<string> JsonToMass(int league)
         {
-            List<string> ret = new List<string>();                     
-                String result;
-                WebClient client = new WebClient();
-                String address = @"http://api.football-data.org/v1/competitions/"+league.ToString()+"/fixtures";
-                client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
-                result = client.DownloadString(address);
-                JObject jres = JObject.Parse(result);
-                var listJres = jres.SelectToken("fixtures").ToList();
-                foreach (var list in listJres)
+            List<string> ret = new List<string>();
+            String result;
+            WebClient client = new WebClient();
+            String address = @"http://api.football-data.org/v1/competitions/" + league.ToString() + "/fixtures";
+            client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
+            result = client.DownloadString(address);
+            JObject jres = JObject.Parse(result);
+            var listJres = jres.SelectToken("fixtures").ToList();
+            foreach (var list in listJres)
+            {
+                string str = " ,";
+                DateTime d = Convert.ToDateTime(list.SelectToken("date").ToString());
+                var dd = d.Date.ToString("dd/MM/yy").Replace(".", "/");
+                str += dd.ToString() + ",";
+                str += list.SelectToken("homeTeamName").ToString() + ",";
+                str += list.SelectToken("awayTeamName").ToString() + ",";
+                str += list.SelectToken("result")["goalsHomeTeam"].ToString() + ",";
+                str += list.SelectToken("result")["goalsAwayTeam"].ToString() + ",";
+                int res1 = 0;
+                int res2 = 0;
+                if (list.SelectToken("result")["goalsHomeTeam"].ToString() != "" && list.SelectToken("result")["goalsAwayTeam"].ToString() != "")
                 {
-                    string str = " ,";
-                    DateTime d = Convert.ToDateTime(list.SelectToken("date").ToString());
-                    var dd = d.Date.ToString("dd/MM/yy").Replace(".", "/");
-                    str += dd.ToString() + ",";
-                    str += list.SelectToken("homeTeamName").ToString() + ",";
-                    str += list.SelectToken("awayTeamName").ToString() + ",";
-                    str += list.SelectToken("result")["goalsHomeTeam"].ToString() + ",";
-                    str += list.SelectToken("result")["goalsAwayTeam"].ToString() + ",";
-                    int res1 = 0;
-                    int res2 = 0;
-                    if (list.SelectToken("result")["goalsHomeTeam"].ToString() != "" && list.SelectToken("result")["goalsAwayTeam"].ToString() != "")
-                    {
-                        res1 = Convert.ToInt32(list.SelectToken("result")["goalsHomeTeam"].ToString());
-                        res2 = Convert.ToInt32(list.SelectToken("result")["goalsAwayTeam"].ToString());
-                        string res = (res1 == res2) ? "D" : (res1 > res2) ? "H" : "A";
-                        str += res;
+                    res1 = Convert.ToInt32(list.SelectToken("result")["goalsHomeTeam"].ToString());
+                    res2 = Convert.ToInt32(list.SelectToken("result")["goalsAwayTeam"].ToString());
+                    string res = (res1 == res2) ? "D" : (res1 > res2) ? "H" : "A";
+                    str += res;
 
-                        ret.Add(str);
-                    }
-                
+                    ret.Add(str);
                 }
+
+            }
             return ret;
         }
         public void CSVcreate()
@@ -377,20 +377,21 @@ namespace WindowsFormsApp1
             for (int i = 0; i < 1; i++)
             {
                 List<string> str = new List<string>();
+                Table(ligues[0]);
                 str = JsonToMass(ligues[0]);
 
-                openFileDialog1.ShowDialog(); 
-                string path = openFileDialog1.FileName;  
+                openFileDialog1.ShowDialog();
+                string path = openFileDialog1.FileName;
                 //var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
                 //Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HF,AF,HC,AC,HY,AY,HR,AR,B365H,B365D,B365A,BWH,BWD,BWA,GBH,GBD,GBA,IWH,IWD,IWA,LBH,LBD,LBA,SBH,SBD,SBA,WHH,WHD,WHA,SJH,SJD,SJA,VCH,VCD,VCA,BSH,BSD,BSA,Bb1X2,BbMxH,BbAvH,BbMxD,BbAvD,BbMxA,BbAvA,BbOU,BbMx>2.5,BbAv>2.5,BbMx<2.5,BbAv<2.5,BbAH,BbAHh,BbMxAHH,BbAvAHH,BbMxAHA,BbAvAHA
                 Excel.Application excel = new Excel.Application();
                 Excel.Workbook wb = excel.Workbooks.Open(path);
-                
+
                 //wb = excel.Workbooks.Add();
-                
+
                 for (int index = 2; index < str.Count; index++)
                 {
-                    excel.Cells[index, 1].value = str[index-2];
+                    excel.Cells[index, 1].value = str[index - 2];
                 }
                 excel.Visible = true;
                 excel.ActiveWorkbook.Save();
@@ -465,14 +466,39 @@ namespace WindowsFormsApp1
                 return matchResult;
             }
         }
-            //return matchResult;
-            public int RowFindExcel(Excel.Application excel, string firstteam, string secondteam)
+        //return matchResult;
+        public int RowFindExcel(Excel.Application excel, string firstteam, string secondteam)
+        {
+            Excel.Range CurrentFind = null;
+            Excel.Range range = excel.get_Range("A1", "A500");
+            CurrentFind = range.Find(firstteam + "," + secondteam, Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart, Excel.XlSearchOrder.xlByRows,
+                                     Excel.XlSearchDirection.xlNext, false, Type.Missing, Type.Missing);
+            return CurrentFind.Row;
+        }
+        public List<string> Table(int league)
+        {
+            List<string> ret = new List<string>();
+            String result;
+            WebClient client = new WebClient();
+            String address = @"http://api.football-data.org/v1/competitions/" + league.ToString() + "/leagueTable";
+            client.Headers.Add("X-Auth-Token", "54e1ad4daa9b45f6aca8da0aaf7fb801");
+            result = client.DownloadString(address);
+            JObject jres = JObject.Parse(result);
+            var listJres = jres.SelectToken("standing").ToList();
+            foreach (var list in listJres)
             {
-                Excel.Range CurrentFind = null;
-                Excel.Range range = excel.get_Range("A1", "A500");
-                CurrentFind = range.Find(firstteam +","+ secondteam, Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart, Excel.XlSearchOrder.xlByRows,
-                                         Excel.XlSearchDirection.xlNext, false, Type.Missing, Type.Missing);
-                return CurrentFind.Row;
+                string str = "";
+                str += list.SelectToken("teamName").ToString() + ",";
+                str += list.SelectToken("home")["goals"].ToString() + ",";
+                str += list.SelectToken("home")["goalsAgainst"].ToString() + ",";
+                str += list.SelectToken("away")["goals"].ToString() + ",";
+                str += list.SelectToken("home")["goalsAgainst"].ToString() + ",";
+                str += (int)list.SelectToken("home")["wins"] + (int)list.SelectToken("home")["draws"] + (int)list.SelectToken("home")["losses"] + ",";
+                str+= (int)list.SelectToken("away")["wins"] + (int)list.SelectToken("away")["draws"] + (int)list.SelectToken("away")["losses"] + ",,,,,";
+                str += list.SelectToken("goalDifference").ToString();
+                ret.Add(str);
             }
+            return ret;
+        }
     }
-    }
+}
