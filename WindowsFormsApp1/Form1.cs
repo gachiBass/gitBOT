@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using WitAi;
 using WitAi.Models;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
@@ -24,6 +25,7 @@ namespace WindowsFormsApp1
 
         Wit client;
         Telegram.Bot.TelegramBotClient Bot;
+        string matchResult;
 
         public Form1()
         {
@@ -297,6 +299,11 @@ namespace WindowsFormsApp1
                         {
                             case "England":
                                 {
+                                    matchResult = "Результат:";
+                                    string pathtofile = @"..\..\csv\EPL"+season.ToString() + ".csv";
+                                    string path = System.IO.File.Open(@"..\..\csv\EPL" + season.ToString() + ".csv", FileMode.Open).Name;
+                                    Matches(path, dateBegin, dateEnd, commands);
+                                   
                                     break;
                                 }
                             case "Germany":
@@ -316,7 +323,9 @@ namespace WindowsFormsApp1
                                     break;
                                 }
                                 //await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
+                                
                         }
+                        await Bot.SendTextMessageAsync(id, matchResult);
                     }
                 }
             }              
@@ -394,5 +403,39 @@ namespace WindowsFormsApp1
         {
             CSVcreate();
         }
+
+        public void Matches(string path, DateTime d1, DateTime d2, List<string> commands)
+        {
+            matchResult = "";
+            try
+            {
+
+                Excel.Application excel = new Excel.Application();
+                Excel.Workbook wb = excel.Workbooks.Open(path);
+                int row1 = RowFindExcel(excel, commands[0].ToString(), commands[1].ToString());
+                int row2 = RowFindExcel(excel, commands[1].ToString(), commands[0].ToString());
+
+                string FsMatch = excel.Range[row1,1].ToString();
+                string ScMatch = excel.Range[row2,1].ToString();
+                //excel.Visible = true;
+            }
+            catch
+            {
+                Process[] list = Process.GetProcessesByName("EXCEL");
+                foreach (Process proc in list)
+                {
+                    proc.Kill();
+                }
+            }
+        }
+            //return matchResult;
+            public int RowFindExcel(Excel.Application excel, string firstteam, string secondteam)
+            {
+                Excel.Range CurrentFind = null;
+                Excel.Range range = excel.get_Range("A1", "A500");
+                CurrentFind = range.Find(firstteam +","+ secondteam, Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart, Excel.XlSearchOrder.xlByRows,
+                                         Excel.XlSearchDirection.xlNext, false, Type.Missing, Type.Missing);
+                return CurrentFind.Row;
+            }
     }
-}
+    }
