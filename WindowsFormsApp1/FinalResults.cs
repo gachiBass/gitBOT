@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
 {
     class FinalResults
     {
-        string GetExcelFileName(string League, string Season) //поиск чсв по лиге и сезону
+        public string GetExcelFileName(string League, string Season) //поиск чсв по лиге и сезону
         {
             string EPLExcelName, SERIA_AExcelName, BundesligaExcelName, LaLigaExcelName, Ligue1ExcelName;
             EPLExcelName = SERIA_AExcelName = BundesligaExcelName = LaLigaExcelName = Ligue1ExcelName = "";
@@ -142,7 +142,7 @@ namespace WindowsFormsApp1
             return Season;
         }
 
-        string[,] GetMatchResult(string ExcelName, string HomeTeam, string AwayTeam) //получение результата прошедшего матча
+        public string[,] GetMatchResult(string ExcelName, string HomeTeam, string AwayTeam) //получение результата прошедшего матча
         {
             string[,] Result = new string[4, 2];
             Result[1, 0] = HomeTeam; Result[1, 1] = AwayTeam;
@@ -151,32 +151,34 @@ namespace WindowsFormsApp1
             List<string> TeamsList = new List<string>();
             List<string> TeamNamesList = new List<string>(); //названия команд
             StreamReader stream = new StreamReader(new FileStream(ExcelName, FileMode.Open));
-            string row;
-            while ((row = stream.ReadLine()) != null)
-            {
-                Matches.Add(row);
-            }
-            stream.Close();
-            string[] Values;
-            for (int i = 1; i < Matches.Count; i++)
-            {
-                string Text = Matches[i];
-                Values = Text.Split(new char[] { ',' });
-                if (Values[2] == HomeTeam && Values[3] == AwayTeam)
+            
+                string row;
+                while ((row = stream.ReadLine()) != null)
                 {
-                    Result[0, 0] = Values[1];
-                    Result[3, 0] = Values[4] + ":" + Values[5];
+                    Matches.Add(row);
                 }
-                if (Values[2] == AwayTeam && Values[3] == HomeTeam)
+                stream.Close();
+                string[] Values;
+                for (int i = 1; i < Matches.Count; i++)
                 {
-                    Result[0, 1] = Values[1];
-                    Result[3, 1] = Values[4] + ":" + Values[5];
+                    string Text = Matches[i];
+                    Values = Text.Split(new char[] { ',' });
+                    if (Values[2] == HomeTeam && Values[3] == AwayTeam)
+                    {
+                        Result[0, 0] = Values[1];
+                        Result[3, 0] = Values[4] + ":" + Values[5];
+                    }
+                    if (Values[2] == AwayTeam && Values[3] == HomeTeam)
+                    {
+                        Result[0, 1] = Values[1];
+                        Result[3, 1] = Values[4] + ":" + Values[5];
+                    }
                 }
-            }
-            return Result;
+                return Result;
+            
         }
 
-        int GetTeamCount(string League) //получение количества команд в лиге
+        public int GetTeamCount(string League) //получение количества команд в лиге
         {
             List<string> LeaguesWithCount = new List<string>();
             string[] LeagueArrayName = new string[5];
@@ -211,7 +213,7 @@ namespace WindowsFormsApp1
         }
 
 
-        string[] PromotedTeams(string league, string season) //раз в год
+        public string[] PromotedTeams(string league, string season) //раз в год
         {
             string LowDivExcelName = "";
             string[] Promoted = new string[3];
@@ -308,7 +310,7 @@ namespace WindowsFormsApp1
             return result;
         }
 
-        string[] Forecast(string HomeTeam, string AwayTeam, string StrengthFile, string League) //прогноз на матч
+        public string[] Forecast(string HomeTeam, string AwayTeam, string StrengthFile, string League) //прогноз на матч
         {
             double HomeAtt, HomeDef, AwayAtt, AwayDef, AllHomeGoals,AllAwayGoals, HomeMatches, AwayMatches, AVGHomeGoals,AVGAwayGoals;
             int TeamCount = GetTeamCount(League);
