@@ -215,7 +215,7 @@ namespace WindowsFormsApp1
         {
             string LowDivExcelName = "";
             string[] Promoted = new string[3];
-            switch (League)
+            switch (league)
             {
                 case "EPL":
                     {
@@ -300,7 +300,13 @@ namespace WindowsFormsApp1
             return StrengthFile;
         }
 
-
+        private int Factorial(int x)
+        {
+            int result = 1;
+            for (int i = 2; i <= x; ++i)
+                result *= i;
+            return result;
+        }
 
         string[] Forecast(string HomeTeam, string AwayTeam, string StrengthFile, string League) //прогноз на матч
         {
@@ -347,22 +353,10 @@ namespace WindowsFormsApp1
             ///////////////////////
             double HomeGoals, AwayGoals;
             HomeGoals = AwayGoals = 0;
-            int HomeTeamIndex, AwayTeamIndex;
+                         
 
-            for (int i = 0; i < dataGridView4.RowCount; i++) //таблица будет виртуальной
-            {
-                HomeTeamIndex = Array.IndexOf(TeamNames[0].ToArray(), dataGridView4[0, i].Value);
-                AwayTeamIndex = Array.IndexOf(TeamNames[0].ToArray(), dataGridView4[1, i].Value);
-                if (i > 50)
-                {
-                    if ((i + 1) % 10 == 0)
-                    {
-                        strengths.GetNewStrengths((i + 1) / 10);
-                    }
-                }
-
-                HomeGoals = HomeAdvantageValue * ToDouble(TeamNames[5][HomeTeamIndex]) * ToDouble(TeamNames[8][AwayTeamIndex]) * AVGHomeGoals;
-                AwayGoals = ToDouble(TeamNames[7][AwayTeamIndex]) * ToDouble(TeamNames[6][HomeTeamIndex]) * AVGAwayGoals;
+                HomeGoals = HomeAdvantageValue * HomeAtt *AwayDef * AVGHomeGoals;
+                AwayGoals = AwayAtt*HomeDef * AVGAwayGoals;
 
                 double[] HomeGoalsPercentage = new double[10];
                 double[] AwayGoalsPercentage = new double[10];
@@ -384,9 +378,7 @@ namespace WindowsFormsApp1
                         if (x > y) homewin += ResultMatrix[x, y];
                         if (x < y) awaywin += ResultMatrix[x, y];
                     }
-                dataGridView4[8, i].Value = Math.Round(homewin, 5);
-                dataGridView4[9, i].Value = Math.Round(draw, 5);
-                dataGridView4[10, i].Value = Math.Round(awaywin, 5);
+                
                 string winner;
                 if (homewin > 0.333)
                 {
@@ -429,11 +421,7 @@ namespace WindowsFormsApp1
                                             homegoals = x;
                                             awaygoals = y;
                                         }
-                                }
-                            if (dataGridView4[5, i].Value.ToString() == "H")
-                            {
-                                dataGridView4[6, i].Value = true;
-                            }
+                                }                          
                             break;
                         }
                     case "1x":
@@ -450,11 +438,7 @@ namespace WindowsFormsApp1
                                             homegoals = x;
                                             awaygoals = y;
                                         }
-                                }
-                            if (dataGridView4[5, i].Value.ToString() != "A")
-                            {
-                                dataGridView4[6, i].Value = true;
-                            }
+                                }                          
                             break;
                         }
                     case "12":
@@ -471,11 +455,7 @@ namespace WindowsFormsApp1
                                             homegoals = x;
                                             awaygoals = y;
                                         }
-                                }
-                            if (dataGridView4[5, i].Value.ToString() != "D")
-                            {
-                                dataGridView4[6, i].Value = true;
-                            }
+                                }                           
                             break;
                         }
                     case "x":
@@ -492,11 +472,7 @@ namespace WindowsFormsApp1
                                             homegoals = x;
                                             awaygoals = y;
                                         }
-                                }
-                            if (dataGridView4[5, i].Value.ToString() == "D")
-                            {
-                                dataGridView4[6, i].Value = true;
-                            }
+                                }                          
                             break;
                         }
                     case "x2":
@@ -513,11 +489,7 @@ namespace WindowsFormsApp1
                                             homegoals = x;
                                             awaygoals = y;
                                         }
-                                }
-                            if (dataGridView4[5, i].Value.ToString() != "H")
-                            {
-                                dataGridView4[6, i].Value = true;
-                            }
+                                }                           
                             break;
                         }
                     case "2":
@@ -534,39 +506,13 @@ namespace WindowsFormsApp1
                                             homegoals = x;
                                             awaygoals = y;
                                         }
-                                }
-                            if (dataGridView4[5, i].Value.ToString() == "A")
-                            {
-                                dataGridView4[6, i].Value = true;
-                            }
+                                }                           
                             break;
                         }
                 }
-                dataGridView4[3, i].Value = winner;
-                dataGridView4[2, i].Value = homegoals.ToString() + "-" + awaygoals.ToString();
-                if (dataGridView4[2, i].Value.ToString() == dataGridView4[4, i].Value.ToString())
-                {
-                    dataGridView4[7, i].Value = true;
-                }
-            }
+            string[] Result = { homewin.ToString(), draw.ToString(), awaywin.ToString(), homegoals.ToString(), awaygoals.ToString(), winner };
+            return Result;
         }
-
-        void Do()
-        {
-            //из ВИТ получаем сезон, лигу, домашнюю команду,гостевую команду
-            string Season, League, HomeTeam, AwayTeam;
-            //через ВИТ определяем,что нужно пользователю - результаты прошлых матчей или прогноз
-            bool Past = true;
-            string ExcelName = GetExcelFileName(League, Season);
-            string[,] MatchResult;
-            if (Past)
-            {
-                MatchResult = GetMatchResult(ExcelName, HomeTeam, AwayTeam); //здесь счет запрашиваемого матча
-            }
-            else
-            {
-                MatchResult = Forecast(HomeTeam, AwayTeam);
-            }
-        }
+       
     }
 }
