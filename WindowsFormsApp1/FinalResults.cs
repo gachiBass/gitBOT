@@ -122,11 +122,11 @@ namespace WindowsFormsApp1
                         return EPLExcelName;
                     }
 
-                case "Seria_A":
+                case "SERIA_A":
                     {
                         return SERIA_AExcelName;
                     }
-                case "BundesLiga":
+                case "Bundes":
                     {
                         return BundesligaExcelName;
                     }
@@ -224,12 +224,12 @@ namespace WindowsFormsApp1
                         LowDivExcelName = @"..\..\csv\SHIP.csv";
                         break;
                     }
-                case "Seria_A":
+                case "SERIA_A":
                     {
                         LowDivExcelName = @"..\..\csv\Seria_B.csv";
                         break;
                     }
-                case "Bundesliga":
+                case "Bundes":
                     {
                         LowDivExcelName = @"..\..\csv\Bundes2.csv";
                         break;
