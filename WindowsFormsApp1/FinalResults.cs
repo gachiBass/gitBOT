@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
             EPLExcelName = SERIA_AExcelName = BundesligaExcelName = LaLigaExcelName = Ligue1ExcelName = "";
             switch (Season)
             {
-                case "2007/2008":
+                case "0708":
                     {
                         EPLExcelName = @"..\..\csv\EPL0708.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0708.csv";
@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue10708.csv";
                         break;
                     }
-                case "2008/2009":
+                case "0809":
                     {
                         EPLExcelName = @"..\..\csv\EPL0809.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0809.csv";
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue10809.csv";
                         break;
                     }
-                case "2009/2010":
+                case "0910":
                     {
                         EPLExcelName = @"..\..\csv\EPL0910.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A0910.csv";
@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue10910csv";
                         break;
                     }
-                case "2010/2011":
+                case "1011":
                     {
                         EPLExcelName = @"..\..\csv\EPL1011.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1011.csv";
@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue11011.csv";
                         break;
                     }
-                case "2011/2012":
+                case "1112":
                     {
                         EPLExcelName = @"..\..\csv\EPL1112.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1112.csv";
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue11112.csv";
                         break;
                     }
-                case "2012/2013":
+                case "1213":
                     {
                         EPLExcelName = @"..\..\csv\EPL1213.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1213.csv";
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue11213.csv";
                         break;
                     }
-                case "2013/2014":
+                case "1314":
                     {
                         EPLExcelName = @"..\..\csv\EPL1314.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1314.csv";
@@ -78,7 +78,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue11314.csv";
                         break;
                     }
-                case "2014/2015":
+                case "1415":
                     {
                         EPLExcelName = @"..\..\csv\EPL1415.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1415.csv";
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue11415.csv";
                         break;
                     }
-                case "2015/2016":
+                case "1516":
                     {
                         EPLExcelName = @"..\..\csv\EPL1516.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1516.csv";
@@ -96,7 +96,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue11516.csv";
                         break;
                     }
-                case "2016/2017":
+                case "1617":
                     {
                         EPLExcelName = @"..\..\csv\EPL1617.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1617.csv";
@@ -105,7 +105,7 @@ namespace WindowsFormsApp1
                         Ligue1ExcelName = @"..\..\csv\Ligue11617.csv";
                         break;
                     }
-                case "2017/2018":
+                case "1718":
                     {
                         EPLExcelName = @"..\..\csv\EPL1718.csv";
                         SERIA_AExcelName = @"..\..\csv\SERIA_A1718.csv";
