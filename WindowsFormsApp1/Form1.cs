@@ -414,7 +414,7 @@ namespace WindowsFormsApp1
         public string Matches(string path, DateTime d1, DateTime d2, List<string> commands, long id)
         {
             matchResult = "Результат:\n";
-            //StreamReader stream = new StreamReader(new FileStream(@"..\..\csv1\SHIP.csv",FileMode.Open));
+            StreamReader stream = new StreamReader(new FileStream(@"..\..\csv\EPL0708.csv",FileMode.Open));
             try
             {
                 //stream = new StreamReader(new FileStream(path, FileMode.Open));
