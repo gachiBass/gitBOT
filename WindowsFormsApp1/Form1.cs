@@ -298,7 +298,7 @@ namespace WindowsFormsApp1
                     {
                         switch (res.Key)
                         {
-                            case "England":
+                            case "EPL":
                                 {
                                     matchResult = "Результат:";
                                     string pathtofile = @"..\..\csv2\EPL" + season.ToString() + ".csv";
@@ -307,19 +307,19 @@ namespace WindowsFormsApp1
                                    
                                     break;
                                 }
-                            case "Germany":
+                            case "Bundes":
                                 {
                                     break;
                                 }
-                            case "Spain":
+                            case "LaLiga":
                                 {
                                     break;
                                 }
-                            case "Italy":
+                            case "SERIA_A":
                                 {
                                     break;
                                 }
-                            case "France":
+                            case "Ligue1":
                                 {
                                     break;
                                 }
