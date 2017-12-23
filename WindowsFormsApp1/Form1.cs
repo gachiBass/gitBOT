@@ -312,18 +312,30 @@ namespace WindowsFormsApp1
                                 }
                             case "Bundes":
                                 {
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                             case "LaLiga":
                                 {
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                             case "SERIA_A":
                                 {
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                             case "Ligue1":
                                 {
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                                 //await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
