@@ -348,7 +348,7 @@ namespace WindowsFormsApp1
             var listJres = jres.SelectToken("fixtures").ToList();
             foreach (var list in listJres)
             {
-                string str = " ,";
+                string str = "E0,";
                 DateTime d = Convert.ToDateTime(list.SelectToken("date").ToString());
                 var dd = d.Date.ToString("dd/MM/yy").Replace(".", "/");
                 str += dd.ToString() + ",";
@@ -364,7 +364,10 @@ namespace WindowsFormsApp1
                     res2 = Convert.ToInt32(list.SelectToken("result")["goalsAwayTeam"].ToString());
                     string res = (res1 == res2) ? "D" : (res1 > res2) ? "H" : "A";
                     str += res;
-
+                    ret.Add(str);
+                }
+                else
+                {
                     ret.Add(str);
                 }
 
@@ -373,23 +376,19 @@ namespace WindowsFormsApp1
         }
         public void CSVcreate()
         {
-
+            //445-epl 450-ligue1 452-bundes 456-seria a 455-LaLiga
             int[] ligues = new int[] { 445, 450, 452, 455, 456 };
             for (int i = 0; i < 1; i++)
             {
                 List<string> str = new List<string>();
-                Table(ligues[0]);
-                str = JsonToMass(ligues[0]);
+                str = JsonToMass(ligues[4]);
 
                 openFileDialog1.ShowDialog();
                 string path = openFileDialog1.FileName;
-                //var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
-                //Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HF,AF,HC,AC,HY,AY,HR,AR,B365H,B365D,B365A,BWH,BWD,BWA,GBH,GBD,GBA,IWH,IWD,IWA,LBH,LBD,LBA,SBH,SBD,SBA,WHH,WHD,WHA,SJH,SJD,SJA,VCH,VCD,VCA,BSH,BSD,BSA,Bb1X2,BbMxH,BbAvH,BbMxD,BbAvD,BbMxA,BbAvA,BbOU,BbMx>2.5,BbAv>2.5,BbMx<2.5,BbAv<2.5,BbAH,BbAHh,BbMxAHH,BbAvAHH,BbMxAHA,BbAvAHA
                 Excel.Application excel = new Excel.Application();
                 Excel.Workbook wb = excel.Workbooks.Open(path);
 
-                //wb = excel.Workbooks.Add();
-
+                excel.Cells[1, 1].value = "Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR";
                 for (int index = 2; index < str.Count; index++)
                 {
                     excel.Cells[index, 1].value = str[index - 2];
@@ -505,6 +504,37 @@ namespace WindowsFormsApp1
                 ret.Add(str);
             }
             return ret;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //445-epl 450-ligue1 452-bundes 456-seria a 455-LaLiga
+            int[] ligues = new int[] { 445, 450, 452, 455, 456 };
+            for (int i = 0; i < 1; i++)
+            {
+                List<string> str = new List<string>();
+                str = Table(ligues[4]);
+
+                openFileDialog1.ShowDialog();
+                string path = openFileDialog1.FileName;
+                Excel.Application excel = new Excel.Application();
+                Excel.Workbook wb = excel.Workbooks.Open(path);
+
+                excel.Cells[1, 1].value = "Team,HomeScored,HomeConceded,AwayScored,AwayConceded,HomeMatches,AwayMatches,HomeAttack,HomeDefence,AwayAttack,AwayDefence,GoalDiff,Points";
+                for (int index = 2; index < str.Count; index++)
+                {
+                    excel.Cells[index, 1].value = str[index - 2];
+                }
+                excel.Visible = true;
+                excel.ActiveWorkbook.Save();
+                excel.ActiveWorkbook.Close(true);
+                excel.Quit();
+                Process[] list = Process.GetProcessesByName("EXCEL");
+                foreach (Process proc in list)
+                {
+                    proc.Kill();
+                }
+            }
         }
     }
 }
