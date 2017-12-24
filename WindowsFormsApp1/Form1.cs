@@ -530,7 +530,7 @@ namespace WindowsFormsApp1
             for (int i = 0; i < 1; i++)
             {
                 List<string> str = new List<string>();
-                str = Table(ligues[4]);
+                str = Table(ligues[0]);
 
                 openFileDialog1.ShowDialog();
                 string path = openFileDialog1.FileName;
@@ -538,9 +538,9 @@ namespace WindowsFormsApp1
                 Excel.Workbook wb = excel.Workbooks.Open(path);
 
                 excel.Cells[1, 1].value = "Team,HomeScored,HomeConceded,AwayScored,AwayConceded,HomeMatches,AwayMatches,HomeAttack,HomeDefence,AwayAttack,AwayDefence,GoalDiff,Points";
-                for (int index = 2; index < str.Count; index++)
+                for (int index = 0; index < str.Count; index++)
                 {
-                    excel.Cells[index, 1].value = str[index - 2];
+                    excel.Cells[index+2, 1].value = str[index];
                 }
                 excel.Visible = true;
                 excel.ActiveWorkbook.Save();
