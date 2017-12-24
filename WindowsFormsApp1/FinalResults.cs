@@ -163,12 +163,12 @@ namespace WindowsFormsApp1
                 {
                     string Text = Matches[i];
                     Values = Text.Split(new char[] { ',' });
-                    if (Values[2] == HomeTeam && Values[3] == AwayTeam)
+                    if (Values[2].Contains(HomeTeam) && Values[3].Contains(AwayTeam))
                     {
                         Result[0, 0] = Values[1];
                         Result[3, 0] = Values[4] + ":" + Values[5];
                     }
-                    if (Values[2] == AwayTeam && Values[3] == HomeTeam)
+                    if (Values[2].Contains(AwayTeam) && Values[3].Contains(HomeTeam))
                     {
                         Result[0, 1] = Values[1];
                         Result[3, 1] = Values[4] + ":" + Values[5];
@@ -275,27 +275,27 @@ namespace WindowsFormsApp1
             {
                 case "EPL":
                     {
-                        StrengthFile = @"..\..\csv\EPL_Table.csv";
+                        StrengthFile = @"..\..\csv\EPL_TABLE.csv";
                         break;
                     }
                 case "SERIA_A":
                     {
-                        StrengthFile = @"..\..\csv\SERIA_A_Table.csv";
+                        StrengthFile = @"..\..\csv\SERIA_A_TABLE.csv";
                         break;
                     }
                 case "Bundes":
                     {
-                        StrengthFile = @"..\..\csv\Bundes_Table.csv";
+                        StrengthFile = @"..\..\csv\Bundes_TABLE.csv";
                         break;
                     }
                 case "LaLiga":
                     {
-                        StrengthFile = @"..\..\csv\LaLiga_Table.csv";
+                        StrengthFile = @"..\..\csv\LaLiga_TABLE.csv";
                         break;
                     }
                 case "Ligue1":
                     {
-                        StrengthFile = @"..\..\csv\Ligue1_Table.csv";
+                        StrengthFile = @"..\..\csv\Ligue1_TABLE.csv";
                         break;
                     }
             }
@@ -333,12 +333,12 @@ namespace WindowsFormsApp1
                 AwayMatches += ToInt(Values[6]);
                 AllHomeGoals += ToInt(Values[1]);
                 AllAwayGoals += ToInt(Values[2]);
-                if (Values[0]==HomeTeam)
+                if (Values[0].Contains(HomeTeam))
                 {
                     HomeAtt = Convert.ToDouble(Values[7]);
                     HomeDef = Convert.ToDouble(Values[8]);
                 }
-                if (Values[0]==AwayTeam)
+                if (Values[0].Contains(AwayTeam))
                 {
                     AwayAtt = Convert.ToDouble(Values[9]);
                     AwayDef = Convert.ToDouble(Values[10]);
