@@ -552,7 +552,6 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
         public string FormattedResult(string[,] result)
         {
             string ResultToOut = "";
@@ -560,7 +559,5 @@ namespace WindowsFormsApp1
             ResultToOut += @"Дата: " + result[0, 1] + "\n" + "Дом: " + result[1, 1] + "\n" + "Гости: " + result[2, 1] + "\n" + "Счет: " + result[3, 1] + "\n\n";
             return ResultToOut;
         }
-
-
     }
 }
