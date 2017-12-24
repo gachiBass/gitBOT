@@ -513,7 +513,7 @@ namespace WindowsFormsApp1
                 str += list.SelectToken("home")["goals"].ToString() + ",";
                 str += list.SelectToken("home")["goalsAgainst"].ToString() + ",";
                 str += list.SelectToken("away")["goals"].ToString() + ",";
-                str += list.SelectToken("home")["goalsAgainst"].ToString() + ",";
+                str += list.SelectToken("away")["goalsAgainst"].ToString() + ",";
                 str += (int)list.SelectToken("home")["wins"] + (int)list.SelectToken("home")["draws"] + (int)list.SelectToken("home")["losses"] + ",";
                 str+= (int)list.SelectToken("away")["wins"] + (int)list.SelectToken("away")["draws"] + (int)list.SelectToken("away")["losses"] + ",,,,,";
                 str += list.SelectToken("goalDifference").ToString();
