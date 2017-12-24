@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
 
         Wit client;
         Telegram.Bot.TelegramBotClient Bot;
-        string matchResult;
+        string[,] matchResult;
 
         public Form1()
         {
@@ -282,7 +282,7 @@ namespace WindowsFormsApp1
                 {
                     season = "1718";
                 }
-                if (res.Key == "England" || res.Key == "Germany" || res.Key == "Spain" || res.Key == "Italy" || res.Key == "France")
+                if (res.Key == "EPL" || res.Key == "Bundes" || res.Key == "LaLiga" || res.Key == "SERIA_A" || res.Key == "Ligue1")
                 {
                     var sovpadCom = res.Value.Children()["value"];
                     var com = sovpadCom.Values().ToList();
@@ -300,33 +300,48 @@ namespace WindowsFormsApp1
                         {
                             case "EPL":
                                 {
-                                    matchResult = "Результат:";
-                                    string pathtofile = @"..\..\csv2\EPL" + season.ToString() + ".csv";
-                                    string path = System.IO.File.Open(@"..\..\csv2\EPL" + season.ToString() + ".csv", FileMode.Open).Name;
-                                    Matches( path, dateBegin, dateEnd, commands, id);
-                                   
+                                    //matchResult = "Результат:";
+                                    //string pathtofile = @"..\..\csv2\EPL" + season.ToString() + ".csv";
+                                    //string path = System.IO.File.Open(@"..\..\csv2\EPL" + season.ToString() + ".csv", FileMode.Open).Name;
+                                    //Matches( path, dateBegin, dateEnd, commands, id);
+
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                             case "Bundes":
                                 {
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                             case "LaLiga":
                                 {
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                             case "SERIA_A":
                                 {
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                             case "Ligue1":
                                 {
+                                    FinalResults obj = new FinalResults();
+                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
                                     break;
                                 }
                                 //await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
 
                         }
-                        await Bot.SendTextMessageAsync(id, matchResult);
+                        await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
                     }
                 }
             }
@@ -348,7 +363,7 @@ namespace WindowsFormsApp1
             var listJres = jres.SelectToken("fixtures").ToList();
             foreach (var list in listJres)
             {
-                string str = " ,";
+                string str = "E0,";
                 DateTime d = Convert.ToDateTime(list.SelectToken("date").ToString());
                 var dd = d.Date.ToString("dd/MM/yy").Replace(".", "/");
                 str += dd.ToString() + ",";
@@ -364,7 +379,10 @@ namespace WindowsFormsApp1
                     res2 = Convert.ToInt32(list.SelectToken("result")["goalsAwayTeam"].ToString());
                     string res = (res1 == res2) ? "D" : (res1 > res2) ? "H" : "A";
                     str += res;
-
+                    ret.Add(str);
+                }
+                else
+                {
                     ret.Add(str);
                 }
 
@@ -373,23 +391,19 @@ namespace WindowsFormsApp1
         }
         public void CSVcreate()
         {
-
+            //445-epl 450-ligue1 452-bundes 456-seria a 455-LaLiga
             int[] ligues = new int[] { 445, 450, 452, 455, 456 };
             for (int i = 0; i < 1; i++)
             {
                 List<string> str = new List<string>();
-                Table(ligues[0]);
-                str = JsonToMass(ligues[0]);
+                str = JsonToMass(ligues[4]);
 
                 openFileDialog1.ShowDialog();
                 string path = openFileDialog1.FileName;
-                //var file = System.IO.File.Open(path,FileMode.OpenOrCreate);
-                //Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR,HTHG,HTAG,HTR,HS,AS,HST,AST,HF,AF,HC,AC,HY,AY,HR,AR,B365H,B365D,B365A,BWH,BWD,BWA,GBH,GBD,GBA,IWH,IWD,IWA,LBH,LBD,LBA,SBH,SBD,SBA,WHH,WHD,WHA,SJH,SJD,SJA,VCH,VCD,VCA,BSH,BSD,BSA,Bb1X2,BbMxH,BbAvH,BbMxD,BbAvD,BbMxA,BbAvA,BbOU,BbMx>2.5,BbAv>2.5,BbMx<2.5,BbAv<2.5,BbAH,BbAHh,BbMxAHH,BbAvAHH,BbMxAHA,BbAvAHA
                 Excel.Application excel = new Excel.Application();
                 Excel.Workbook wb = excel.Workbooks.Open(path);
 
-                //wb = excel.Workbooks.Add();
-
+                excel.Cells[1, 1].value = "Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR";
                 for (int index = 2; index < str.Count; index++)
                 {
                     excel.Cells[index, 1].value = str[index - 2];
@@ -413,64 +427,65 @@ namespace WindowsFormsApp1
 
         public string Matches(string path, DateTime d1, DateTime d2, List<string> commands, long id)
         {
-            matchResult = "Результат:\n";
-            StreamReader stream = new StreamReader(new FileStream(@"..\..\csv\EPL0708.csv",FileMode.Open));
-            try
-            {
-                //stream = new StreamReader(new FileStream(path, FileMode.Open));
-                //string[] Result = new string[4];
-                //Result[1] = HomeTeam;
-                //Result[2] = AwayTeam;
-                //List<string> Matches = new List<string>();
-                //List<string> TeamsList = new List<string>();
-                //List<string> TeamNamesList = new List<string>();
+            //// matchResult = "Результат:\n";
+            // StreamReader stream = new StreamReader(new FileStream(@"..\..\csv\EPL0708.csv",FileMode.Open));
+            // try
+            // {
+            //     //stream = new StreamReader(new FileStream(path, FileMode.Open));
+            //     //string[] Result = new string[4];
+            //     //Result[1] = HomeTeam;
+            //     //Result[2] = AwayTeam;
+            //     //List<string> Matches = new List<string>();
+            //     //List<string> TeamsList = new List<string>();
+            //     //List<string> TeamNamesList = new List<string>();
 
-                //string row;
-                //while ((row = stream.ReadLine()) != null)
-                //{
-                //    Matches.Add(row);
-                //}
-                //stream.Close();
-                //string[] Values;
-                //for (int i = 1; i < Matches.Count; i++)
-                //{
-                //    string Text = Matches[i];
-                //    Values = Text.Split(new char[] { ',' });
-                //    if (Values[2] == commands[0] && Values[3] == commands[1])
-                //    {
-                //        matchResult += Values[1] + Values[2] + ":" + Values[3] + Values[4] + ":" + Values[5];
-                //    }
-                //    if (Values[2] == commands[1] && Values[3] == commands[0])
-                //    {
-                //        matchResult += Values[1] + Values[2] + ":" + Values[3] + Values[4] + ":" + Values[5];
-                //    }
-                //}
-                //return matchResult;
+            //     //string row;
+            //     //while ((row = stream.ReadLine()) != null)
+            //     //{
+            //     //    Matches.Add(row);
+            //     //}
+            //     //stream.Close();
+            //     //string[] Values;
+            //     //for (int i = 1; i < Matches.Count; i++)
+            //     //{
+            //     //    string Text = Matches[i];
+            //     //    Values = Text.Split(new char[] { ',' });
+            //     //    if (Values[2] == commands[0] && Values[3] == commands[1])
+            //     //    {
+            //     //        matchResult += Values[1] + Values[2] + ":" + Values[3] + Values[4] + ":" + Values[5];
+            //     //    }
+            //     //    if (Values[2] == commands[1] && Values[3] == commands[0])
+            //     //    {
+            //     //        matchResult += Values[1] + Values[2] + ":" + Values[3] + Values[4] + ":" + Values[5];
+            //     //    }
+            //     //}
+            //     //return matchResult;
 
-                Excel.Application excel = new Excel.Application();
+            //     Excel.Application excel = new Excel.Application();
 
-                Excel.Workbook wb = excel.Workbooks.Open(path);
-                int row1 = RowFindExcel(excel, commands[0].ToString(), commands[1].ToString());
-                int row2 = RowFindExcel(excel, commands[1].ToString(), commands[0].ToString());
+            //     Excel.Workbook wb = excel.Workbooks.Open(path);
+            //     int row1 = RowFindExcel(excel, commands[0].ToString(), commands[1].ToString());
+            //     int row2 = RowFindExcel(excel, commands[1].ToString(), commands[0].ToString());
 
-                string FsMatch = excel.Range[row1, 1].ToString();
-                string ScMatch = excel.Range[row2, 1].ToString();
-                excel.Visible = true;
-                return matchResult;
-            }
-            catch(Exception e)
-            {
-                Process[] list = Process.GetProcessesByName("EXCEL");
-                foreach (Process proc in list)
-                {
-                    proc.Kill();
-                }
-                //Process.GetCurrentProcess().Kill();
-                matchResult = e.ToString();
-                
-                //stream.Close();
-                return matchResult;
-            }
+            //     string FsMatch = excel.Range[row1, 1].ToString();
+            //     string ScMatch = excel.Range[row2, 1].ToString();
+            //     excel.Visible = true;
+            //     return matchResult;
+            // }
+            // catch(Exception e)
+            // {
+            //     Process[] list = Process.GetProcessesByName("EXCEL");
+            //     foreach (Process proc in list)
+            //     {
+            //         proc.Kill();
+            //     }
+            //     //Process.GetCurrentProcess().Kill();
+            //     matchResult = e.ToString();
+
+            //     //stream.Close();
+            //     return matchResult;
+            //}
+            return "s";
         }
         //return matchResult;
         public int RowFindExcel(Excel.Application excel, string firstteam, string secondteam)
@@ -506,5 +521,46 @@ namespace WindowsFormsApp1
             }
             return ret;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //445-epl 450-ligue1 452-bundes 456-seria a 455-LaLiga
+            int[] ligues = new int[] { 445, 450, 452, 455, 456 };
+            for (int i = 0; i < 1; i++)
+            {
+                List<string> str = new List<string>();
+                str = Table(ligues[4]);
+
+                openFileDialog1.ShowDialog();
+                string path = openFileDialog1.FileName;
+                Excel.Application excel = new Excel.Application();
+                Excel.Workbook wb = excel.Workbooks.Open(path);
+
+                excel.Cells[1, 1].value = "Team,HomeScored,HomeConceded,AwayScored,AwayConceded,HomeMatches,AwayMatches,HomeAttack,HomeDefence,AwayAttack,AwayDefence,GoalDiff,Points";
+                for (int index = 2; index < str.Count; index++)
+                {
+                    excel.Cells[index, 1].value = str[index - 2];
+                }
+                excel.Visible = true;
+                excel.ActiveWorkbook.Save();
+                excel.ActiveWorkbook.Close(true);
+                excel.Quit();
+                Process[] list = Process.GetProcessesByName("EXCEL");
+                foreach (Process proc in list)
+                {
+                    proc.Kill();
+                }
+            }
+        }
+
+        public string FormattedResult(string[,] result)
+        {
+            string ResultToOut = "";
+            ResultToOut = @"Дата: "+result[0,0]+"\n" +"Дом: "+result[1,0]+"\n" +"Гости: " + result[2,0] + "\n" + "Счет: " + result[3,0] + "\n\n";
+            ResultToOut += @"Дата: " + result[0, 1] + "\n" + "Дом: " + result[1, 1] + "\n" + "Гости: " + result[2, 1] + "\n" + "Счет: " + result[3, 1] + "\n\n";
+            return ResultToOut;
+        }
+
+
     }
 }
