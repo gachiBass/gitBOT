@@ -530,7 +530,7 @@ namespace WindowsFormsApp1
             for (int i = 0; i < 1; i++)
             {
                 List<string> str = new List<string>();
-                str = Table(ligues[0]);
+                str = Table(ligues[2]);
 
                 openFileDialog1.ShowDialog();
                 string path = openFileDialog1.FileName;
