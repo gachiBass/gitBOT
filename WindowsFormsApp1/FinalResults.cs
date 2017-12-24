@@ -273,27 +273,27 @@ namespace WindowsFormsApp1
             {
                 case "EPL":
                     {
-                        StrengthFile = @"..\..\csv\EPL_Table.csv";
+                        StrengthFile = @"..\..\csv\EPL_TABLE.csv";
                         break;
                     }
                 case "SERIA_A":
                     {
-                        StrengthFile = @"..\..\csv\SERIA_A_Table.csv";
+                        StrengthFile = @"..\..\csv\SERIA_A_TABLE.csv";
                         break;
                     }
                 case "Bundes":
                     {
-                        StrengthFile = @"..\..\csv\Bundes_Table.csv";
+                        StrengthFile = @"..\..\csv\Bundes_TABLE.csv";
                         break;
                     }
                 case "LaLiga":
                     {
-                        StrengthFile = @"..\..\csv\LaLiga_Table.csv";
+                        StrengthFile = @"..\..\csv\LaLiga_TABLE.csv";
                         break;
                     }
                 case "Ligue1":
                     {
-                        StrengthFile = @"..\..\csv\Ligue1_Table.csv";
+                        StrengthFile = @"..\..\csv\Ligue1_TABLE.csv";
                         break;
                     }
             }
