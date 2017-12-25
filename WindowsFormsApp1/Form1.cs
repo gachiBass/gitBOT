@@ -167,8 +167,9 @@ namespace WindowsFormsApp1
             List<string> commands = new List<string>();
             List<string> times = new List<string>();
             string season = "";
-            DateTime dateBegin = new DateTime(1, 1, 1, 0, 0, 0);
-            DateTime dateEnd = new DateTime(1, 1, 1, 0, 0, 0);
+            DateTime dateBegin = new DateTime(2017, 1, 1, 0, 0, 0);
+            DateTime dateEnd = new DateTime(2018, 12, 31, 23, 59, 59);
+           
 
             double MaxSovpad = 0;
             foreach (var res in resp.Entities)
@@ -280,6 +281,8 @@ namespace WindowsFormsApp1
                 { }
                 if (season == "")
                 {
+                    dateBegin = new DateTime(2017, 1, 1, 0, 0, 0);
+                    dateEnd = new DateTime(2018, 12, 31, 23, 59, 59);
                     season = "1718";
                 }
                 if (res.Key == "EPL" || res.Key == "Bundes" || res.Key == "LaLiga" || res.Key == "SERIA_A" || res.Key == "Ligue1")
@@ -307,35 +310,35 @@ namespace WindowsFormsApp1
 
                                     FinalResults obj = new FinalResults();
                                     string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
+                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                             case "Bundes":
                                 {
                                     FinalResults obj = new FinalResults();
                                     string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
+                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                             case "LaLiga":
                                 {
                                     FinalResults obj = new FinalResults();
                                     string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
+                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                             case "SERIA_A":
                                 {
                                     FinalResults obj = new FinalResults();
                                     string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
+                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                             case "Ligue1":
                                 {
                                     FinalResults obj = new FinalResults();
                                     string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResult(excelName, commands[0], commands[1]);
+                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                                 //await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
@@ -556,8 +559,14 @@ namespace WindowsFormsApp1
         public string FormattedResult(string[,] result)
         {
             string ResultToOut = "";
-            ResultToOut = @"Дата: "+result[0,0]+"\n" +"Дом: "+result[1,0]+"\n" +"Гости: " + result[2,0] + "\n" + "Счет: " + result[3,0] + "\n\n";
-            ResultToOut += @"Дата: " + result[0, 1] + "\n" + "Дом: " + result[1, 1] + "\n" + "Гости: " + result[2, 1] + "\n" + "Счет: " + result[3, 1] + "\n\n";
+            if (result[0, 0] != null)
+            {
+                ResultToOut = @"Дата: " + result[0, 0] + "\n" + "Дом: " + result[1, 0] + "\n" + "Гости: " + result[2, 0] + "\n" + "Счет: " + result[3, 0] + "\n\n";
+            }
+            if (result[0, 1] != null)
+            { 
+                ResultToOut += @"Дата: " + result[0, 1] + "\n" + "Дом: " + result[1, 1] + "\n" + "Гости: " + result[2, 1] + "\n" + "Счет: " + result[3, 1] + "\n\n";
+            }
             return ResultToOut;
         }
     }

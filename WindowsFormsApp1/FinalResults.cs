@@ -178,6 +178,52 @@ namespace WindowsFormsApp1
             
         }
 
+        public string[,] GetMatchResultWithDates(string ExcelName, string HomeTeam, string AwayTeam, DateTime dateBegin, DateTime dateEnd) //получение результата прошедшего матча
+        {
+            string[,] Result = new string[4, 2];
+            //Result[1, 0] = HomeTeam; Result[1, 1] = AwayTeam;
+            //Result[2, 0] = AwayTeam; Result[2, 1] = HomeTeam;
+            List<string> Matches = new List<string>();
+            List<string> TeamsList = new List<string>();
+            List<string> TeamNamesList = new List<string>(); //названия команд
+            StreamReader stream = new StreamReader(new FileStream(ExcelName, FileMode.Open));
+
+            string row;
+            while ((row = stream.ReadLine()) != null)
+            {
+                Matches.Add(row);
+            }
+            stream.Close();
+            string[] Values;
+            for (int i = 1; i < Matches.Count; i++)
+            {
+                string Text = Matches[i];
+                Values = Text.Split(new char[] { ',' });
+                if (Values[2].Contains(HomeTeam) && Values[3].Contains(AwayTeam))
+                {
+                    if (Convert.ToDateTime(Values[1]) >= dateBegin && Convert.ToDateTime(Values[1]) <= dateEnd)
+                    {
+                        Result[0, 0] = Values[1];
+                        Result[1, 0] = HomeTeam;
+                        Result[2, 0] = AwayTeam;
+                        Result[3, 0] = Values[4] + ":" + Values[5];
+                    }
+                }
+                if (Values[2].Contains(AwayTeam) && Values[3].Contains(HomeTeam))
+                {
+                    if (Convert.ToDateTime(Values[1]) >= dateBegin && Convert.ToDateTime(Values[1]) <= dateEnd)
+                    {
+                        Result[0, 1] = Values[1];
+                        Result[1, 1] = AwayTeam;
+                        Result[2, 1] = HomeTeam;
+                        Result[3, 1] = Values[4] + ":" + Values[5];
+                    }
+                }
+            }
+            return Result;
+
+        }
+
         public int GetTeamCount(string League) //получение количества команд в лиге
         {
             List<string> LeaguesWithCount = new List<string>();
