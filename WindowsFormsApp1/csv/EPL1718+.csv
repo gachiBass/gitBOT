@@ -1,379 +1,379 @@
-Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
-E0,11/08/17,Arsenal FC,Leicester City FC,4,3,H
-E0,12/08/17,Watford FC,Liverpool FC,3,3,D
-E0,12/08/17,Crystal Palace FC,Huddersfield Town,0,3,A
-E0,12/08/17,West Bromwich Albion FC,AFC Bournemouth,1,0,H
-E0,12/08/17,Chelsea FC,Burnley FC,2,3,A
-E0,12/08/17,Everton FC,Stoke City FC,1,0,H
-E0,12/08/17,Southampton FC,Swansea City FC,0,0,D
-E0,12/08/17,Brighton & Hove Albion,Manchester City FC,0,2,A
-E0,13/08/17,Newcastle United FC,Tottenham Hotspur FC,0,2,A
-E0,13/08/17,Manchester United FC,West Ham United FC,4,0,H
-E0,19/08/17,Swansea City FC,Manchester United FC,0,4,A
-E0,19/08/17,Southampton FC,West Ham United FC,3,2,H
-E0,19/08/17,AFC Bournemouth,Watford FC,0,2,A
-E0,19/08/17,Burnley FC,West Bromwich Albion FC,0,1,A
-E0,19/08/17,Leicester City FC,Brighton & Hove Albion,2,0,H
-E0,19/08/17,Liverpool FC,Crystal Palace FC,1,0,H
-E0,19/08/17,Stoke City FC,Arsenal FC,1,0,H
-E0,20/08/17,Huddersfield Town,Newcastle United FC,1,0,H
-E0,20/08/17,Tottenham Hotspur FC,Chelsea FC,1,2,A
-E0,21/08/17,Manchester City FC,Everton FC,1,1,D
-E0,26/08/17,AFC Bournemouth,Manchester City FC,1,2,A
-E0,26/08/17,Crystal Palace FC,Swansea City FC,0,2,A
-E0,26/08/17,Huddersfield Town,Southampton FC,0,0,D
-E0,26/08/17,Newcastle United FC,West Ham United FC,3,0,H
-E0,26/08/17,Watford FC,Brighton & Hove Albion,0,0,D
-E0,26/08/17,Manchester United FC,Leicester City FC,2,0,H
-E0,27/08/17,West Bromwich Albion FC,Stoke City FC,1,1,D
-E0,27/08/17,Chelsea FC,Everton FC,2,0,H
-E0,27/08/17,Liverpool FC,Arsenal FC,4,0,H
-E0,27/08/17,Tottenham Hotspur FC,Burnley FC,1,1,D
-E0,09/09/17,Manchester City FC,Liverpool FC,5,0,H
-E0,09/09/17,Arsenal FC,AFC Bournemouth,3,0,H
-E0,09/09/17,Brighton & Hove Albion,West Bromwich Albion FC,3,1,H
-E0,09/09/17,Everton FC,Tottenham Hotspur FC,0,3,A
-E0,09/09/17,Leicester City FC,Chelsea FC,1,2,A
-E0,09/09/17,Southampton FC,Watford FC,0,2,A
-E0,09/09/17,Stoke City FC,Manchester United FC,2,2,D
-E0,10/09/17,Burnley FC,Crystal Palace FC,1,0,H
-E0,10/09/17,Swansea City FC,Newcastle United FC,0,1,A
-E0,11/09/17,West Ham United FC,Huddersfield Town,2,0,H
-E0,15/09/17,AFC Bournemouth,Brighton & Hove Albion,2,1,H
-E0,16/09/17,Crystal Palace FC,Southampton FC,0,1,A
-E0,16/09/17,Newcastle United FC,Stoke City FC,2,1,H
-E0,16/09/17,Liverpool FC,Burnley FC,1,1,D
-E0,16/09/17,Watford FC,Manchester City FC,0,6,A
-E0,16/09/17,Huddersfield Town,Leicester City FC,1,1,D
-E0,16/09/17,West Bromwich Albion FC,West Ham United FC,0,0,D
-E0,16/09/17,Tottenham Hotspur FC,Swansea City FC,0,0,D
-E0,17/09/17,Chelsea FC,Arsenal FC,0,0,D
-E0,17/09/17,Manchester United FC,Everton FC,4,0,H
-E0,23/09/17,West Ham United FC,Tottenham Hotspur FC,2,3,A
-E0,23/09/17,Burnley FC,Huddersfield Town,0,0,D
-E0,23/09/17,Everton FC,AFC Bournemouth,2,1,H
-E0,23/09/17,Manchester City FC,Crystal Palace FC,5,0,H
-E0,23/09/17,Southampton FC,Manchester United FC,0,1,A
-E0,23/09/17,Stoke City FC,Chelsea FC,0,4,A
-E0,23/09/17,Swansea City FC,Watford FC,1,2,A
-E0,23/09/17,Leicester City FC,Liverpool FC,2,3,A
-E0,24/09/17,Brighton & Hove Albion,Newcastle United FC,1,0,H
-E0,25/09/17,Arsenal FC,West Bromwich Albion FC,2,0,H
-E0,30/09/17,Huddersfield Town,Tottenham Hotspur FC,0,4,A
-E0,30/09/17,Manchester United FC,Crystal Palace FC,4,0,H
-E0,30/09/17,Stoke City FC,Southampton FC,2,1,H
-E0,30/09/17,West Bromwich Albion FC,Watford FC,2,2,D
-E0,30/09/17,West Ham United FC,Swansea City FC,1,0,H
-E0,30/09/17,AFC Bournemouth,Leicester City FC,0,0,D
-E0,30/09/17,Chelsea FC,Manchester City FC,0,1,A
-E0,01/10/17,Arsenal FC,Brighton & Hove Albion,2,0,H
-E0,01/10/17,Everton FC,Burnley FC,0,1,A
-E0,01/10/17,Newcastle United FC,Liverpool FC,1,1,D
-E0,14/10/17,Liverpool FC,Manchester United FC,0,0,D
-E0,14/10/17,Tottenham Hotspur FC,AFC Bournemouth,1,0,H
-E0,14/10/17,Burnley FC,West Ham United FC,1,1,D
-E0,14/10/17,Crystal Palace FC,Chelsea FC,2,1,H
-E0,14/10/17,Manchester City FC,Stoke City FC,7,2,H
-E0,14/10/17,Swansea City FC,Huddersfield Town,2,0,H
-E0,14/10/17,Watford FC,Arsenal FC,2,1,H
-E0,15/10/17,Brighton & Hove Albion,Everton FC,1,1,D
-E0,15/10/17,Southampton FC,Newcastle United FC,2,2,D
-E0,16/10/17,Leicester City FC,West Bromwich Albion FC,1,1,D
-E0,20/10/17,West Ham United FC,Brighton & Hove Albion,0,3,A
-E0,21/10/17,Chelsea FC,Watford FC,4,2,H
-E0,21/10/17,Huddersfield Town,Manchester United FC,2,1,H
-E0,21/10/17,Manchester City FC,Burnley FC,3,0,H
-E0,21/10/17,Newcastle United FC,Crystal Palace FC,1,0,H
-E0,21/10/17,Stoke City FC,AFC Bournemouth,1,2,A
-E0,21/10/17,Swansea City FC,Leicester City FC,1,2,A
-E0,21/10/17,Southampton FC,West Bromwich Albion FC,1,0,H
-E0,22/10/17,Everton FC,Arsenal FC,2,5,A
-E0,22/10/17,Tottenham Hotspur FC,Liverpool FC,4,1,H
-E0,28/10/17,Manchester United FC,Tottenham Hotspur FC,1,0,H
-E0,28/10/17,Crystal Palace FC,West Ham United FC,2,2,D
-E0,28/10/17,Arsenal FC,Swansea City FC,2,1,H
-E0,28/10/17,Liverpool FC,Huddersfield Town,3,0,H
-E0,28/10/17,Watford FC,Stoke City FC,0,1,A
-E0,28/10/17,West Bromwich Albion FC,Manchester City FC,2,3,A
-E0,28/10/17,AFC Bournemouth,Chelsea FC,0,1,A
-E0,29/10/17,Brighton & Hove Albion,Southampton FC,1,1,D
-E0,29/10/17,Leicester City FC,Everton FC,2,0,H
-E0,30/10/17,Burnley FC,Newcastle United FC,1,0,H
-E0,04/11/17,Stoke City FC,Leicester City FC,2,2,D
-E0,04/11/17,Huddersfield Town,West Bromwich Albion FC,1,0,H
-E0,04/11/17,Newcastle United FC,AFC Bournemouth,0,1,A
-E0,04/11/17,Southampton FC,Burnley FC,0,1,A
-E0,04/11/17,Swansea City FC,Brighton & Hove Albion,0,1,A
-E0,04/11/17,West Ham United FC,Liverpool FC,1,4,A
-E0,05/11/17,Tottenham Hotspur FC,Crystal Palace FC,1,0,H
-E0,05/11/17,Manchester City FC,Arsenal FC,3,1,H
-E0,05/11/17,Chelsea FC,Manchester United FC,1,0,H
-E0,05/11/17,Everton FC,Watford FC,3,2,H
-E0,18/11/17,Arsenal FC,Tottenham Hotspur FC,2,0,H
-E0,18/11/17,AFC Bournemouth,Huddersfield Town,4,0,H
-E0,18/11/17,Burnley FC,Swansea City FC,2,0,H
-E0,18/11/17,Crystal Palace FC,Everton FC,2,2,D
-E0,18/11/17,Leicester City FC,Manchester City FC,0,2,A
-E0,18/11/17,Liverpool FC,Southampton FC,3,0,H
-E0,18/11/17,West Bromwich Albion FC,Chelsea FC,0,4,A
-E0,18/11/17,Manchester United FC,Newcastle United FC,4,1,H
-E0,19/11/17,Watford FC,West Ham United FC,2,0,H
-E0,20/11/17,Brighton & Hove Albion,Stoke City FC,2,2,D
-E0,24/11/17,West Ham United FC,Leicester City FC,1,1,D
-E0,25/11/17,Crystal Palace FC,Stoke City FC,2,1,H
-E0,25/11/17,Manchester United FC,Brighton & Hove Albion,1,0,H
-E0,25/11/17,Newcastle United FC,Watford FC,0,3,A
-E0,25/11/17,Swansea City FC,AFC Bournemouth,0,0,D
-E0,25/11/17,Tottenham Hotspur FC,West Bromwich Albion FC,1,1,D
-E0,25/11/17,Liverpool FC,Chelsea FC,1,1,D
-E0,26/11/17,Southampton FC,Everton FC,4,1,H
-E0,26/11/17,Burnley FC,Arsenal FC,0,1,A
-E0,26/11/17,Huddersfield Town,Manchester City FC,1,2,A
-E0,28/11/17,Leicester City FC,Tottenham Hotspur FC,2,1,H
-E0,28/11/17,Brighton & Hove Albion,Crystal Palace FC,0,0,D
-E0,28/11/17,Watford FC,Manchester United FC,2,4,A
-E0,28/11/17,West Bromwich Albion FC,Newcastle United FC,2,2,D
-E0,29/11/17,Chelsea FC,Swansea City FC,1,0,H
-E0,29/11/17,AFC Bournemouth,Burnley FC,1,2,A
-E0,29/11/17,Arsenal FC,Huddersfield Town,5,0,H
-E0,29/11/17,Everton FC,West Ham United FC,4,0,H
-E0,29/11/17,Stoke City FC,Liverpool FC,0,3,A
-E0,29/11/17,Manchester City FC,Southampton FC,2,1,H
-E0,02/12/17,Chelsea FC,Newcastle United FC,3,1,H
-E0,02/12/17,Watford FC,Tottenham Hotspur FC,1,1,D
-E0,02/12/17,Stoke City FC,Swansea City FC,2,1,H
-E0,02/12/17,Leicester City FC,Burnley FC,1,0,H
-E0,02/12/17,Everton FC,Huddersfield Town,2,0,H
-E0,02/12/17,West Bromwich Albion FC,Crystal Palace FC,0,0,D
-E0,02/12/17,Brighton & Hove Albion,Liverpool FC,1,5,A
-E0,02/12/17,Arsenal FC,Manchester United FC,1,3,A
-E0,03/12/17,AFC Bournemouth,Southampton FC,1,1,D
-E0,03/12/17,Manchester City FC,West Ham United FC,2,1,H
-E0,09/12/17,West Ham United FC,Chelsea FC,1,0,H
-E0,09/12/17,Tottenham Hotspur FC,Stoke City FC,5,1,H
-E0,09/12/17,Swansea City FC,West Bromwich Albion FC,1,0,H
-E0,09/12/17,Crystal Palace FC,AFC Bournemouth,2,2,D
-E0,09/12/17,Burnley FC,Watford FC,1,0,H
-E0,09/12/17,Huddersfield Town,Brighton & Hove Albion,2,0,H
-E0,09/12/17,Newcastle United FC,Leicester City FC,2,3,A
-E0,10/12/17,Southampton FC,Arsenal FC,1,1,D
-E0,10/12/17,Liverpool FC,Everton FC,1,1,D
-E0,10/12/17,Manchester United FC,Manchester City FC,1,2,A
-E0,12/12/17,Burnley FC,Stoke City FC,1,0,H
-E0,12/12/17,Huddersfield Town,Chelsea FC,1,3,A
-E0,12/12/17,Crystal Palace FC,Watford FC,2,1,H
-E0,13/12/17,Swansea City FC,Manchester City FC,0,4,A
-E0,13/12/17,Southampton FC,Leicester City FC,1,4,A
-E0,13/12/17,Newcastle United FC,Everton FC,0,1,A
-E0,13/12/17,Liverpool FC,West Bromwich Albion FC,0,0,D
-E0,13/12/17,Tottenham Hotspur FC,Brighton & Hove Albion,2,0,H
-E0,13/12/17,Manchester United FC,AFC Bournemouth,1,0,H
-E0,13/12/17,West Ham United FC,Arsenal FC,0,0,D
-E0,16/12/17,Leicester City FC,Crystal Palace FC,0,3,A
-E0,16/12/17,Watford FC,Huddersfield Town,1,4,A
-E0,16/12/17,Arsenal FC,Newcastle United FC,1,0,H
-E0,16/12/17,Brighton & Hove Albion,Burnley FC,0,0,D
-E0,16/12/17,Chelsea FC,Southampton FC,1,0,H
-E0,16/12/17,Stoke City FC,West Ham United FC,0,3,A
-E0,16/12/17,Manchester City FC,Tottenham Hotspur FC,4,1,H
-E0,17/12/17,West Bromwich Albion FC,Manchester United FC,1,2,A
-E0,17/12/17,AFC Bournemouth,Liverpool FC,0,4,A
-E0,18/12/17,Everton FC,Swansea City FC,3,1,H
-E0,22/12/17,Arsenal FC,Liverpool FC,3,3,D
-E0,23/12/17,Everton FC,Chelsea FC,0,0,D
-E0,23/12/17,Manchester City FC,AFC Bournemouth,4,0,H
-E0,23/12/17,West Ham United FC,Newcastle United FC,2,3,A
-E0,23/12/17,Swansea City FC,Crystal Palace FC,1,1,D
-E0,23/12/17,Stoke City FC,West Bromwich Albion FC,3,1,H
-E0,23/12/17,Southampton FC,Huddersfield Town,1,1,D
-E0,23/12/17,Brighton & Hove Albion,Watford FC,1,0,H
-E0,23/12/17,Burnley FC,Tottenham Hotspur FC,0,3,A
-E0,23/12/17,Leicester City FC,Manchester United FC,,,
-E0,26/12/17,Tottenham Hotspur FC,Southampton FC,,,
-E0,26/12/17,Huddersfield Town,Stoke City FC,,,
-E0,26/12/17,Manchester United FC,Burnley FC,,,
-E0,26/12/17,Watford FC,Leicester City FC,,,
-E0,26/12/17,Chelsea FC,Brighton & Hove Albion,,,
-E0,26/12/17,AFC Bournemouth,West Ham United FC,,,
-E0,26/12/17,West Bromwich Albion FC,Everton FC,,,
-E0,26/12/17,Liverpool FC,Swansea City FC,,,
-E0,27/12/17,Newcastle United FC,Manchester City FC,,,
-E0,28/12/17,Crystal Palace FC,Arsenal FC,,,
-E0,30/12/17,Huddersfield Town,Burnley FC,,,
-E0,30/12/17,Liverpool FC,Leicester City FC,,,
-E0,30/12/17,Newcastle United FC,Brighton & Hove Albion,,,
-E0,30/12/17,AFC Bournemouth,Everton FC,,,
-E0,30/12/17,Watford FC,Swansea City FC,,,
-E0,30/12/17,Chelsea FC,Stoke City FC,,,
-E0,30/12/17,Manchester United FC,Southampton FC,,,
-E0,31/12/17,Crystal Palace FC,Manchester City FC,,,
-E0,31/12/17,West Bromwich Albion FC,Arsenal FC,,,
-E0,01/01/18,Brighton & Hove Albion,AFC Bournemouth,,,
-E0,01/01/18,Burnley FC,Liverpool FC,,,
-E0,01/01/18,Leicester City FC,Huddersfield Town,,,
-E0,01/01/18,Stoke City FC,Newcastle United FC,,,
-E0,01/01/18,Everton FC,Manchester United FC,,,
-E0,02/01/18,Southampton FC,Crystal Palace FC,,,
-E0,02/01/18,West Ham United FC,West Bromwich Albion FC,,,
-E0,02/01/18,Swansea City FC,Tottenham Hotspur FC,,,
-E0,02/01/18,Manchester City FC,Watford FC,,,
-E0,03/01/18,Arsenal FC,Chelsea FC,,,
-E0,04/01/18,Tottenham Hotspur FC,West Ham United FC,,,
-E0,13/01/18,Huddersfield Town,West Ham United FC,,,
-E0,13/01/18,Chelsea FC,Leicester City FC,,,
-E0,13/01/18,Newcastle United FC,Swansea City FC,,,
-E0,13/01/18,Watford FC,Southampton FC,,,
-E0,13/01/18,West Bromwich Albion FC,Brighton & Hove Albion,,,
-E0,13/01/18,Crystal Palace FC,Burnley FC,,,
-E0,13/01/18,Tottenham Hotspur FC,Everton FC,,,
-E0,14/01/18,AFC Bournemouth,Arsenal FC,,,
-E0,14/01/18,Liverpool FC,Manchester City FC,,,
-E0,15/01/18,Manchester United FC,Stoke City FC,,,
-E0,20/01/18,Brighton & Hove Albion,Chelsea FC,,,
-E0,20/01/18,Arsenal FC,Crystal Palace FC,,,
-E0,20/01/18,Stoke City FC,Huddersfield Town,,,
-E0,20/01/18,West Ham United FC,AFC Bournemouth,,,
-E0,20/01/18,Leicester City FC,Watford FC,,,
-E0,20/01/18,Burnley FC,Manchester United FC,,,
-E0,20/01/18,Everton FC,West Bromwich Albion FC,,,
-E0,20/01/18,Manchester City FC,Newcastle United FC,,,
-E0,21/01/18,Southampton FC,Tottenham Hotspur FC,,,
-E0,22/01/18,Swansea City FC,Liverpool FC,,,
-E0,30/01/18,West Ham United FC,Crystal Palace FC,,,
-E0,30/01/18,Swansea City FC,Arsenal FC,,,
-E0,30/01/18,Huddersfield Town,Liverpool FC,,,
-E0,31/01/18,Chelsea FC,AFC Bournemouth,,,
-E0,31/01/18,Everton FC,Leicester City FC,,,
-E0,31/01/18,Newcastle United FC,Burnley FC,,,
-E0,31/01/18,Southampton FC,Brighton & Hove Albion,,,
-E0,31/01/18,Tottenham Hotspur FC,Manchester United FC,,,
-E0,31/01/18,Stoke City FC,Watford FC,,,
-E0,31/01/18,Manchester City FC,West Bromwich Albion FC,,,
-E0,03/02/18,Burnley FC,Manchester City FC,,,
-E0,03/02/18,Brighton & Hove Albion,West Ham United FC,,,
-E0,03/02/18,Arsenal FC,Everton FC,,,
-E0,03/02/18,AFC Bournemouth,Stoke City FC,,,
-E0,03/02/18,Crystal Palace FC,Newcastle United FC,,,
-E0,03/02/18,Leicester City FC,Swansea City FC,,,
-E0,03/02/18,Liverpool FC,Tottenham Hotspur FC,,,
-E0,03/02/18,Manchester United FC,Huddersfield Town,,,
-E0,03/02/18,Watford FC,Chelsea FC,,,
-E0,03/02/18,West Bromwich Albion FC,Southampton FC,,,
-E0,10/02/18,Manchester City FC,Leicester City FC,,,
-E0,10/02/18,Huddersfield Town,AFC Bournemouth,,,
-E0,10/02/18,Everton FC,Crystal Palace FC,,,
-E0,10/02/18,Chelsea FC,West Bromwich Albion FC,,,
-E0,10/02/18,Newcastle United FC,Manchester United FC,,,
-E0,10/02/18,Southampton FC,Liverpool FC,,,
-E0,10/02/18,Stoke City FC,Brighton & Hove Albion,,,
-E0,10/02/18,Swansea City FC,Burnley FC,,,
-E0,10/02/18,Tottenham Hotspur FC,Arsenal FC,,,
-E0,10/02/18,West Ham United FC,Watford FC,,,
-E0,24/02/18,Burnley FC,Southampton FC,,,
-E0,24/02/18,Brighton & Hove Albion,Swansea City FC,,,
-E0,24/02/18,Arsenal FC,Manchester City FC,,,
-E0,24/02/18,AFC Bournemouth,Newcastle United FC,,,
-E0,24/02/18,Crystal Palace FC,Tottenham Hotspur FC,,,
-E0,24/02/18,Leicester City FC,Stoke City FC,,,
-E0,24/02/18,Liverpool FC,West Ham United FC,,,
-E0,24/02/18,Manchester United FC,Chelsea FC,,,
-E0,24/02/18,Watford FC,Everton FC,,,
-E0,24/02/18,West Bromwich Albion FC,Huddersfield Town,,,
-E0,03/03/18,Crystal Palace FC,Manchester United FC,,,
-E0,03/03/18,Burnley FC,Everton FC,,,
-E0,03/03/18,Brighton & Hove Albion,Arsenal FC,,,
-E0,03/03/18,Liverpool FC,Newcastle United FC,,,
-E0,03/03/18,Leicester City FC,AFC Bournemouth,,,
-E0,03/03/18,Watford FC,West Bromwich Albion FC,,,
-E0,03/03/18,Manchester City FC,Chelsea FC,,,
-E0,03/03/18,Southampton FC,Stoke City FC,,,
-E0,03/03/18,Swansea City FC,West Ham United FC,,,
-E0,03/03/18,Tottenham Hotspur FC,Huddersfield Town,,,
-E0,10/03/18,Chelsea FC,Crystal Palace FC,,,
-E0,10/03/18,Arsenal FC,Watford FC,,,
-E0,10/03/18,AFC Bournemouth,Tottenham Hotspur FC,,,
-E0,10/03/18,Everton FC,Brighton & Hove Albion,,,
-E0,10/03/18,Huddersfield Town,Swansea City FC,,,
-E0,10/03/18,Manchester United FC,Liverpool FC,,,
-E0,10/03/18,Newcastle United FC,Southampton FC,,,
-E0,10/03/18,Stoke City FC,Manchester City FC,,,
-E0,10/03/18,West Bromwich Albion FC,Leicester City FC,,,
-E0,10/03/18,West Ham United FC,Burnley FC,,,
-E0,17/03/18,AFC Bournemouth,West Bromwich Albion FC,,,
-E0,17/03/18,Burnley FC,Chelsea FC,,,
-E0,17/03/18,Leicester City FC,Arsenal FC,,,
-E0,17/03/18,Liverpool FC,Watford FC,,,
-E0,17/03/18,Manchester City FC,Brighton & Hove Albion,,,
-E0,17/03/18,Stoke City FC,Everton FC,,,
-E0,17/03/18,Swansea City FC,Southampton FC,,,
-E0,17/03/18,Tottenham Hotspur FC,Newcastle United FC,,,
-E0,17/03/18,West Ham United FC,Manchester United FC,,,
-E0,17/03/18,Huddersfield Town,Crystal Palace FC,,,
-E0,31/03/18,Arsenal FC,Stoke City FC,,,
-E0,31/03/18,Brighton & Hove Albion,Leicester City FC,,,
-E0,31/03/18,Chelsea FC,Tottenham Hotspur FC,,,
-E0,31/03/18,Crystal Palace FC,Liverpool FC,,,
-E0,31/03/18,Everton FC,Manchester City FC,,,
-E0,31/03/18,Manchester United FC,Swansea City FC,,,
-E0,31/03/18,Newcastle United FC,Huddersfield Town,,,
-E0,31/03/18,Watford FC,AFC Bournemouth,,,
-E0,31/03/18,West Bromwich Albion FC,Burnley FC,,,
-E0,31/03/18,West Ham United FC,Southampton FC,,,
-E0,07/04/18,AFC Bournemouth,Crystal Palace FC,,,
-E0,07/04/18,Arsenal FC,Southampton FC,,,
-E0,07/04/18,Brighton & Hove Albion,Huddersfield Town,,,
-E0,07/04/18,Chelsea FC,West Ham United FC,,,
-E0,07/04/18,Everton FC,Liverpool FC,,,
-E0,07/04/18,Leicester City FC,Newcastle United FC,,,
-E0,07/04/18,Manchester City FC,Manchester United FC,,,
-E0,07/04/18,Stoke City FC,Tottenham Hotspur FC,,,
-E0,07/04/18,Watford FC,Burnley FC,,,
-E0,07/04/18,West Bromwich Albion FC,Swansea City FC,,,
-E0,14/04/18,Huddersfield Town,Watford FC,,,
-E0,14/04/18,Crystal Palace FC,Brighton & Hove Albion,,,
-E0,14/04/18,Burnley FC,Leicester City FC,,,
-E0,14/04/18,Southampton FC,Chelsea FC,,,
-E0,14/04/18,Liverpool FC,AFC Bournemouth,,,
-E0,14/04/18,Manchester United FC,West Bromwich Albion FC,,,
-E0,14/04/18,West Ham United FC,Stoke City FC,,,
-E0,14/04/18,Tottenham Hotspur FC,Manchester City FC,,,
-E0,14/04/18,Swansea City FC,Everton FC,,,
-E0,14/04/18,Newcastle United FC,Arsenal FC,,,
-E0,21/04/18,AFC Bournemouth,Manchester United FC,,,
-E0,21/04/18,Arsenal FC,West Ham United FC,,,
-E0,21/04/18,Brighton & Hove Albion,Tottenham Hotspur FC,,,
-E0,21/04/18,Chelsea FC,Huddersfield Town,,,
-E0,21/04/18,Leicester City FC,Southampton FC,,,
-E0,21/04/18,Everton FC,Newcastle United FC,,,
-E0,21/04/18,West Bromwich Albion FC,Liverpool FC,,,
-E0,21/04/18,Watford FC,Crystal Palace FC,,,
-E0,21/04/18,Stoke City FC,Burnley FC,,,
-E0,21/04/18,Manchester City FC,Swansea City FC,,,
-E0,28/04/18,Burnley FC,Brighton & Hove Albion,,,
-E0,28/04/18,Crystal Palace FC,Leicester City FC,,,
-E0,28/04/18,Huddersfield Town,Everton FC,,,
-E0,28/04/18,Liverpool FC,Stoke City FC,,,
-E0,28/04/18,Manchester United FC,Arsenal FC,,,
-E0,28/04/18,Newcastle United FC,West Bromwich Albion FC,,,
-E0,28/04/18,Southampton FC,AFC Bournemouth,,,
-E0,28/04/18,Swansea City FC,Chelsea FC,,,
-E0,28/04/18,Tottenham Hotspur FC,Watford FC,,,
-E0,28/04/18,West Ham United FC,Manchester City FC,,,
-E0,05/05/18,AFC Bournemouth,Swansea City FC,,,
-E0,05/05/18,Arsenal FC,Burnley FC,,,
-E0,05/05/18,Brighton & Hove Albion,Manchester United FC,,,
-E0,05/05/18,Chelsea FC,Liverpool FC,,,
-E0,05/05/18,Everton FC,Southampton FC,,,
-E0,05/05/18,Leicester City FC,West Ham United FC,,,
-E0,05/05/18,Manchester City FC,Huddersfield Town,,,
-E0,05/05/18,Stoke City FC,Crystal Palace FC,,,
-E0,05/05/18,Watford FC,Newcastle United FC,,,
-E0,05/05/18,West Bromwich Albion FC,Tottenham Hotspur FC,,,
-E0,13/05/18,Crystal Palace FC,West Bromwich Albion FC,,,
-E0,13/05/18,Huddersfield Town,Arsenal FC,,,
-E0,13/05/18,Liverpool FC,Brighton & Hove Albion,,,
-E0,13/05/18,Manchester United FC,Watford FC,,,
-E0,13/05/18,Newcastle United FC,Chelsea FC,,,
-E0,13/05/18,Southampton FC,Manchester City FC,,,
-E0,13/05/18,Swansea City FC,Stoke City FC,,,
-E0,13/05/18,Tottenham Hotspur FC,Leicester City FC,,,
+"Div,Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR",Date,HomeTeam,AwayTeam,FTHG,FTAG,FTR
+"E0,11/08/17,Arsenal FC,Leicester City FC,4,3,H",11/8/2017,Arsenal FC,Leicester City FC,4,3,H
+"E0,12/08/17,Watford FC,Liverpool FC,3,3,D",12/8/2017,Watford FC,Liverpool FC,3,3,D
+"E0,12/08/17,Crystal Palace FC,Huddersfield Town,0,3,A",12/8/2017,Crystal Palace FC,Huddersfield Town,0,3,A
+"E0,12/08/17,West Bromwich Albion FC,AFC Bournemouth,1,0,H",12/8/2017,West Bromwich Albion FC,AFC Bournemouth,1,0,H
+"E0,12/08/17,Chelsea FC,Burnley FC,2,3,A",12/8/2017,Chelsea FC,Burnley FC,2,3,A
+"E0,12/08/17,Everton FC,Stoke City FC,1,0,H",12/8/2017,Everton FC,Stoke City FC,1,0,H
+"E0,12/08/17,Southampton FC,Swansea City FC,0,0,D",12/8/2017,Southampton FC,Swansea City FC,0,0,D
+"E0,12/08/17,Brighton & Hove Albion,Manchester City FC,0,2,A",12/8/2017,Brighton & Hove Albion,Manchester City FC,0,2,A
+"E0,13/08/17,Newcastle United FC,Tottenham Hotspur FC,0,2,A",13/08/17,Newcastle United FC,Tottenham Hotspur FC,0,2,A
+"E0,13/08/17,Manchester United FC,West Ham United FC,4,0,H",13/08/17,Manchester United FC,West Ham United FC,4,0,H
+"E0,19/08/17,Swansea City FC,Manchester United FC,0,4,A",19/08/17,Swansea City FC,Manchester United FC,0,4,A
+"E0,19/08/17,Southampton FC,West Ham United FC,3,2,H",19/08/17,Southampton FC,West Ham United FC,3,2,H
+"E0,19/08/17,AFC Bournemouth,Watford FC,0,2,A",19/08/17,AFC Bournemouth,Watford FC,0,2,A
+"E0,19/08/17,Burnley FC,West Bromwich Albion FC,0,1,A",19/08/17,Burnley FC,West Bromwich Albion FC,0,1,A
+"E0,19/08/17,Leicester City FC,Brighton & Hove Albion,2,0,H",19/08/17,Leicester City FC,Brighton & Hove Albion,2,0,H
+"E0,19/08/17,Liverpool FC,Crystal Palace FC,1,0,H",19/08/17,Liverpool FC,Crystal Palace FC,1,0,H
+"E0,19/08/17,Stoke City FC,Arsenal FC,1,0,H",19/08/17,Stoke City FC,Arsenal FC,1,0,H
+"E0,20/08/17,Huddersfield Town,Newcastle United FC,1,0,H",20/08/17,Huddersfield Town,Newcastle United FC,1,0,H
+"E0,20/08/17,Tottenham Hotspur FC,Chelsea FC,1,2,A",20/08/17,Tottenham Hotspur FC,Chelsea FC,1,2,A
+"E0,21/08/17,Manchester City FC,Everton FC,1,1,D",21/08/17,Manchester City FC,Everton FC,1,1,D
+"E0,26/08/17,AFC Bournemouth,Manchester City FC,1,2,A",26/08/17,AFC Bournemouth,Manchester City FC,1,2,A
+"E0,26/08/17,Crystal Palace FC,Swansea City FC,0,2,A",26/08/17,Crystal Palace FC,Swansea City FC,0,2,A
+"E0,26/08/17,Huddersfield Town,Southampton FC,0,0,D",26/08/17,Huddersfield Town,Southampton FC,0,0,D
+"E0,26/08/17,Newcastle United FC,West Ham United FC,3,0,H",26/08/17,Newcastle United FC,West Ham United FC,3,0,H
+"E0,26/08/17,Watford FC,Brighton & Hove Albion,0,0,D",26/08/17,Watford FC,Brighton & Hove Albion,0,0,D
+"E0,26/08/17,Manchester United FC,Leicester City FC,2,0,H",26/08/17,Manchester United FC,Leicester City FC,2,0,H
+"E0,27/08/17,West Bromwich Albion FC,Stoke City FC,1,1,D",27/08/17,West Bromwich Albion FC,Stoke City FC,1,1,D
+"E0,27/08/17,Chelsea FC,Everton FC,2,0,H",27/08/17,Chelsea FC,Everton FC,2,0,H
+"E0,27/08/17,Liverpool FC,Arsenal FC,4,0,H",27/08/17,Liverpool FC,Arsenal FC,4,0,H
+"E0,27/08/17,Tottenham Hotspur FC,Burnley FC,1,1,D",27/08/17,Tottenham Hotspur FC,Burnley FC,1,1,D
+"E0,09/09/17,Manchester City FC,Liverpool FC,5,0,H",9/9/2017,Manchester City FC,Liverpool FC,5,0,H
+"E0,09/09/17,Arsenal FC,AFC Bournemouth,3,0,H",9/9/2017,Arsenal FC,AFC Bournemouth,3,0,H
+"E0,09/09/17,Brighton & Hove Albion,West Bromwich Albion FC,3,1,H",9/9/2017,Brighton & Hove Albion,West Bromwich Albion FC,3,1,H
+"E0,09/09/17,Everton FC,Tottenham Hotspur FC,0,3,A",9/9/2017,Everton FC,Tottenham Hotspur FC,0,3,A
+"E0,09/09/17,Leicester City FC,Chelsea FC,1,2,A",9/9/2017,Leicester City FC,Chelsea FC,1,2,A
+"E0,09/09/17,Southampton FC,Watford FC,0,2,A",9/9/2017,Southampton FC,Watford FC,0,2,A
+"E0,09/09/17,Stoke City FC,Manchester United FC,2,2,D",9/9/2017,Stoke City FC,Manchester United FC,2,2,D
+"E0,10/09/17,Burnley FC,Crystal Palace FC,1,0,H",10/9/2017,Burnley FC,Crystal Palace FC,1,0,H
+"E0,10/09/17,Swansea City FC,Newcastle United FC,0,1,A",10/9/2017,Swansea City FC,Newcastle United FC,0,1,A
+"E0,11/09/17,West Ham United FC,Huddersfield Town,2,0,H",11/9/2017,West Ham United FC,Huddersfield Town,2,0,H
+"E0,15/09/17,AFC Bournemouth,Brighton & Hove Albion,2,1,H",15/09/17,AFC Bournemouth,Brighton & Hove Albion,2,1,H
+"E0,16/09/17,Crystal Palace FC,Southampton FC,0,1,A",16/09/17,Crystal Palace FC,Southampton FC,0,1,A
+"E0,16/09/17,Newcastle United FC,Stoke City FC,2,1,H",16/09/17,Newcastle United FC,Stoke City FC,2,1,H
+"E0,16/09/17,Liverpool FC,Burnley FC,1,1,D",16/09/17,Liverpool FC,Burnley FC,1,1,D
+"E0,16/09/17,Watford FC,Manchester City FC,0,6,A",16/09/17,Watford FC,Manchester City FC,0,6,A
+"E0,16/09/17,Huddersfield Town,Leicester City FC,1,1,D",16/09/17,Huddersfield Town,Leicester City FC,1,1,D
+"E0,16/09/17,West Bromwich Albion FC,West Ham United FC,0,0,D",16/09/17,West Bromwich Albion FC,West Ham United FC,0,0,D
+"E0,16/09/17,Tottenham Hotspur FC,Swansea City FC,0,0,D",16/09/17,Tottenham Hotspur FC,Swansea City FC,0,0,D
+"E0,17/09/17,Chelsea FC,Arsenal FC,0,0,D",17/09/17,Chelsea FC,Arsenal FC,0,0,D
+"E0,17/09/17,Manchester United FC,Everton FC,4,0,H",17/09/17,Manchester United FC,Everton FC,4,0,H
+"E0,23/09/17,West Ham United FC,Tottenham Hotspur FC,2,3,A",23/09/17,West Ham United FC,Tottenham Hotspur FC,2,3,A
+"E0,23/09/17,Burnley FC,Huddersfield Town,0,0,D",23/09/17,Burnley FC,Huddersfield Town,0,0,D
+"E0,23/09/17,Everton FC,AFC Bournemouth,2,1,H",23/09/17,Everton FC,AFC Bournemouth,2,1,H
+"E0,23/09/17,Manchester City FC,Crystal Palace FC,5,0,H",23/09/17,Manchester City FC,Crystal Palace FC,5,0,H
+"E0,23/09/17,Southampton FC,Manchester United FC,0,1,A",23/09/17,Southampton FC,Manchester United FC,0,1,A
+"E0,23/09/17,Stoke City FC,Chelsea FC,0,4,A",23/09/17,Stoke City FC,Chelsea FC,0,4,A
+"E0,23/09/17,Swansea City FC,Watford FC,1,2,A",23/09/17,Swansea City FC,Watford FC,1,2,A
+"E0,23/09/17,Leicester City FC,Liverpool FC,2,3,A",23/09/17,Leicester City FC,Liverpool FC,2,3,A
+"E0,24/09/17,Brighton & Hove Albion,Newcastle United FC,1,0,H",24/09/17,Brighton & Hove Albion,Newcastle United FC,1,0,H
+"E0,25/09/17,Arsenal FC,West Bromwich Albion FC,2,0,H",25/09/17,Arsenal FC,West Bromwich Albion FC,2,0,H
+"E0,30/09/17,Huddersfield Town,Tottenham Hotspur FC,0,4,A",30/09/17,Huddersfield Town,Tottenham Hotspur FC,0,4,A
+"E0,30/09/17,Manchester United FC,Crystal Palace FC,4,0,H",30/09/17,Manchester United FC,Crystal Palace FC,4,0,H
+"E0,30/09/17,Stoke City FC,Southampton FC,2,1,H",30/09/17,Stoke City FC,Southampton FC,2,1,H
+"E0,30/09/17,West Bromwich Albion FC,Watford FC,2,2,D",30/09/17,West Bromwich Albion FC,Watford FC,2,2,D
+"E0,30/09/17,West Ham United FC,Swansea City FC,1,0,H",30/09/17,West Ham United FC,Swansea City FC,1,0,H
+"E0,30/09/17,AFC Bournemouth,Leicester City FC,0,0,D",30/09/17,AFC Bournemouth,Leicester City FC,0,0,D
+"E0,30/09/17,Chelsea FC,Manchester City FC,0,1,A",30/09/17,Chelsea FC,Manchester City FC,0,1,A
+"E0,01/10/17,Arsenal FC,Brighton & Hove Albion,2,0,H",1/10/2017,Arsenal FC,Brighton & Hove Albion,2,0,H
+"E0,01/10/17,Everton FC,Burnley FC,0,1,A",1/10/2017,Everton FC,Burnley FC,0,1,A
+"E0,01/10/17,Newcastle United FC,Liverpool FC,1,1,D",1/10/2017,Newcastle United FC,Liverpool FC,1,1,D
+"E0,14/10/17,Liverpool FC,Manchester United FC,0,0,D",14/10/17,Liverpool FC,Manchester United FC,0,0,D
+"E0,14/10/17,Tottenham Hotspur FC,AFC Bournemouth,1,0,H",14/10/17,Tottenham Hotspur FC,AFC Bournemouth,1,0,H
+"E0,14/10/17,Burnley FC,West Ham United FC,1,1,D",14/10/17,Burnley FC,West Ham United FC,1,1,D
+"E0,14/10/17,Crystal Palace FC,Chelsea FC,2,1,H",14/10/17,Crystal Palace FC,Chelsea FC,2,1,H
+"E0,14/10/17,Manchester City FC,Stoke City FC,7,2,H",14/10/17,Manchester City FC,Stoke City FC,7,2,H
+"E0,14/10/17,Swansea City FC,Huddersfield Town,2,0,H",14/10/17,Swansea City FC,Huddersfield Town,2,0,H
+"E0,14/10/17,Watford FC,Arsenal FC,2,1,H",14/10/17,Watford FC,Arsenal FC,2,1,H
+"E0,15/10/17,Brighton & Hove Albion,Everton FC,1,1,D",15/10/17,Brighton & Hove Albion,Everton FC,1,1,D
+"E0,15/10/17,Southampton FC,Newcastle United FC,2,2,D",15/10/17,Southampton FC,Newcastle United FC,2,2,D
+"E0,16/10/17,Leicester City FC,West Bromwich Albion FC,1,1,D",16/10/17,Leicester City FC,West Bromwich Albion FC,1,1,D
+"E0,20/10/17,West Ham United FC,Brighton & Hove Albion,0,3,A",20/10/17,West Ham United FC,Brighton & Hove Albion,0,3,A
+"E0,21/10/17,Chelsea FC,Watford FC,4,2,H",21/10/17,Chelsea FC,Watford FC,4,2,H
+"E0,21/10/17,Huddersfield Town,Manchester United FC,2,1,H",21/10/17,Huddersfield Town,Manchester United FC,2,1,H
+"E0,21/10/17,Manchester City FC,Burnley FC,3,0,H",21/10/17,Manchester City FC,Burnley FC,3,0,H
+"E0,21/10/17,Newcastle United FC,Crystal Palace FC,1,0,H",21/10/17,Newcastle United FC,Crystal Palace FC,1,0,H
+"E0,21/10/17,Stoke City FC,AFC Bournemouth,1,2,A",21/10/17,Stoke City FC,AFC Bournemouth,1,2,A
+"E0,21/10/17,Swansea City FC,Leicester City FC,1,2,A",21/10/17,Swansea City FC,Leicester City FC,1,2,A
+"E0,21/10/17,Southampton FC,West Bromwich Albion FC,1,0,H",21/10/17,Southampton FC,West Bromwich Albion FC,1,0,H
+"E0,22/10/17,Everton FC,Arsenal FC,2,5,A",22/10/17,Everton FC,Arsenal FC,2,5,A
+"E0,22/10/17,Tottenham Hotspur FC,Liverpool FC,4,1,H",22/10/17,Tottenham Hotspur FC,Liverpool FC,4,1,H
+"E0,28/10/17,Manchester United FC,Tottenham Hotspur FC,1,0,H",28/10/17,Manchester United FC,Tottenham Hotspur FC,1,0,H
+"E0,28/10/17,Crystal Palace FC,West Ham United FC,2,2,D",28/10/17,Crystal Palace FC,West Ham United FC,2,2,D
+"E0,28/10/17,Arsenal FC,Swansea City FC,2,1,H",28/10/17,Arsenal FC,Swansea City FC,2,1,H
+"E0,28/10/17,Liverpool FC,Huddersfield Town,3,0,H",28/10/17,Liverpool FC,Huddersfield Town,3,0,H
+"E0,28/10/17,Watford FC,Stoke City FC,0,1,A",28/10/17,Watford FC,Stoke City FC,0,1,A
+"E0,28/10/17,West Bromwich Albion FC,Manchester City FC,2,3,A",28/10/17,West Bromwich Albion FC,Manchester City FC,2,3,A
+"E0,28/10/17,AFC Bournemouth,Chelsea FC,0,1,A",28/10/17,AFC Bournemouth,Chelsea FC,0,1,A
+"E0,29/10/17,Brighton & Hove Albion,Southampton FC,1,1,D",29/10/17,Brighton & Hove Albion,Southampton FC,1,1,D
+"E0,29/10/17,Leicester City FC,Everton FC,2,0,H",29/10/17,Leicester City FC,Everton FC,2,0,H
+"E0,30/10/17,Burnley FC,Newcastle United FC,1,0,H",30/10/17,Burnley FC,Newcastle United FC,1,0,H
+"E0,04/11/17,Stoke City FC,Leicester City FC,2,2,D",4/11/2017,Stoke City FC,Leicester City FC,2,2,D
+"E0,04/11/17,Huddersfield Town,West Bromwich Albion FC,1,0,H",4/11/2017,Huddersfield Town,West Bromwich Albion FC,1,0,H
+"E0,04/11/17,Newcastle United FC,AFC Bournemouth,0,1,A",4/11/2017,Newcastle United FC,AFC Bournemouth,0,1,A
+"E0,04/11/17,Southampton FC,Burnley FC,0,1,A",4/11/2017,Southampton FC,Burnley FC,0,1,A
+"E0,04/11/17,Swansea City FC,Brighton & Hove Albion,0,1,A",4/11/2017,Swansea City FC,Brighton & Hove Albion,0,1,A
+"E0,04/11/17,West Ham United FC,Liverpool FC,1,4,A",4/11/2017,West Ham United FC,Liverpool FC,1,4,A
+"E0,05/11/17,Tottenham Hotspur FC,Crystal Palace FC,1,0,H",5/11/2017,Tottenham Hotspur FC,Crystal Palace FC,1,0,H
+"E0,05/11/17,Manchester City FC,Arsenal FC,3,1,H",5/11/2017,Manchester City FC,Arsenal FC,3,1,H
+"E0,05/11/17,Chelsea FC,Manchester United FC,1,0,H",5/11/2017,Chelsea FC,Manchester United FC,1,0,H
+"E0,05/11/17,Everton FC,Watford FC,3,2,H",5/11/2017,Everton FC,Watford FC,3,2,H
+"E0,18/11/17,Arsenal FC,Tottenham Hotspur FC,2,0,H",18/11/17,Arsenal FC,Tottenham Hotspur FC,2,0,H
+"E0,18/11/17,AFC Bournemouth,Huddersfield Town,4,0,H",18/11/17,AFC Bournemouth,Huddersfield Town,4,0,H
+"E0,18/11/17,Burnley FC,Swansea City FC,2,0,H",18/11/17,Burnley FC,Swansea City FC,2,0,H
+"E0,18/11/17,Crystal Palace FC,Everton FC,2,2,D",18/11/17,Crystal Palace FC,Everton FC,2,2,D
+"E0,18/11/17,Leicester City FC,Manchester City FC,0,2,A",18/11/17,Leicester City FC,Manchester City FC,0,2,A
+"E0,18/11/17,Liverpool FC,Southampton FC,3,0,H",18/11/17,Liverpool FC,Southampton FC,3,0,H
+"E0,18/11/17,West Bromwich Albion FC,Chelsea FC,0,4,A",18/11/17,West Bromwich Albion FC,Chelsea FC,0,4,A
+"E0,18/11/17,Manchester United FC,Newcastle United FC,4,1,H",18/11/17,Manchester United FC,Newcastle United FC,4,1,H
+"E0,19/11/17,Watford FC,West Ham United FC,2,0,H",19/11/17,Watford FC,West Ham United FC,2,0,H
+"E0,20/11/17,Brighton & Hove Albion,Stoke City FC,2,2,D",20/11/17,Brighton & Hove Albion,Stoke City FC,2,2,D
+"E0,24/11/17,West Ham United FC,Leicester City FC,1,1,D",24/11/17,West Ham United FC,Leicester City FC,1,1,D
+"E0,25/11/17,Crystal Palace FC,Stoke City FC,2,1,H",25/11/17,Crystal Palace FC,Stoke City FC,2,1,H
+"E0,25/11/17,Manchester United FC,Brighton & Hove Albion,1,0,H",25/11/17,Manchester United FC,Brighton & Hove Albion,1,0,H
+"E0,25/11/17,Newcastle United FC,Watford FC,0,3,A",25/11/17,Newcastle United FC,Watford FC,0,3,A
+"E0,25/11/17,Swansea City FC,AFC Bournemouth,0,0,D",25/11/17,Swansea City FC,AFC Bournemouth,0,0,D
+"E0,25/11/17,Tottenham Hotspur FC,West Bromwich Albion FC,1,1,D",25/11/17,Tottenham Hotspur FC,West Bromwich Albion FC,1,1,D
+"E0,25/11/17,Liverpool FC,Chelsea FC,1,1,D",25/11/17,Liverpool FC,Chelsea FC,1,1,D
+"E0,26/11/17,Southampton FC,Everton FC,4,1,H",26/11/17,Southampton FC,Everton FC,4,1,H
+"E0,26/11/17,Burnley FC,Arsenal FC,0,1,A",26/11/17,Burnley FC,Arsenal FC,0,1,A
+"E0,26/11/17,Huddersfield Town,Manchester City FC,1,2,A",26/11/17,Huddersfield Town,Manchester City FC,1,2,A
+"E0,28/11/17,Leicester City FC,Tottenham Hotspur FC,2,1,H",28/11/17,Leicester City FC,Tottenham Hotspur FC,2,1,H
+"E0,28/11/17,Brighton & Hove Albion,Crystal Palace FC,0,0,D",28/11/17,Brighton & Hove Albion,Crystal Palace FC,0,0,D
+"E0,28/11/17,Watford FC,Manchester United FC,2,4,A",28/11/17,Watford FC,Manchester United FC,2,4,A
+"E0,28/11/17,West Bromwich Albion FC,Newcastle United FC,2,2,D",28/11/17,West Bromwich Albion FC,Newcastle United FC,2,2,D
+"E0,29/11/17,Chelsea FC,Swansea City FC,1,0,H",29/11/17,Chelsea FC,Swansea City FC,1,0,H
+"E0,29/11/17,AFC Bournemouth,Burnley FC,1,2,A",29/11/17,AFC Bournemouth,Burnley FC,1,2,A
+"E0,29/11/17,Arsenal FC,Huddersfield Town,5,0,H",29/11/17,Arsenal FC,Huddersfield Town,5,0,H
+"E0,29/11/17,Everton FC,West Ham United FC,4,0,H",29/11/17,Everton FC,West Ham United FC,4,0,H
+"E0,29/11/17,Stoke City FC,Liverpool FC,0,3,A",29/11/17,Stoke City FC,Liverpool FC,0,3,A
+"E0,29/11/17,Manchester City FC,Southampton FC,2,1,H",29/11/17,Manchester City FC,Southampton FC,2,1,H
+"E0,02/12/17,Chelsea FC,Newcastle United FC,3,1,H",2/12/2017,Chelsea FC,Newcastle United FC,3,1,H
+"E0,02/12/17,Watford FC,Tottenham Hotspur FC,1,1,D",2/12/2017,Watford FC,Tottenham Hotspur FC,1,1,D
+"E0,02/12/17,Stoke City FC,Swansea City FC,2,1,H",2/12/2017,Stoke City FC,Swansea City FC,2,1,H
+"E0,02/12/17,Leicester City FC,Burnley FC,1,0,H",2/12/2017,Leicester City FC,Burnley FC,1,0,H
+"E0,02/12/17,Everton FC,Huddersfield Town,2,0,H",2/12/2017,Everton FC,Huddersfield Town,2,0,H
+"E0,02/12/17,West Bromwich Albion FC,Crystal Palace FC,0,0,D",2/12/2017,West Bromwich Albion FC,Crystal Palace FC,0,0,D
+"E0,02/12/17,Brighton & Hove Albion,Liverpool FC,1,5,A",2/12/2017,Brighton & Hove Albion,Liverpool FC,1,5,A
+"E0,02/12/17,Arsenal FC,Manchester United FC,1,3,A",2/12/2017,Arsenal FC,Manchester United FC,1,3,A
+"E0,03/12/17,AFC Bournemouth,Southampton FC,1,1,D",3/12/2017,AFC Bournemouth,Southampton FC,1,1,D
+"E0,03/12/17,Manchester City FC,West Ham United FC,2,1,H",3/12/2017,Manchester City FC,West Ham United FC,2,1,H
+"E0,09/12/17,West Ham United FC,Chelsea FC,1,0,H",9/12/2017,West Ham United FC,Chelsea FC,1,0,H
+"E0,09/12/17,Tottenham Hotspur FC,Stoke City FC,5,1,H",9/12/2017,Tottenham Hotspur FC,Stoke City FC,5,1,H
+"E0,09/12/17,Swansea City FC,West Bromwich Albion FC,1,0,H",9/12/2017,Swansea City FC,West Bromwich Albion FC,1,0,H
+"E0,09/12/17,Crystal Palace FC,AFC Bournemouth,2,2,D",9/12/2017,Crystal Palace FC,AFC Bournemouth,2,2,D
+"E0,09/12/17,Burnley FC,Watford FC,1,0,H",9/12/2017,Burnley FC,Watford FC,1,0,H
+"E0,09/12/17,Huddersfield Town,Brighton & Hove Albion,2,0,H",9/12/2017,Huddersfield Town,Brighton & Hove Albion,2,0,H
+"E0,09/12/17,Newcastle United FC,Leicester City FC,2,3,A",9/12/2017,Newcastle United FC,Leicester City FC,2,3,A
+"E0,10/12/17,Southampton FC,Arsenal FC,1,1,D",10/12/2017,Southampton FC,Arsenal FC,1,1,D
+"E0,10/12/17,Liverpool FC,Everton FC,1,1,D",10/12/2017,Liverpool FC,Everton FC,1,1,D
+"E0,10/12/17,Manchester United FC,Manchester City FC,1,2,A",10/12/2017,Manchester United FC,Manchester City FC,1,2,A
+"E0,12/12/17,Burnley FC,Stoke City FC,1,0,H",12/12/2017,Burnley FC,Stoke City FC,1,0,H
+"E0,12/12/17,Huddersfield Town,Chelsea FC,1,3,A",12/12/2017,Huddersfield Town,Chelsea FC,1,3,A
+"E0,12/12/17,Crystal Palace FC,Watford FC,2,1,H",12/12/2017,Crystal Palace FC,Watford FC,2,1,H
+"E0,13/12/17,Swansea City FC,Manchester City FC,0,4,A",13/12/17,Swansea City FC,Manchester City FC,0,4,A
+"E0,13/12/17,Southampton FC,Leicester City FC,1,4,A",13/12/17,Southampton FC,Leicester City FC,1,4,A
+"E0,13/12/17,Newcastle United FC,Everton FC,0,1,A",13/12/17,Newcastle United FC,Everton FC,0,1,A
+"E0,13/12/17,Liverpool FC,West Bromwich Albion FC,0,0,D",13/12/17,Liverpool FC,West Bromwich Albion FC,0,0,D
+"E0,13/12/17,Tottenham Hotspur FC,Brighton & Hove Albion,2,0,H",13/12/17,Tottenham Hotspur FC,Brighton & Hove Albion,2,0,H
+"E0,13/12/17,Manchester United FC,AFC Bournemouth,1,0,H",13/12/17,Manchester United FC,AFC Bournemouth,1,0,H
+"E0,13/12/17,West Ham United FC,Arsenal FC,0,0,D",13/12/17,West Ham United FC,Arsenal FC,0,0,D
+"E0,16/12/17,Leicester City FC,Crystal Palace FC,0,3,A",16/12/17,Leicester City FC,Crystal Palace FC,0,3,A
+"E0,16/12/17,Watford FC,Huddersfield Town,1,4,A",16/12/17,Watford FC,Huddersfield Town,1,4,A
+"E0,16/12/17,Arsenal FC,Newcastle United FC,1,0,H",16/12/17,Arsenal FC,Newcastle United FC,1,0,H
+"E0,16/12/17,Brighton & Hove Albion,Burnley FC,0,0,D",16/12/17,Brighton & Hove Albion,Burnley FC,0,0,D
+"E0,16/12/17,Chelsea FC,Southampton FC,1,0,H",16/12/17,Chelsea FC,Southampton FC,1,0,H
+"E0,16/12/17,Stoke City FC,West Ham United FC,0,3,A",16/12/17,Stoke City FC,West Ham United FC,0,3,A
+"E0,16/12/17,Manchester City FC,Tottenham Hotspur FC,4,1,H",16/12/17,Manchester City FC,Tottenham Hotspur FC,4,1,H
+"E0,17/12/17,West Bromwich Albion FC,Manchester United FC,1,2,A",17/12/17,West Bromwich Albion FC,Manchester United FC,1,2,A
+"E0,17/12/17,AFC Bournemouth,Liverpool FC,0,4,A",17/12/17,AFC Bournemouth,Liverpool FC,0,4,A
+"E0,18/12/17,Everton FC,Swansea City FC,3,1,H",18/12/17,Everton FC,Swansea City FC,3,1,H
+"E0,22/12/17,Arsenal FC,Liverpool FC,3,3,D",22/12/17,Arsenal FC,Liverpool FC,3,3,D
+"E0,23/12/17,Everton FC,Chelsea FC,0,0,D",23/12/17,Everton FC,Chelsea FC,0,0,D
+"E0,23/12/17,Manchester City FC,AFC Bournemouth,4,0,H",23/12/17,Manchester City FC,AFC Bournemouth,4,0,H
+"E0,23/12/17,West Ham United FC,Newcastle United FC,2,3,A",23/12/17,West Ham United FC,Newcastle United FC,2,3,A
+"E0,23/12/17,Swansea City FC,Crystal Palace FC,1,1,D",23/12/17,Swansea City FC,Crystal Palace FC,1,1,D
+"E0,23/12/17,Stoke City FC,West Bromwich Albion FC,3,1,H",23/12/17,Stoke City FC,West Bromwich Albion FC,3,1,H
+"E0,23/12/17,Southampton FC,Huddersfield Town,1,1,D",23/12/17,Southampton FC,Huddersfield Town,1,1,D
+"E0,23/12/17,Brighton & Hove Albion,Watford FC,1,0,H",23/12/17,Brighton & Hove Albion,Watford FC,1,0,H
+"E0,23/12/17,Burnley FC,Tottenham Hotspur FC,0,3,A",23/12/17,Burnley FC,Tottenham Hotspur FC,0,3,A
+"E0,23/12/17,Leicester City FC,Manchester United FC,2,2,D",23/12/17,Leicester City FC,Manchester United FC,,,
+"E0,26/12/17,Tottenham Hotspur FC,Southampton FC,5,2,H",26/12/17,Tottenham Hotspur FC,Southampton FC,,,
+"E0,26/12/17,Huddersfield Town,Stoke City FC,,,",26/12/17,Huddersfield Town,Stoke City FC,,,
+"E0,26/12/17,Manchester United FC,Burnley FC,,,",26/12/17,Manchester United FC,Burnley FC,,,
+"E0,26/12/17,Watford FC,Leicester City FC,,,",26/12/17,Watford FC,Leicester City FC,,,
+"E0,26/12/17,Chelsea FC,Brighton & Hove Albion,,,",26/12/17,Chelsea FC,Brighton & Hove Albion,,,
+"E0,26/12/17,AFC Bournemouth,West Ham United FC,,,",26/12/17,AFC Bournemouth,West Ham United FC,,,
+"E0,26/12/17,West Bromwich Albion FC,Everton FC,,,",26/12/17,West Bromwich Albion FC,Everton FC,,,
+"E0,26/12/17,Liverpool FC,Swansea City FC,,,",26/12/17,Liverpool FC,Swansea City FC,,,
+"E0,27/12/17,Newcastle United FC,Manchester City FC,,,",27/12/17,Newcastle United FC,Manchester City FC,,,
+"E0,28/12/17,Crystal Palace FC,Arsenal FC,,,",28/12/17,Crystal Palace FC,Arsenal FC,,,
+"E0,30/12/17,Huddersfield Town,Burnley FC,,,",30/12/17,Huddersfield Town,Burnley FC,,,
+"E0,30/12/17,Liverpool FC,Leicester City FC,,,",30/12/17,Liverpool FC,Leicester City FC,,,
+"E0,30/12/17,Newcastle United FC,Brighton & Hove Albion,,,",30/12/17,Newcastle United FC,Brighton & Hove Albion,,,
+"E0,30/12/17,AFC Bournemouth,Everton FC,,,",30/12/17,AFC Bournemouth,Everton FC,,,
+"E0,30/12/17,Watford FC,Swansea City FC,,,",30/12/17,Watford FC,Swansea City FC,,,
+"E0,30/12/17,Chelsea FC,Stoke City FC,,,",30/12/17,Chelsea FC,Stoke City FC,,,
+"E0,30/12/17,Manchester United FC,Southampton FC,,,",30/12/17,Manchester United FC,Southampton FC,,,
+"E0,31/12/17,Crystal Palace FC,Manchester City FC,,,",31/12/17,Crystal Palace FC,Manchester City FC,,,
+"E0,31/12/17,West Bromwich Albion FC,Arsenal FC,,,",31/12/17,West Bromwich Albion FC,Arsenal FC,,,
+"E0,01/01/18,Brighton & Hove Albion,AFC Bournemouth,,,",1/1/2018,Brighton & Hove Albion,AFC Bournemouth,,,
+"E0,01/01/18,Burnley FC,Liverpool FC,,,",1/1/2018,Burnley FC,Liverpool FC,,,
+"E0,01/01/18,Leicester City FC,Huddersfield Town,,,",1/1/2018,Leicester City FC,Huddersfield Town,,,
+"E0,01/01/18,Stoke City FC,Newcastle United FC,,,",1/1/2018,Stoke City FC,Newcastle United FC,,,
+"E0,01/01/18,Everton FC,Manchester United FC,,,",1/1/2018,Everton FC,Manchester United FC,,,
+"E0,02/01/18,Southampton FC,Crystal Palace FC,,,",2/1/2018,Southampton FC,Crystal Palace FC,,,
+"E0,02/01/18,West Ham United FC,West Bromwich Albion FC,,,",2/1/2018,West Ham United FC,West Bromwich Albion FC,,,
+"E0,02/01/18,Swansea City FC,Tottenham Hotspur FC,,,",2/1/2018,Swansea City FC,Tottenham Hotspur FC,,,
+"E0,02/01/18,Manchester City FC,Watford FC,,,",2/1/2018,Manchester City FC,Watford FC,,,
+"E0,03/01/18,Arsenal FC,Chelsea FC,,,",3/1/2018,Arsenal FC,Chelsea FC,,,
+"E0,04/01/18,Tottenham Hotspur FC,West Ham United FC,,,",4/1/2018,Tottenham Hotspur FC,West Ham United FC,,,
+"E0,13/01/18,Huddersfield Town,West Ham United FC,,,",13/01/18,Huddersfield Town,West Ham United FC,,,
+"E0,13/01/18,Chelsea FC,Leicester City FC,,,",13/01/18,Chelsea FC,Leicester City FC,,,
+"E0,13/01/18,Newcastle United FC,Swansea City FC,,,",13/01/18,Newcastle United FC,Swansea City FC,,,
+"E0,13/01/18,Watford FC,Southampton FC,,,",13/01/18,Watford FC,Southampton FC,,,
+"E0,13/01/18,West Bromwich Albion FC,Brighton & Hove Albion,,,",13/01/18,West Bromwich Albion FC,Brighton & Hove Albion,,,
+"E0,13/01/18,Crystal Palace FC,Burnley FC,,,",13/01/18,Crystal Palace FC,Burnley FC,,,
+"E0,13/01/18,Tottenham Hotspur FC,Everton FC,,,",13/01/18,Tottenham Hotspur FC,Everton FC,,,
+"E0,14/01/18,AFC Bournemouth,Arsenal FC,,,",14/01/18,AFC Bournemouth,Arsenal FC,,,
+"E0,14/01/18,Liverpool FC,Manchester City FC,,,",14/01/18,Liverpool FC,Manchester City FC,,,
+"E0,15/01/18,Manchester United FC,Stoke City FC,,,",15/01/18,Manchester United FC,Stoke City FC,,,
+"E0,20/01/18,Brighton & Hove Albion,Chelsea FC,,,",20/01/18,Brighton & Hove Albion,Chelsea FC,,,
+"E0,20/01/18,Arsenal FC,Crystal Palace FC,,,",20/01/18,Arsenal FC,Crystal Palace FC,,,
+"E0,20/01/18,Stoke City FC,Huddersfield Town,,,",20/01/18,Stoke City FC,Huddersfield Town,,,
+"E0,20/01/18,West Ham United FC,AFC Bournemouth,,,",20/01/18,West Ham United FC,AFC Bournemouth,,,
+"E0,20/01/18,Leicester City FC,Watford FC,,,",20/01/18,Leicester City FC,Watford FC,,,
+"E0,20/01/18,Burnley FC,Manchester United FC,,,",20/01/18,Burnley FC,Manchester United FC,,,
+"E0,20/01/18,Everton FC,West Bromwich Albion FC,,,",20/01/18,Everton FC,West Bromwich Albion FC,,,
+"E0,20/01/18,Manchester City FC,Newcastle United FC,,,",20/01/18,Manchester City FC,Newcastle United FC,,,
+"E0,21/01/18,Southampton FC,Tottenham Hotspur FC,,,",21/01/18,Southampton FC,Tottenham Hotspur FC,,,
+"E0,22/01/18,Swansea City FC,Liverpool FC,,,",22/01/18,Swansea City FC,Liverpool FC,,,
+"E0,30/01/18,West Ham United FC,Crystal Palace FC,,,",30/01/18,West Ham United FC,Crystal Palace FC,,,
+"E0,30/01/18,Swansea City FC,Arsenal FC,,,",30/01/18,Swansea City FC,Arsenal FC,,,
+"E0,30/01/18,Huddersfield Town,Liverpool FC,,,",30/01/18,Huddersfield Town,Liverpool FC,,,
+"E0,31/01/18,Chelsea FC,AFC Bournemouth,,,",31/01/18,Chelsea FC,AFC Bournemouth,,,
+"E0,31/01/18,Everton FC,Leicester City FC,,,",31/01/18,Everton FC,Leicester City FC,,,
+"E0,31/01/18,Newcastle United FC,Burnley FC,,,",31/01/18,Newcastle United FC,Burnley FC,,,
+"E0,31/01/18,Southampton FC,Brighton & Hove Albion,,,",31/01/18,Southampton FC,Brighton & Hove Albion,,,
+"E0,31/01/18,Tottenham Hotspur FC,Manchester United FC,,,",31/01/18,Tottenham Hotspur FC,Manchester United FC,,,
+"E0,31/01/18,Stoke City FC,Watford FC,,,",31/01/18,Stoke City FC,Watford FC,,,
+"E0,31/01/18,Manchester City FC,West Bromwich Albion FC,,,",31/01/18,Manchester City FC,West Bromwich Albion FC,,,
+"E0,03/02/18,Burnley FC,Manchester City FC,,,",3/2/2018,Burnley FC,Manchester City FC,,,
+"E0,03/02/18,Brighton & Hove Albion,West Ham United FC,,,",3/2/2018,Brighton & Hove Albion,West Ham United FC,,,
+"E0,03/02/18,Arsenal FC,Everton FC,,,",3/2/2018,Arsenal FC,Everton FC,,,
+"E0,03/02/18,AFC Bournemouth,Stoke City FC,,,",3/2/2018,AFC Bournemouth,Stoke City FC,,,
+"E0,03/02/18,Crystal Palace FC,Newcastle United FC,,,",3/2/2018,Crystal Palace FC,Newcastle United FC,,,
+"E0,03/02/18,Leicester City FC,Swansea City FC,,,",3/2/2018,Leicester City FC,Swansea City FC,,,
+"E0,03/02/18,Liverpool FC,Tottenham Hotspur FC,,,",3/2/2018,Liverpool FC,Tottenham Hotspur FC,,,
+"E0,03/02/18,Manchester United FC,Huddersfield Town,,,",3/2/2018,Manchester United FC,Huddersfield Town,,,
+"E0,03/02/18,Watford FC,Chelsea FC,,,",3/2/2018,Watford FC,Chelsea FC,,,
+"E0,03/02/18,West Bromwich Albion FC,Southampton FC,,,",3/2/2018,West Bromwich Albion FC,Southampton FC,,,
+"E0,10/02/18,Manchester City FC,Leicester City FC,,,",10/2/2018,Manchester City FC,Leicester City FC,,,
+"E0,10/02/18,Huddersfield Town,AFC Bournemouth,,,",10/2/2018,Huddersfield Town,AFC Bournemouth,,,
+"E0,10/02/18,Everton FC,Crystal Palace FC,,,",10/2/2018,Everton FC,Crystal Palace FC,,,
+"E0,10/02/18,Chelsea FC,West Bromwich Albion FC,,,",10/2/2018,Chelsea FC,West Bromwich Albion FC,,,
+"E0,10/02/18,Newcastle United FC,Manchester United FC,,,",10/2/2018,Newcastle United FC,Manchester United FC,,,
+"E0,10/02/18,Southampton FC,Liverpool FC,,,",10/2/2018,Southampton FC,Liverpool FC,,,
+"E0,10/02/18,Stoke City FC,Brighton & Hove Albion,,,",10/2/2018,Stoke City FC,Brighton & Hove Albion,,,
+"E0,10/02/18,Swansea City FC,Burnley FC,,,",10/2/2018,Swansea City FC,Burnley FC,,,
+"E0,10/02/18,Tottenham Hotspur FC,Arsenal FC,,,",10/2/2018,Tottenham Hotspur FC,Arsenal FC,,,
+"E0,10/02/18,West Ham United FC,Watford FC,,,",10/2/2018,West Ham United FC,Watford FC,,,
+"E0,24/02/18,Burnley FC,Southampton FC,,,",24/02/18,Burnley FC,Southampton FC,,,
+"E0,24/02/18,Brighton & Hove Albion,Swansea City FC,,,",24/02/18,Brighton & Hove Albion,Swansea City FC,,,
+"E0,24/02/18,Arsenal FC,Manchester City FC,,,",24/02/18,Arsenal FC,Manchester City FC,,,
+"E0,24/02/18,AFC Bournemouth,Newcastle United FC,,,",24/02/18,AFC Bournemouth,Newcastle United FC,,,
+"E0,24/02/18,Crystal Palace FC,Tottenham Hotspur FC,,,",24/02/18,Crystal Palace FC,Tottenham Hotspur FC,,,
+"E0,24/02/18,Leicester City FC,Stoke City FC,,,",24/02/18,Leicester City FC,Stoke City FC,,,
+"E0,24/02/18,Liverpool FC,West Ham United FC,,,",24/02/18,Liverpool FC,West Ham United FC,,,
+"E0,24/02/18,Manchester United FC,Chelsea FC,,,",24/02/18,Manchester United FC,Chelsea FC,,,
+"E0,24/02/18,Watford FC,Everton FC,,,",24/02/18,Watford FC,Everton FC,,,
+"E0,24/02/18,West Bromwich Albion FC,Huddersfield Town,,,",24/02/18,West Bromwich Albion FC,Huddersfield Town,,,
+"E0,03/03/18,Crystal Palace FC,Manchester United FC,,,",3/3/2018,Crystal Palace FC,Manchester United FC,,,
+"E0,03/03/18,Burnley FC,Everton FC,,,",3/3/2018,Burnley FC,Everton FC,,,
+"E0,03/03/18,Brighton & Hove Albion,Arsenal FC,,,",3/3/2018,Brighton & Hove Albion,Arsenal FC,,,
+"E0,03/03/18,Liverpool FC,Newcastle United FC,,,",3/3/2018,Liverpool FC,Newcastle United FC,,,
+"E0,03/03/18,Leicester City FC,AFC Bournemouth,,,",3/3/2018,Leicester City FC,AFC Bournemouth,,,
+"E0,03/03/18,Watford FC,West Bromwich Albion FC,,,",3/3/2018,Watford FC,West Bromwich Albion FC,,,
+"E0,03/03/18,Manchester City FC,Chelsea FC,,,",3/3/2018,Manchester City FC,Chelsea FC,,,
+"E0,03/03/18,Southampton FC,Stoke City FC,,,",3/3/2018,Southampton FC,Stoke City FC,,,
+"E0,03/03/18,Swansea City FC,West Ham United FC,,,",3/3/2018,Swansea City FC,West Ham United FC,,,
+"E0,03/03/18,Tottenham Hotspur FC,Huddersfield Town,,,",3/3/2018,Tottenham Hotspur FC,Huddersfield Town,,,
+"E0,10/03/18,Chelsea FC,Crystal Palace FC,,,",10/3/2018,Chelsea FC,Crystal Palace FC,,,
+"E0,10/03/18,Arsenal FC,Watford FC,,,",10/3/2018,Arsenal FC,Watford FC,,,
+"E0,10/03/18,AFC Bournemouth,Tottenham Hotspur FC,,,",10/3/2018,AFC Bournemouth,Tottenham Hotspur FC,,,
+"E0,10/03/18,Everton FC,Brighton & Hove Albion,,,",10/3/2018,Everton FC,Brighton & Hove Albion,,,
+"E0,10/03/18,Huddersfield Town,Swansea City FC,,,",10/3/2018,Huddersfield Town,Swansea City FC,,,
+"E0,10/03/18,Manchester United FC,Liverpool FC,,,",10/3/2018,Manchester United FC,Liverpool FC,,,
+"E0,10/03/18,Newcastle United FC,Southampton FC,,,",10/3/2018,Newcastle United FC,Southampton FC,,,
+"E0,10/03/18,Stoke City FC,Manchester City FC,,,",10/3/2018,Stoke City FC,Manchester City FC,,,
+"E0,10/03/18,West Bromwich Albion FC,Leicester City FC,,,",10/3/2018,West Bromwich Albion FC,Leicester City FC,,,
+"E0,10/03/18,West Ham United FC,Burnley FC,,,",10/3/2018,West Ham United FC,Burnley FC,,,
+"E0,17/03/18,AFC Bournemouth,West Bromwich Albion FC,,,",17/03/18,AFC Bournemouth,West Bromwich Albion FC,,,
+"E0,17/03/18,Burnley FC,Chelsea FC,,,",17/03/18,Burnley FC,Chelsea FC,,,
+"E0,17/03/18,Leicester City FC,Arsenal FC,,,",17/03/18,Leicester City FC,Arsenal FC,,,
+"E0,17/03/18,Liverpool FC,Watford FC,,,",17/03/18,Liverpool FC,Watford FC,,,
+"E0,17/03/18,Manchester City FC,Brighton & Hove Albion,,,",17/03/18,Manchester City FC,Brighton & Hove Albion,,,
+"E0,17/03/18,Stoke City FC,Everton FC,,,",17/03/18,Stoke City FC,Everton FC,,,
+"E0,17/03/18,Swansea City FC,Southampton FC,,,",17/03/18,Swansea City FC,Southampton FC,,,
+"E0,17/03/18,Tottenham Hotspur FC,Newcastle United FC,,,",17/03/18,Tottenham Hotspur FC,Newcastle United FC,,,
+"E0,17/03/18,West Ham United FC,Manchester United FC,,,",17/03/18,West Ham United FC,Manchester United FC,,,
+"E0,17/03/18,Huddersfield Town,Crystal Palace FC,,,",17/03/18,Huddersfield Town,Crystal Palace FC,,,
+"E0,31/03/18,Arsenal FC,Stoke City FC,,,",31/03/18,Arsenal FC,Stoke City FC,,,
+"E0,31/03/18,Brighton & Hove Albion,Leicester City FC,,,",31/03/18,Brighton & Hove Albion,Leicester City FC,,,
+"E0,31/03/18,Chelsea FC,Tottenham Hotspur FC,,,",31/03/18,Chelsea FC,Tottenham Hotspur FC,,,
+"E0,31/03/18,Crystal Palace FC,Liverpool FC,,,",31/03/18,Crystal Palace FC,Liverpool FC,,,
+"E0,31/03/18,Everton FC,Manchester City FC,,,",31/03/18,Everton FC,Manchester City FC,,,
+"E0,31/03/18,Manchester United FC,Swansea City FC,,,",31/03/18,Manchester United FC,Swansea City FC,,,
+"E0,31/03/18,Newcastle United FC,Huddersfield Town,,,",31/03/18,Newcastle United FC,Huddersfield Town,,,
+"E0,31/03/18,Watford FC,AFC Bournemouth,,,",31/03/18,Watford FC,AFC Bournemouth,,,
+"E0,31/03/18,West Bromwich Albion FC,Burnley FC,,,",31/03/18,West Bromwich Albion FC,Burnley FC,,,
+"E0,31/03/18,West Ham United FC,Southampton FC,,,",31/03/18,West Ham United FC,Southampton FC,,,
+"E0,07/04/18,AFC Bournemouth,Crystal Palace FC,,,",7/4/2018,AFC Bournemouth,Crystal Palace FC,,,
+"E0,07/04/18,Arsenal FC,Southampton FC,,,",7/4/2018,Arsenal FC,Southampton FC,,,
+"E0,07/04/18,Brighton & Hove Albion,Huddersfield Town,,,",7/4/2018,Brighton & Hove Albion,Huddersfield Town,,,
+"E0,07/04/18,Chelsea FC,West Ham United FC,,,",7/4/2018,Chelsea FC,West Ham United FC,,,
+"E0,07/04/18,Everton FC,Liverpool FC,,,",7/4/2018,Everton FC,Liverpool FC,,,
+"E0,07/04/18,Leicester City FC,Newcastle United FC,,,",7/4/2018,Leicester City FC,Newcastle United FC,,,
+"E0,07/04/18,Manchester City FC,Manchester United FC,,,",7/4/2018,Manchester City FC,Manchester United FC,,,
+"E0,07/04/18,Stoke City FC,Tottenham Hotspur FC,,,",7/4/2018,Stoke City FC,Tottenham Hotspur FC,,,
+"E0,07/04/18,Watford FC,Burnley FC,,,",7/4/2018,Watford FC,Burnley FC,,,
+"E0,07/04/18,West Bromwich Albion FC,Swansea City FC,,,",7/4/2018,West Bromwich Albion FC,Swansea City FC,,,
+"E0,14/04/18,Huddersfield Town,Watford FC,,,",14/04/18,Huddersfield Town,Watford FC,,,
+"E0,14/04/18,Crystal Palace FC,Brighton & Hove Albion,,,",14/04/18,Crystal Palace FC,Brighton & Hove Albion,,,
+"E0,14/04/18,Burnley FC,Leicester City FC,,,",14/04/18,Burnley FC,Leicester City FC,,,
+"E0,14/04/18,Southampton FC,Chelsea FC,,,",14/04/18,Southampton FC,Chelsea FC,,,
+"E0,14/04/18,Liverpool FC,AFC Bournemouth,,,",14/04/18,Liverpool FC,AFC Bournemouth,,,
+"E0,14/04/18,Manchester United FC,West Bromwich Albion FC,,,",14/04/18,Manchester United FC,West Bromwich Albion FC,,,
+"E0,14/04/18,West Ham United FC,Stoke City FC,,,",14/04/18,West Ham United FC,Stoke City FC,,,
+"E0,14/04/18,Tottenham Hotspur FC,Manchester City FC,,,",14/04/18,Tottenham Hotspur FC,Manchester City FC,,,
+"E0,14/04/18,Swansea City FC,Everton FC,,,",14/04/18,Swansea City FC,Everton FC,,,
+"E0,14/04/18,Newcastle United FC,Arsenal FC,,,",14/04/18,Newcastle United FC,Arsenal FC,,,
+"E0,21/04/18,AFC Bournemouth,Manchester United FC,,,",21/04/18,AFC Bournemouth,Manchester United FC,,,
+"E0,21/04/18,Arsenal FC,West Ham United FC,,,",21/04/18,Arsenal FC,West Ham United FC,,,
+"E0,21/04/18,Brighton & Hove Albion,Tottenham Hotspur FC,,,",21/04/18,Brighton & Hove Albion,Tottenham Hotspur FC,,,
+"E0,21/04/18,Chelsea FC,Huddersfield Town,,,",21/04/18,Chelsea FC,Huddersfield Town,,,
+"E0,21/04/18,Leicester City FC,Southampton FC,,,",21/04/18,Leicester City FC,Southampton FC,,,
+"E0,21/04/18,Everton FC,Newcastle United FC,,,",21/04/18,Everton FC,Newcastle United FC,,,
+"E0,21/04/18,West Bromwich Albion FC,Liverpool FC,,,",21/04/18,West Bromwich Albion FC,Liverpool FC,,,
+"E0,21/04/18,Watford FC,Crystal Palace FC,,,",21/04/18,Watford FC,Crystal Palace FC,,,
+"E0,21/04/18,Stoke City FC,Burnley FC,,,",21/04/18,Stoke City FC,Burnley FC,,,
+"E0,21/04/18,Manchester City FC,Swansea City FC,,,",21/04/18,Manchester City FC,Swansea City FC,,,
+"E0,28/04/18,Burnley FC,Brighton & Hove Albion,,,",28/04/18,Burnley FC,Brighton & Hove Albion,,,
+"E0,28/04/18,Crystal Palace FC,Leicester City FC,,,",28/04/18,Crystal Palace FC,Leicester City FC,,,
+"E0,28/04/18,Huddersfield Town,Everton FC,,,",28/04/18,Huddersfield Town,Everton FC,,,
+"E0,28/04/18,Liverpool FC,Stoke City FC,,,",28/04/18,Liverpool FC,Stoke City FC,,,
+"E0,28/04/18,Manchester United FC,Arsenal FC,,,",28/04/18,Manchester United FC,Arsenal FC,,,
+"E0,28/04/18,Newcastle United FC,West Bromwich Albion FC,,,",28/04/18,Newcastle United FC,West Bromwich Albion FC,,,
+"E0,28/04/18,Southampton FC,AFC Bournemouth,,,",28/04/18,Southampton FC,AFC Bournemouth,,,
+"E0,28/04/18,Swansea City FC,Chelsea FC,,,",28/04/18,Swansea City FC,Chelsea FC,,,
+"E0,28/04/18,Tottenham Hotspur FC,Watford FC,,,",28/04/18,Tottenham Hotspur FC,Watford FC,,,
+"E0,28/04/18,West Ham United FC,Manchester City FC,,,",28/04/18,West Ham United FC,Manchester City FC,,,
+"E0,05/05/18,AFC Bournemouth,Swansea City FC,,,",5/5/2018,AFC Bournemouth,Swansea City FC,,,
+"E0,05/05/18,Arsenal FC,Burnley FC,,,",5/5/2018,Arsenal FC,Burnley FC,,,
+"E0,05/05/18,Brighton & Hove Albion,Manchester United FC,,,",5/5/2018,Brighton & Hove Albion,Manchester United FC,,,
+"E0,05/05/18,Chelsea FC,Liverpool FC,,,",5/5/2018,Chelsea FC,Liverpool FC,,,
+"E0,05/05/18,Everton FC,Southampton FC,,,",5/5/2018,Everton FC,Southampton FC,,,
+"E0,05/05/18,Leicester City FC,West Ham United FC,,,",5/5/2018,Leicester City FC,West Ham United FC,,,
+"E0,05/05/18,Manchester City FC,Huddersfield Town,,,",5/5/2018,Manchester City FC,Huddersfield Town,,,
+"E0,05/05/18,Stoke City FC,Crystal Palace FC,,,",5/5/2018,Stoke City FC,Crystal Palace FC,,,
+"E0,05/05/18,Watford FC,Newcastle United FC,,,",5/5/2018,Watford FC,Newcastle United FC,,,
+"E0,05/05/18,West Bromwich Albion FC,Tottenham Hotspur FC,,,",5/5/2018,West Bromwich Albion FC,Tottenham Hotspur FC,,,
+"E0,13/05/18,Crystal Palace FC,West Bromwich Albion FC,,,",13/05/18,Crystal Palace FC,West Bromwich Albion FC,,,
+"E0,13/05/18,Huddersfield Town,Arsenal FC,,,",13/05/18,Huddersfield Town,Arsenal FC,,,
+"E0,13/05/18,Liverpool FC,Brighton & Hove Albion,,,",13/05/18,Liverpool FC,Brighton & Hove Albion,,,
+"E0,13/05/18,Manchester United FC,Watford FC,,,",13/05/18,Manchester United FC,Watford FC,,,
+"E0,13/05/18,Newcastle United FC,Chelsea FC,,,",13/05/18,Newcastle United FC,Chelsea FC,,,
+"E0,13/05/18,Southampton FC,Manchester City FC,,,",13/05/18,Southampton FC,Manchester City FC,,,
+"E0,13/05/18,Swansea City FC,Stoke City FC,,,",13/05/18,Swansea City FC,Stoke City FC,,,
+"E0,13/05/18,Tottenham Hotspur FC,Leicester City FC,,,",13/05/18,Tottenham Hotspur FC,Leicester City FC,,,
