@@ -326,7 +326,7 @@ namespace WindowsFormsApp1
                     }
                 case "SERIA_A":
                     {
-                        StrengthFile = @"..\..\csv\SERIA_A_TABLE.csv";
+                        StrengthFile = @"..\..\csv\SERIA_TABLE.csv";
                         break;
                     }
                 case "Bundes":
