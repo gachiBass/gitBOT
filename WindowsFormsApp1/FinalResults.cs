@@ -453,7 +453,7 @@ namespace WindowsFormsApp1
             HomeMatches /= TeamCount;
             AwayMatches /= TeamCount;       
 
-            double HomeAdvantageValue = 1;
+            double HomeAdvantageValue = (607*1.0)/457;
            
 
             AVGHomeGoals = AllHomeGoals/TeamCount/HomeMatches; //йцуйцу
