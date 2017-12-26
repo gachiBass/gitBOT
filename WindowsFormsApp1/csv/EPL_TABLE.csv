@@ -1,21 +1,21 @@
-"Team,HomeScored,HomeConceded,AwayScored,AwayConceded,HomeMatches,AwayMatches,HomeAttack,HomeDefence,AwayAttack,AwayDefence,GoalDiff,Points"
-"Manchester City FC,36,7,24,5,10,9,,,,,48,55"
-"Manchester United FC,22,3,19,11,9,10,,,,,27,42"
-"Chelsea FC,14,7,18,7,9,10,,,,,18,39"
-"Liverpool FC,14,3,27,20,9,10,,,,,18,35"
-"Tottenham Hotspur FC,16,6,18,12,9,10,,,,,16,34"
-"Arsenal FC,25,10,9,13,10,9,,,,,11,34"
-"Burnley FC,7,6,9,9,10,9,,,,,1,32"
-"Leicester City FC,13,14,16,14,10,9,,,,,1,27"
-"Everton FC,17,13,7,17,10,9,,,,,-6,26"
-"Watford FC,11,20,16,14,9,10,,,,,-7,22"
-"Huddersfield Town,9,11,8,20,9,10,,,,,-14,22"
-"Brighton & Hove Albion,10,12,5,11,10,9,,,,,-8,21"
-"Southampton FC,13,15,5,10,11,8,,,,,-7,19"
-"Stoke City FC,13,19,9,21,10,9,,,,,-18,19"
-"Newcastle United FC,9,12,10,17,9,10,,,,,-10,18"
-"Crystal Palace FC,12,15,4,14,9,10,,,,,-13,18"
-"West Ham United FC,10,14,9,21,9,10,,,,,-16,17"
-"AFC Bournemouth,9,13,6,15,9,10,,,,,-13,16"
-"West Bromwich Albion FC,9,14,5,13,9,10,,,,,-13,14"
-"Swansea City FC,6,15,5,11,10,9,,,,,-15,13"
+Team,HomeScored,HomeConceded,AwayScored,AwayConceded,HomeMatches,AwayMatches,HomeAttack,HomeDefence,AwayAttack,AwayDefence,GoalDiff,Points
+Manchester City FC,36,7,24,5,10,9,2.356364,0.611354,1.886463,0.363636,48,55
+Manchester United FC,22,3,19,11,9,10,1.6,0.235808,1.659389,0.72,27,42
+Chelsea FC,14,7,18,7,9,10,1.018182,0.550218,1.572052,0.458182,18,39
+Liverpool FC,14,3,27,20,9,10,1.018182,0.235808,2.358079,1.309091,18,35
+Tottenham Hotspur FC,16,6,18,12,9,10,1.163636,0.471616,1.572052,0.785455,16,34
+Arsenal FC,25,10,9,13,10,9,1.636364,0.873362,0.707424,0.945455,11,34
+Burnley FC,7,6,9,9,10,9,0.458182,0.524017,0.707424,0.654545,1,32
+Leicester City FC,13,14,16,14,10,9,0.850909,1.222707,1.257642,1.018182,1,27
+Everton FC,17,13,7,17,10,9,1.112727,1.135371,0.550218,1.236364,-6,26
+Watford FC,11,20,16,14,9,10,0.8,1.572052,1.39738,0.916364,-7,22
+Huddersfield Town,9,11,8,20,9,10,0.654545,0.864629,0.69869,1.309091,-14,22
+Brighton & Hove Albion,10,12,5,11,10,9,0.654545,1.048035,0.393013,0.8,-8,21
+Southampton FC,13,15,5,10,11,8,0.773554,1.473799,0.357285,0.818182,-7,19
+Stoke City FC,13,19,9,21,10,9,0.850909,1.659389,0.707424,1.527273,-18,19
+Newcastle United FC,9,12,10,17,9,10,0.654545,0.943231,0.873362,1.112727,-10,18
+Crystal Palace FC,12,15,4,14,9,10,0.872727,1.179039,0.349345,0.916364,-13,18
+West Ham United FC,10,14,9,21,9,10,0.727273,1.100437,0.786026,1.374545,-16,17
+AFC Bournemouth,9,13,6,15,9,10,0.654545,1.021834,0.524017,0.981818,-13,16
+West Bromwich Albion FC,9,14,5,13,9,10,0.654545,1.100437,0.436681,0.850909,-13,14
+Swansea City FC,6,15,5,11,10,9,0.392727,1.310044,0.393013,0.8,-15,13
