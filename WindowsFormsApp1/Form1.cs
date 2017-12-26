@@ -172,6 +172,8 @@ namespace WindowsFormsApp1
            
 
             double MaxSovpad = 0;
+            //if (resp.Entities.ContainsKey("season") && resp.Entities.ContainsKey("Past") && (resp.Entities.ContainsKey("EPL") || resp.Entities.ContainsKey("Bindes") || resp.Entities.ContainsKey("LaLiga") || resp.Entities.ContainsKey("SERIA_A") || resp.Entities.ContainsKey("Ligue1")))
+            //{ }
             foreach (var res in resp.Entities)
             {
                 if (res.Key == "time")
