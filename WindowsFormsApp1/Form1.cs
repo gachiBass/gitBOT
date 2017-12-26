@@ -291,7 +291,7 @@ namespace WindowsFormsApp1
                     season = "1718";
                 }
                 if (res.Key == "EPL" || res.Key == "Bundes" || res.Key == "LaLiga" || res.Key == "SERIA_A" || res.Key == "Ligue1")
-                {
+                {                  
                     var sovpadCom = res.Value.Children()["value"];
                     var com = sovpadCom.Values().ToList();
                     foreach (var e in com)
@@ -304,11 +304,14 @@ namespace WindowsFormsApp1
                     }
                     else if (commands.Count == 2)
                     {
+                        string filepath="";
+                        FinalResults FR = new FinalResults();
                         switch (res.Key)
                         {
                             case "EPL":
                                 {
                                     leag = "EPL";
+                                    filepath = FR.GetStrengthFile(leag);                                  
                                     //matchResult = "Результат:";
                                     //string pathtofile = @"..\..\csv2\EPL" + season.ToString() + ".csv";
                                     //string path = System.IO.File.Open(@"..\..\csv2\EPL" + season.ToString() + ".csv", FileMode.Open).Name;
@@ -354,6 +357,7 @@ namespace WindowsFormsApp1
                                 //await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
 
                         }
+                        string[] result = FR.Forecast(commands[0], commands[1], filepath, leag);
                         //await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
                     }
                 }

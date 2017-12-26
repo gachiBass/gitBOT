@@ -368,7 +368,7 @@ namespace WindowsFormsApp1
             }
             return Promoted;
         }
-        string GetStrengthFile(string league)
+        public string GetStrengthFile(string league)
         {
             string StrengthFile = "";
             switch (league)
@@ -431,7 +431,7 @@ namespace WindowsFormsApp1
                 if (Text[0] == '\"') Text.Remove(0, 1);
                 if (Text[Text.Length - 1] == '\"') Text.Remove(Text.Length - 1, 1);
             }
-            for (int i = 0; i < Strengths.Count; i++)
+            for (int i = 1; i < Strengths.Count; i++)
             {
                 string Text = Strengths[i];
                 Values = Text.Split(new char[] { ',' });
@@ -441,13 +441,13 @@ namespace WindowsFormsApp1
                 AllAwayGoals += ToInt(Values[2]);
                 if (Values[0].Contains(HomeTeam))
                 {
-                    HomeAtt = Convert.ToDouble(Values[7]);
-                    HomeDef = Convert.ToDouble(Values[8]);
+                    HomeAtt = Convert.ToDouble(Values[7].Replace(".", ","));
+                    HomeDef = Convert.ToDouble(Values[8].Replace(".", ","));
                 }
                 if (Values[0].Contains(AwayTeam))
                 {
-                    AwayAtt = Convert.ToDouble(Values[9]);
-                    AwayDef = Convert.ToDouble(Values[10]);
+                    AwayAtt = Convert.ToDouble(Values[9].Replace(".", ","));
+                    AwayDef = Convert.ToDouble(Values[10].Replace(".", ","));
                 }
             }
             HomeMatches /= TeamCount;
