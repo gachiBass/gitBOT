@@ -167,6 +167,7 @@ namespace WindowsFormsApp1
             List<string> commands = new List<string>();
             List<string> times = new List<string>();
             string season = "";
+            string leag = "";
             DateTime dateBegin = new DateTime(2017, 1, 1, 0, 0, 0);
             DateTime dateEnd = new DateTime(2018, 12, 31, 23, 59, 59);
            
@@ -176,16 +177,16 @@ namespace WindowsFormsApp1
             //{ }
             foreach (var res in resp.Entities)
             {
-                if (res.Key == "time")
-                {
-                    var sovpadTime = res.Value.Children()["value"];
-                    var time = sovpadTime.Values().ToList();
-                    foreach (var e in time)
-                    {
-                        times.Add(e.ToString());
-                    }
-                    continue;
-                }
+                //if (res.Key == "time")
+                //{
+                //    var sovpadTime = res.Value.Children()["value"];
+                //    var time = sovpadTime.Values().ToList();
+                //    foreach (var e in time)
+                //    {
+                //        times.Add(e.ToString());
+                //    }
+                //    continue;
+                //}
                 if (res.Key == "season")
                 {
                     var seasons = res.Value.Children()["value"];
@@ -194,6 +195,8 @@ namespace WindowsFormsApp1
                     {
                         season = e.ToString();
                     }
+                    dateBegin = new DateTime(Convert.ToInt32("20" + season.Substring(0, 2)), 1, 1, 0, 0, 0);
+                    dateEnd = new DateTime(Convert.ToInt32("20" + season.Substring(2, 2)), 12, 31, 23, 59, 59);
                 }
                 if (res.Key == "Past")
                 {
@@ -305,51 +308,62 @@ namespace WindowsFormsApp1
                         {
                             case "EPL":
                                 {
+                                    leag = "EPL";
                                     //matchResult = "Результат:";
                                     //string pathtofile = @"..\..\csv2\EPL" + season.ToString() + ".csv";
                                     //string path = System.IO.File.Open(@"..\..\csv2\EPL" + season.ToString() + ".csv", FileMode.Open).Name;
                                     //Matches( path, dateBegin, dateEnd, commands, id);
 
-                                    FinalResults obj = new FinalResults();
-                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
+                                    //FinalResults obj = new FinalResults();
+                                    //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                             case "Bundes":
                                 {
-                                    FinalResults obj = new FinalResults();
-                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
+                                    leag = "Bundes";
+                                    //FinalResults obj = new FinalResults();
+                                    //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                             case "LaLiga":
                                 {
-                                    FinalResults obj = new FinalResults();
-                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
+                                    leag = "LaLiga";
+                                    //FinalResults obj = new FinalResults();
+                                    //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                             case "SERIA_A":
                                 {
-                                    FinalResults obj = new FinalResults();
-                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
+                                    leag = "SERIA_A";
+                                    //FinalResults obj = new FinalResults();
+                                    //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                             case "Ligue1":
                                 {
-                                    FinalResults obj = new FinalResults();
-                                    string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
-                                    matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
+                                    leag = "Ligue1";
+                                    //FinalResults obj = new FinalResults();
+                                    //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
+                                    //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
                                     break;
                                 }
                                 //await Bot.SendTextMessageAsync(id, "Результат");//МЕТОД ДЛЯ РАСЧЕТА
 
                         }
-                        await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
+                        //await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
                     }
                 }
             }
+
+            //Выдаем результат
+            FinalResults obj = new FinalResults();
+            string excelName = obj.GetExcelFileName(leag, season);
+            matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
+            await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
         }
 
         private void Form1_Load(object sender, EventArgs e)
