@@ -558,7 +558,7 @@ namespace WindowsFormsApp1
                             break;
                         }
                 }
-            string[] Result = { homewin.ToString(), draw.ToString(), awaywin.ToString(), homegoals.ToString(), awaygoals.ToString(), winner };
+            string[] Result = { HomeTeam, AwayTeam, homewin.ToString(), draw.ToString(), awaywin.ToString(), homegoals.ToString(), awaygoals.ToString(), winner };
             return Result;
         }
        
