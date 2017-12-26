@@ -428,6 +428,12 @@ namespace WindowsFormsApp1
             for (int i = 0; i < Strengths.Count; i++)
             {
                 string Text = Strengths[i];
+                if (Text[0] == '\"') Text.Remove(0, 1);
+                if (Text[Text.Length - 1] == '\"') Text.Remove(Text.Length - 1, 1);
+            }
+            for (int i = 0; i < Strengths.Count; i++)
+            {
+                string Text = Strengths[i];
                 Values = Text.Split(new char[] { ',' });
                 HomeMatches += ToInt(Values[5]);
                 AwayMatches += ToInt(Values[6]);
