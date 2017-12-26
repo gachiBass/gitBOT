@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WindowsFormsApp1
 {
@@ -251,6 +252,59 @@ namespace WindowsFormsApp1
             return TeamCount;
         }
 
+        void UpdateStrenghts(string FileName, string League)
+        {
+            List<string> Teams = new List<string>();            
+            StreamReader stream = new StreamReader(new FileStream(FileName, FileMode.Open));
+            string row;
+            while ((row = stream.ReadLine()) != null)
+            {
+                Teams.Add(row);
+            }
+            stream.Close();
+            int TeamCount = GetTeamCount(League);
+            int AllHomeScored, AllAwayScored;
+            AllHomeScored = AllAwayScored = 0;
+            double AVGHomePlayed, AVGAwayPlayed, AVGHomeGoals, AVGAwayGoals;
+            AVGAwayPlayed = AVGHomePlayed=AVGAwayGoals= AVGHomeGoals= 0;
+            string[] Values;
+           
+            for (int i = 1; i < Teams.Count; i++)
+            {
+                string Text = Teams[i];
+                Values = Text.Split(new char[] { ',' });
+                AllHomeScored += ToInt(Values[1]);
+                AllAwayScored += ToInt(Values[3]);
+                AVGHomePlayed += ToInt(Values[5]);
+                AVGAwayPlayed += ToInt(Values[6]);
+            }
+            AVGHomePlayed /= TeamCount;
+            AVGAwayPlayed /= TeamCount;
+            AVGHomeGoals = AllHomeScored * 1.0 / TeamCount / AVGHomePlayed;
+            AVGAwayGoals = AllAwayScored * 1.0 / TeamCount / AVGAwayPlayed;
+            double HomeAtt, HomeDef, AwayAtt, AwayDef;
+            HomeAtt = HomeDef = AwayAtt = AwayDef = 0;            
+            
+            string path = FileName;
+            Excel.Application excel = new Excel.Application();
+            Excel.Workbook wb = excel.Workbooks.Open(path);
+
+            for (int i = 1; i < Teams.Count; i++)
+            {
+                string Text = Teams[i];
+                Values = Text.Split(new char[] { ',' });
+                HomeAtt = Math.Round((ToInt(Values[1]) * 1.0) / ToInt(Values[5]) / AVGHomeGoals, 6);
+                HomeDef = Math.Round((ToInt(Values[2]) * 1.0) / ToInt(Values[6]) / AVGAwayGoals, 6);
+                AwayAtt = Math.Round((ToInt(Values[3]) * 1.0) / ToInt(Values[5]) / AVGAwayGoals, 6);
+                AwayDef = Math.Round((ToInt(Values[4]) * 1.0) / ToInt(Values[6]) / AVGHomeGoals, 6);
+                excel.Cells[i + 1, 1] = Values[0] + "," + Values[1] + "," + Values[2] + "," + Values[3] + ","
+                    + Values[4] + "," + Values[5] + "," + Values[6] + "," + HomeAtt.ToString() + "," +
+                    HomeDef.ToString() + "," + AwayAtt.ToString() + "," + AwayDef.ToString() + "," + Values[11] + "," + Values[12];
+       }
+            excel.ActiveWorkbook.Save();
+            excel.ActiveWorkbook.Close(true);
+            excel.Quit();
+        }
 
         int ToInt(string TextValue)
         {
