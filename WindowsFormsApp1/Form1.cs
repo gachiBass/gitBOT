@@ -63,25 +63,36 @@ namespace WindowsFormsApp1
                             var message = update.Message;
                             if (message != null && message.Type == Telegram.Bot.Types.Enums.MessageType.TextMessage)
                             {
-                                if (message.Text == "/say")
-                                { await Bot.SendTextMessageAsync(message.Chat.Id, "тест"); }
+                                if (message.Text == "/info")
+                                { await Bot.SendTextMessageAsync(message.Chat.Id, "Бот прогнозирования матчей\nКоманда разработчиков:\nНеприенков Владимир\nОрлова Алиса\nСакаев Рустам\nСтерликов Данил\nВерсия 1.0\nг.Тюмень, 2017 год"); }
                                 else if (message.Text == "/start")
                                 { await Bot.SendTextMessageAsync(message.Chat.Id, "Привет!"); }
-                                else if (message.Text == "/but")
+                                else if (message.Text == "/help")
                                 {
-                                    var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
-                                    {
-                                        Keyboard = new[]
-                                        {
-                                                new[]
-                                                {
-                                                    new Telegram.Bot.Types.KeyboardButton("Red!"),
-                                                    new Telegram.Bot.Types.KeyboardButton("Blue!")
-                                                },
-                                     },
-                                        ResizeKeyboard = true,
-                                    };
-                                    await Bot.SendTextMessageAsync(message.Chat.Id, "Нео, что ты выберешь?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
+                                    //var keyboard = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
+                                    //{
+                                    //    Keyboard = new[]
+                                    //    {
+                                    //            new[]
+                                    //            {
+                                    //                new Telegram.Bot.Types.KeyboardButton("Red!"),
+                                    //                new Telegram.Bot.Types.KeyboardButton("Blue!")
+                                    //            },
+                                    // },
+                                    //    ResizeKeyboard = true,
+                                    //};
+                                    //await Bot.SendTextMessageAsync(message.Chat.Id, "Нео, что ты выберешь?", Telegram.Bot.Types.Enums.ParseMode.Default, false, false, 0, keyboard);
+                                    await Bot.SendTextMessageAsync(message.Chat.Id,"Приветствую!\n"+
+"Наш бот предназначен для прогнозирования матчей 5 ведущих чемпионатов Европы (Англия, Франция, Германия, Испания, Италия). Чтобы получить прогноз на матч, просто введите наименования двух команд, играющих в одном и том же чемпионате и бот выведет прогнозируемый счет и вероятности различных исходов матча."+
+"Если команды уже играли между собой в рамках текущего сезона, причем дважды, тогда бот выведет результаты обоих сыгранных матчей. Если же введенные команды играли между собой в течение текущего сезона лишь однажды, тогда бот выведет результат сыгранного матча и прогноз на следующий.\n"+
+"Наш бот, помимо прогнозирования матчей, может выводить результаты уже прошедших матчей. Для того, чтобы получить результат уже такого матча, необходимо ввести 2 команды, играющие в одном и том же чемпионате и сезон, в котором нужно искать этот матч. К примеру, если вы введете “2005”,тогда поиск будет осуществляться по сезону “2005/2006”.\n"+
+"Расшифровка результатов прогноза:\n"+
+"“1” - победа домашней команды\n"+
+"“1х” - домашняя команда не проиграет\n"+
+"“х” - ничья\n"+
+"“х2” - гостевая команда не проиграет\n"+
+"“2” - победа гостевой команды\n"+
+"Удачного пользования!");
                                 }
                                 else if (message.Text == "Red!")
                                 {
@@ -298,9 +309,7 @@ namespace WindowsFormsApp1
 
                         }
                         string[] result = FR.Forecast(commands[0], commands[1], filepath, leag);
-                        Ans = @"Дом: " + result[0] + "\n" + "Гости: " + result[1] + "\n" + "Победит дом: " + String.Format("{0:f}", Convert.ToDouble(result[2])) + "\n" + "Ничья: " + String.Format("{0:f}", Convert.ToDouble(result[3])) + "\n" + "Победят гости: " + String.Format("{0:f}", Convert.ToDouble(result[4])) + "\n" + "Счет:" + result[5] + "-" + result[6] + "\n" + "Победитель:" + result[7];
-                        string t = String.Format("{0:f}", result[2]);
-                        //await Bot.SendTextMessageAsync(id, Ans);
+                        Ans = "Прогноз\nДом: " + result[0] + "\n" + "Гости: " + result[1] + "\n" + "Победа домашней: " + String.Format("{0:f4}", Convert.ToDouble(result[2])) + "\n" + "Ничья: " + String.Format("{0:f4}", Convert.ToDouble(result[3])) + "\n" + "Победа гостевой: " + String.Format("{0:f4}", Convert.ToDouble(result[4])) + "\n" + "Счет:" + result[5] + "-" + result[6] + "\n" + "Исход:" + result[7];
                     }
                 }
             }
@@ -537,11 +546,11 @@ namespace WindowsFormsApp1
             string ResultToOut = "";
             if (result[0, 0] != null)
             {
-                ResultToOut = @"Дата: " + result[0, 0] + "\n" + "Дом: " + result[1, 0] + "\n" + "Гости: " + result[2, 0] + "\n" + "Счет: " + result[3, 0] + "\n\n";
+                ResultToOut = "Сыгранный матч\nДата: " + result[0, 0] + "\n" + "Дом: " + result[1, 0] + "\n" + "Гости: " + result[2, 0] + "\n" + "Счет: " + result[3, 0] + "\n\n";
             }
             if (result[0, 1] != null)
             { 
-                ResultToOut += @"Дата: " + result[0, 1] + "\n" + "Дом: " + result[1, 1] + "\n" + "Гости: " + result[2, 1] + "\n" + "Счет: " + result[3, 1] + "\n\n";
+                ResultToOut += "Сыгранный матч\nДата: " + result[0, 1] + "\n" + "Дом: " + result[1, 1] + "\n" + "Гости: " + result[2, 1] + "\n" + "Счет: " + result[3, 1] + "\n\n";
             }
             return ResultToOut;
         }
