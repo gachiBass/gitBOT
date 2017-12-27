@@ -170,6 +170,7 @@ namespace WindowsFormsApp1
             string leag = "";
             DateTime dateBegin = new DateTime(2017, 1, 1, 0, 0, 0);
             DateTime dateEnd = new DateTime(2018, 12, 31, 23, 59, 59);
+            string Ans = "";
            
 
             double MaxSovpad = 0;
@@ -198,89 +199,24 @@ namespace WindowsFormsApp1
                     dateBegin = new DateTime(Convert.ToInt32("20" + season.Substring(0, 2)), 1, 1, 0, 0, 0);
                     dateEnd = new DateTime(Convert.ToInt32("20" + season.Substring(2, 2)), 12, 31, 23, 59, 59);
                 }
+                else if (res.Key == "halfseason")
+                {
+                    var seasons = res.Value.Children()["value"];
+                    var seas = seasons.Values().ToList();
+                    foreach (var e in seas)
+                    {
+                        if (Convert.ToString(Convert.ToInt32(e) + 1).Length == 2)
+                        { season = e.ToString() + Convert.ToString(Convert.ToInt32(e) + 1);}
+                        else
+                        { season = e.ToString() + "0"+Convert.ToString(Convert.ToInt32(e) + 1); }
+                    }
+                    dateBegin = new DateTime(Convert.ToInt32("20" + season.Substring(0, 2)), 1, 1, 0, 0, 0);
+                    dateEnd = new DateTime(Convert.ToInt32("20" + season.Substring(2, 2)), 12, 31, 23, 59, 59);
+                }
+
                 if (res.Key == "Past")
                 {
-                    var time = res.Value.Children()["value"];
-                    var dates = time.Values().ToList();
-                    foreach (var e in dates)
-                    {
-                        var f = 0;
-                        switch (e.ToString())
-                        {
-                            case "вчера":
-                                {
-                                    dateBegin = DateTime.Today.AddDays(-1);
-                                    dateEnd = DateTime.Today.AddSeconds(-1);
-                                    //  dateBegin.AddHours
-                                    break;
-                                }
-                            case "В прошлом месяце":
-                                {
-                                    var yr = DateTime.Today.Year;
-                                    var mth = DateTime.Today.Month;
-                                    dateBegin = new DateTime(yr, mth, 1, 0, 0, 0).AddMonths(-1);
-                                    dateEnd = new DateTime(yr, mth, 1, 23, 59, 59).AddDays(-1);
-                                    break;
-                                }
-                            case "В прошлом году":
-                                {
-                                    var yr = DateTime.Today.Year;
-                                    dateBegin = new DateTime(yr, 1, 1, 0, 0, 0).AddYears(-1);
-                                    dateEnd = new DateTime(yr, 12, 31, 23, 59, 59).AddYears(-1);
-                                    break;
-                                }
-                            case "на прошлой неделе":
-                                {
-                                    var day = DateTime.Today.DayOfWeek.ToString();
-                                    switch (day)
-                                    {
-                                        case "Monday":
-                                            {
-                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-7);
-                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-1);
-                                                break;
-                                            }
-                                        case "Tuesday":
-                                            {
-                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-8);
-                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-2);
-                                                break;
-                                            }
-                                        case "Wednsday":
-                                            {
-                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-9);
-                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-3);
-                                                break;
-                                            }
-                                        case "Thursday":
-                                            {
-                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-10);
-                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-4);
-                                                break;
-                                            }
-                                        case "Friday":
-                                            {
-                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-11);
-                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-5);
-                                                break;
-                                            }
-                                        case "Saturday":
-                                            {
-                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-12);
-                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-6);
-                                                break;
-                                            }
-                                        case "Sunday":
-                                            {
-                                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-13);
-                                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-7);
-                                                break;
-                                            }
-                                    }
-                                    break;
-                                }
-                        }
-                    }
+               
                 }
                 else if (res.Key == "Future")
                 { }
@@ -325,6 +261,7 @@ namespace WindowsFormsApp1
                             case "Bundes":
                                 {
                                     leag = "Bundes";
+                                    filepath = FR.GetStrengthFile(leag);
                                     //FinalResults obj = new FinalResults();
                                     //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
                                     //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
@@ -333,6 +270,7 @@ namespace WindowsFormsApp1
                             case "LaLiga":
                                 {
                                     leag = "LaLiga";
+                                    filepath = FR.GetStrengthFile(leag);
                                     //FinalResults obj = new FinalResults();
                                     //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
                                     //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
@@ -341,6 +279,7 @@ namespace WindowsFormsApp1
                             case "SERIA_A":
                                 {
                                     leag = "SERIA_A";
+                                    filepath = FR.GetStrengthFile(leag);
                                     //FinalResults obj = new FinalResults();
                                     //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
                                     //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
@@ -349,6 +288,7 @@ namespace WindowsFormsApp1
                             case "Ligue1":
                                 {
                                     leag = "Ligue1";
+                                    filepath = FR.GetStrengthFile(leag);
                                     //FinalResults obj = new FinalResults();
                                     //string excelName = obj.GetExcelFileName(res.Key.ToString(), season);
                                     //matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
@@ -358,9 +298,9 @@ namespace WindowsFormsApp1
 
                         }
                         string[] result = FR.Forecast(commands[0], commands[1], filepath, leag);
-                        string Ans = @"Дом: " + result[0] + "\n" + "Гости: " + result[1] + "\n" + "Победит дом: " + String.Format("{0:f}", Convert.ToDouble(result[2])) + "\n" + "Ничья: " + String.Format("{0:f}", Convert.ToDouble(result[3])) + "\n" + "Победят гости: " + String.Format("{0:f}", Convert.ToDouble(result[4])) + "\n" + "Счет:" + result[5] + "-" + result[6] + "\n" + "Победитель:" + result[7];
+                        Ans = @"Дом: " + result[0] + "\n" + "Гости: " + result[1] + "\n" + "Победит дом: " + String.Format("{0:f}", Convert.ToDouble(result[2])) + "\n" + "Ничья: " + String.Format("{0:f}", Convert.ToDouble(result[3])) + "\n" + "Победят гости: " + String.Format("{0:f}", Convert.ToDouble(result[4])) + "\n" + "Счет:" + result[5] + "-" + result[6] + "\n" + "Победитель:" + result[7];
                         string t = String.Format("{0:f}", result[2]);
-                        await Bot.SendTextMessageAsync(id, Ans);
+                        //await Bot.SendTextMessageAsync(id, Ans);
                     }
                 }
             }
@@ -369,7 +309,21 @@ namespace WindowsFormsApp1
             FinalResults obj = new FinalResults();
             string excelName = obj.GetExcelFileName(leag, season);
             matchResult = obj.GetMatchResultWithDates(excelName, commands[0], commands[1], dateBegin, dateEnd);
-            await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
+            if (matchResult[0, 0] == null && matchResult[0, 1] == null)
+            {
+                await Bot.SendTextMessageAsync(id, Ans);
+            }
+            else if (matchResult[0, 0] != null && matchResult[0, 1] != null)
+            {
+                await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
+            }
+            else if (matchResult[0, 0] == null || matchResult[0, 1] == null)
+            {
+                await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
+                await Bot.SendTextMessageAsync(id, Ans);
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -593,3 +547,85 @@ namespace WindowsFormsApp1
         }
     }
 }
+
+//    var time = res.Value.Children()["value"];
+//    var dates = time.Values().ToList();
+//    foreach (var e in dates)
+//    {
+//        var f = 0;
+//        switch (e.ToString())
+//        {
+//            case "вчера":
+//                {
+//                    dateBegin = DateTime.Today.AddDays(-1);
+//                    dateEnd = DateTime.Today.AddSeconds(-1);
+//                    //  dateBegin.AddHours
+//                    break;
+//                }
+//            case "В прошлом месяце":
+//                {
+//                    var yr = DateTime.Today.Year;
+//                    var mth = DateTime.Today.Month;
+//                    dateBegin = new DateTime(yr, mth, 1, 0, 0, 0).AddMonths(-1);
+//                    dateEnd = new DateTime(yr, mth, 1, 23, 59, 59).AddDays(-1);
+//                    break;
+//                }
+//            case "В прошлом году":
+//                {
+//                    var yr = DateTime.Today.Year;
+//                    dateBegin = new DateTime(yr, 1, 1, 0, 0, 0).AddYears(-1);
+//                    dateEnd = new DateTime(yr, 12, 31, 23, 59, 59).AddYears(-1);
+//                    break;
+//                }
+//            case "на прошлой неделе":
+//                {
+//                    var day = DateTime.Today.DayOfWeek.ToString();
+//                    switch (day)
+//                    {
+//                        case "Monday":
+//                            {
+//                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-7);
+//                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-1);
+//                                break;
+//                            }
+//                        case "Tuesday":
+//                            {
+//                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-8);
+//                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-2);
+//                                break;
+//                            }
+//                        case "Wednsday":
+//                            {
+//                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-9);
+//                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-3);
+//                                break;
+//                            }
+//                        case "Thursday":
+//                            {
+//                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-10);
+//                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-4);
+//                                break;
+//                            }
+//                        case "Friday":
+//                            {
+//                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-11);
+//                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-5);
+//                                break;
+//                            }
+//                        case "Saturday":
+//                            {
+//                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-12);
+//                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-6);
+//                                break;
+//                            }
+//                        case "Sunday":
+//                            {
+//                                dateBegin = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 0, 0, 0).AddDays(-13);
+//                                dateEnd = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59).AddDays(-7);
+//                                break;
+//                            }
+//                    }
+//                    break;
+//                }
+//}
+//}
