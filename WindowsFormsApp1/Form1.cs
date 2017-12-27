@@ -358,7 +358,9 @@ namespace WindowsFormsApp1
 
                         }
                         string[] result = FR.Forecast(commands[0], commands[1], filepath, leag);
-                        //await Bot.SendTextMessageAsync(id, FormattedResult(matchResult));
+                        string Ans = @"Дом: " + result[0] + "\n" + "Гости: " + result[1] + "\n" + "Победит дом: " + String.Format("{0:f}", Convert.ToDouble(result[2])) + "\n" + "Ничья: " + String.Format("{0:f}", Convert.ToDouble(result[3])) + "\n" + "Победят гости: " + String.Format("{0:f}", Convert.ToDouble(result[4])) + "\n" + "Счет:" + result[5] + "-" + result[6] + "\n" + "Победитель:" + result[7];
+                        string t = String.Format("{0:f}", result[2]);
+                        await Bot.SendTextMessageAsync(id, Ans);
                     }
                 }
             }
